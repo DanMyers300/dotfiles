@@ -4,7 +4,7 @@
   config,
   pkgs,
   ...
-}: {
+} : {
 
   imports = [
   ];
@@ -34,7 +34,11 @@
   };
   
   programs = {
-    neovim.enable = true;
+    neovim = {
+      enable = true;
+      package = pkgs.unstable.neovim-unwrapped;
+    };
+
     home-manager.enable = true;
   };
 
