@@ -18,7 +18,6 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -36,15 +35,13 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.printing.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
-  services.printing.enable = true;
-
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -60,9 +57,11 @@
   };
 
   programs.firefox.enable = true;
-
   nixpkgs.config.allowUnfree = true;
 
+  # Fix for OpenVPN
+  environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
+  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "24.05";
