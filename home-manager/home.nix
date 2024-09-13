@@ -7,6 +7,10 @@
 } : {
 
   imports = [
+    ./programs.nix
+    ./config/nvim/nvimrc.nix
+    ./config/nvim/nvimPlugins.nix
+    ./config/stylix.nix
   ];
 
   nixpkgs = {
@@ -23,23 +27,6 @@
     stateVersion = "24.05";
     username = "dan";
     homeDirectory = "/home/dan";
-    packages = with pkgs; [ 
-    # steam
-      prismlauncher
-      nodejs_22
-      baobab
-      alacritty
-      tmux
-    ];
-  };
-  
-  programs = {
-    neovim = {
-      enable = true;
-      package = pkgs.unstable.neovim-unwrapped;
-    };
-
-    home-manager.enable = true;
   };
 
   systemd.user.startServices = "sd-switch";

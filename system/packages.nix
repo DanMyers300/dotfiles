@@ -11,7 +11,7 @@ environment.systemPackages = with pkgs; [
     zig
     gcc
     python3
-    steam
-    openvpn
+    mullvad-vpn
+    nodejs_22
   ];
 }

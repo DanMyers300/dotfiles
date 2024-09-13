@@ -22,15 +22,14 @@
 #
 
 {
-
   inputs = {
-    # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     
-    # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -38,6 +37,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -72,11 +72,10 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
 	  unstable-overlays
+      stylix.homeManagerModules.stylix
 	  ./home-manager/home.nix
 	];
       };
     };
-
   };
-
 }
