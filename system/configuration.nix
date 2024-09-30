@@ -20,8 +20,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+# Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    #allowedTCPPorts = [ 80 443 ];
+    #allowedUDPPortRanges = [
+      #{ from = 4000; to = 4007; }
+      #{ from = 8000; to = 8010; }
+    #];
+  };
+
+
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
