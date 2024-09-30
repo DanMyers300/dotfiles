@@ -13,10 +13,6 @@
       ./config/steam.nix
     ];
 
-
-# ----- System Critical ----- #
-
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -31,7 +27,6 @@
       #{ from = 8000; to = 8010; }
     #];
   };
-
 
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -73,13 +68,9 @@
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
-
-  system.stateVersion = "24.05";
-
-
-# ----- Not System Critical ----- #
-
-
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
+  
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
@@ -87,9 +78,9 @@
   };
 
   environment.variables.EDITOR = "nvim";
- 
-  #VPN
+
   services.mullvad-vpn.enable = true;
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
 
+  system.stateVersion = "24.05";
 }
