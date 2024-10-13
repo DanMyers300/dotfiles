@@ -15,6 +15,7 @@
     qbittorrent
     vlc
     steam
+    ollama
   ];
 
   programs = {

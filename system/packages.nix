@@ -14,7 +14,7 @@ environment.systemPackages = with pkgs; [
   mullvad-vpn
   nodejs_22
   pavucontrol
+  qemu
+  gnome-extension-manager
 ];
-
-
 }

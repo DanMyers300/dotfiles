@@ -52,6 +52,11 @@
   services.printing.enable = true;
   programs.firefox.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  # Enable USB redirection
+  # virtualisation.spiceUSBRedirection.enable = true;
+  
   services.xserver.xkb = {
     layout = "us";
     variant = "";

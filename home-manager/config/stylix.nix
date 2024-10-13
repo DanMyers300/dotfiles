@@ -17,6 +17,7 @@
     polarity = "dark";
     cursor = {
       package = pkgs.gnome.adwaita-icon-theme;
+      size = 8;
       name = "Adwaita";
     };
     fonts = {
