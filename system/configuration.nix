@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
 # Networking
-  networking.hostName = "nixos";
+  networking.hostName = "nixstation";
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;

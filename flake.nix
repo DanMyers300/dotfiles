@@ -57,17 +57,17 @@
   
   in {
 
-    #'nixos-rebuild --flake .#dan'
+    #'nixos-rebuild --flake .#nixstation'
     nixosConfigurations = {
-      dan = nixpkgs.lib.nixosSystem {
+      nixstation = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./system/configuration.nix];
       };
     };
 
-    #'home-manager --flake .#dan@nixos'
+    #'home-manager --flake .#dan@nixstation'
     homeConfigurations = {
-      "dan@nixos" = home-manager.lib.homeManagerConfiguration {
+      "dan@nixstation" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
