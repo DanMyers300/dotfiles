@@ -12,6 +12,7 @@ environment.systemPackages = with pkgs; [
   gcc
   python3
   mullvad-vpn
+  typescript
   nodejs_22
   pavucontrol
 ];
