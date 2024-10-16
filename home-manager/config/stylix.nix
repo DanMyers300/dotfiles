@@ -17,14 +17,14 @@
     polarity = "dark";
     cursor = {
       package = pkgs.gnome.adwaita-icon-theme;
-      size = 8;
+      size = 7;
       name = "Adwaita";
     };
     fonts = {
       sizes = {
-        applications = 9;
-        desktop = 9;
-        popups = 9;
+        applications = 10;
+        desktop = 10;
+        popups = 10;
       };
     };
     targets = {

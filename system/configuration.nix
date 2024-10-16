@@ -5,6 +5,7 @@
   pkgs,
   ... 
 }: {
+
   imports =
     [
       ./hardware-configuration.nix
@@ -13,21 +14,11 @@
       ./config/steam.nix
     ];
 
+### --- Boot loader --- ###
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-# Networking
-  networking.hostName = "nixstation";
-  networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    #allowedTCPPorts = [ 80 443 ];
-    #allowedUDPPortRanges = [
-      #{ from = 4000; to = 4007; }
-      #{ from = 8000; to = 8010; }
-    #];
-  };
-
+### --- Localization --- ###
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -42,26 +33,50 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+### --- Xserver setup --- ###
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-  services.printing.enable = true;
-  programs.firefox.enable = true;
-
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-  # Enable USB redirection
-  # virtualisation.spiceUSBRedirection.enable = true;
-  
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
+### --- Gnome --- ###
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+### --- Hyprland --- ###
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+### --- Crucial Programs --- ###
+  programs.firefox.enable = true;
+  environment.variables.EDITOR = "nvim";
+
+### --- Virtualisation --- ###
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  # Enable USB redirection
+  # virtualisation.spiceUSBRedirection.enable = true;
+
+### --- Networking --- ###
+  networking.hostName = "nixstation";
+  networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    #allowedTCPPorts = [ 80 443 ];
+    #allowedUDPPortRanges = [
+      #{ from = 4000; to = 4007; }
+      #{ from = 8000; to = 8010; }
+    #];
+  };
+
+### --- VPN --- ###
+  services.mullvad-vpn.enable = true;
+  environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
+
+### --- Audio --- ###
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -71,21 +86,19 @@
     pulse.enable = true;
   };
   
+### --- Package settings --- ###
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = false;
   
+### --- User setup --- ###
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  environment.variables.EDITOR = "nvim";
-
-  services.mullvad-vpn.enable = true;
-  environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
-
+### --- Version --- ###
   system.stateVersion = "24.05";
 }

@@ -5,16 +5,23 @@
 } : {
 
 environment.systemPackages = with pkgs; [
+
+# Necessary
   git
   p7zip
-  btop
-  zig
   gcc
+  btop
+
+# Programming Lang
+  zig
   python3
-  mullvad-vpn
   nodejs_22
+
+# System Tools
+  mullvad-vpn
   pavucontrol
   qemu
   gnome-extension-manager
+
 ];
 }

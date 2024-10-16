@@ -10,6 +10,7 @@
     ./programs.nix
     ./config/nvim/nvimrc.nix
     ./config/nvim/nvimPlugins.nix
+    ./config/nvim/nvimSettings.nix
     ./config/stylix.nix
   ];
 
