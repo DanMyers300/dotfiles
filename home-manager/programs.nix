@@ -9,13 +9,13 @@
   home.packages = with pkgs; [
     prismlauncher
     baobab
-    alacritty
     kitty
     tmux
     qbittorrent
     vlc
     steam
     ollama
+    signal-desktop
   ];
 
   programs = {
@@ -24,6 +24,17 @@
       package = pkgs.unstable.neovim-unwrapped;
       viAlias = true;
       vimAlias = true;
+    };
+
+    alacritty = {
+      enable = true;
+      settings = {
+        window = {
+          title="Nixstation";
+          dynamic_title=false;
+          opacity= lib.mkForce 0.8;
+        };
+      };
     };
 
     home-manager.enable = true;

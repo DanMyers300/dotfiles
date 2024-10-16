@@ -30,7 +30,7 @@
     targets = {
       neovim = {
         enable = true;
-        #transparentBackground.main = true;
+        transparentBackground.main = true;
         #transparentBackground.signColumn = true;
       };
     };
