@@ -8,13 +8,13 @@
 
   imports = [
     ./programs.nix
-    ./config/nvim/nvimrc.nix
-    ./config/nvim/nvimPlugins.nix
-    ./config/nvim/nvimSettings.nix
-    ./config/stylix.nix
-    ./config/alacritty.nix
-    ./config/bash.nix
-    ./config/tmux.nix
+    ../config/nvim/nvimrc.nix
+    ../config/nvim/nvimPlugins.nix
+    ../config/nvim/nvimSettings.nix
+    ../config/stylix.nix
+    ../config/alacritty.nix
+    ../config/bash.nix
+    ../config/tmux.nix
   ];
 
   nixpkgs = {
