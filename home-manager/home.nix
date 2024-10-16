@@ -15,6 +15,7 @@
     ../config/alacritty.nix
     ../config/bash.nix
     ../config/tmux.nix
+    ../config/hypr.nix
   ];
 
   nixpkgs = {
