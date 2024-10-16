@@ -10,5 +10,6 @@
     qbittorrent
     vlc
     ollama
+    waybar
   ];
 }
