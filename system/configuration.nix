@@ -17,6 +17,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+### --- Bluetooth --- ###
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
 ### --- Localization --- ###
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
