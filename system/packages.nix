@@ -11,6 +11,7 @@ environment.systemPackages = with pkgs; [
   p7zip
   gcc
   btop
+  baobab
 
 # Programming Lang
   zig
