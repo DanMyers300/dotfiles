@@ -24,5 +24,7 @@ environment.systemPackages = with pkgs; [
   qemu
   gnome-extension-manager
 
+# Required for Hyprland default config
+  kitty
 ];
 }

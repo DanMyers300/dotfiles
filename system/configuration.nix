@@ -48,6 +48,8 @@
     enable = true;
     xwayland.enable = true;
   };
+  # Optional, hint Electron apps to use Wayland:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
 ### --- Crucial Programs --- ###
   programs.firefox.enable = true;
