@@ -10,7 +10,6 @@
     [
       ./hardware-configuration.nix
       ./packages.nix
-      ./config/tmux.nix
       ./config/steam.nix
     ];
 

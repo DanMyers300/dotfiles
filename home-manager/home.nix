@@ -14,6 +14,7 @@
     ./config/stylix.nix
     ./config/alacritty.nix
     ./config/bash.nix
+    ./config/tmux.nix
   ];
 
   nixpkgs = {
