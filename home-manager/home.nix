@@ -12,6 +12,8 @@
     ./config/nvim/nvimPlugins.nix
     ./config/nvim/nvimSettings.nix
     ./config/stylix.nix
+    ./config/alacritty.nix
+    ./config/bash.nix
   ];
 
   nixpkgs = {
