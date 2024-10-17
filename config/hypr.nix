@@ -183,6 +183,7 @@
     ### --- System --- ###
     bind = $mainMod, C, killactive,
     bind = $mainMod, Q, exit,
+    bind = $mainMod SHIFT, F, float
     bind = $mainMod, F, fullscreen
     bind = $mainMod, M, fullscreen, 1
     
