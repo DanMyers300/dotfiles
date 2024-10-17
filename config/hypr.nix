@@ -36,10 +36,8 @@
     #################
     ### AUTOSTART ###
     #################
-    # exec-once = $terminal
-    # exec-once = nm-applet &
-    # exec-once = waybar & hyprpaper & firefox
     exec-once = waybar
+    exec-once = blueman--applet
     
     #############################
     ### ENVIRONMENT VARIABLES ###
@@ -176,12 +174,16 @@
     $mainMod = SUPER
     
     # https://wiki.hyprland.org/Configuring/Binds/
+
+    ### --- Applications --- ###
     bind = $mainMod, T, exec, $terminal
+    bind = $mainMod, F, exec, $browser
+
+    ### --- System --- ###
     bind = $mainMod, C, killactive,
     bind = $mainMod, Q, exit,
-    bind = $mainMod, F, exec, $browser
     
-    # Move focus with mainMod + arrow keys
+    # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
     bind = $mainMod, L, movefocus, r
     bind = $mainMod, K, movefocus, u

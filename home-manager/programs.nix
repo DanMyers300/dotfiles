@@ -11,5 +11,7 @@
     vlc
     ollama
     nerdfonts
+    sway-contrib.grimshot
+    blueman
   ];
 }
