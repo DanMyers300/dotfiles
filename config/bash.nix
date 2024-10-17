@@ -35,7 +35,7 @@
       # Enable tmux on startup
       if [ -z "$TMUX" ]; then
         if tmux has-session 2>/dev/null; then
-          echo "There is already a tmux session. Running outside of tmux."
+          :
         else
           exec tmux new-session
         fi
