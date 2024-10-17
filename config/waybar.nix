@@ -24,13 +24,13 @@
       layer = "top";
       tray = { spacing = 10; };
       modules-right = [
+        "tray"
         "pulseaudio"
         "network"
         "cpu"
         "memory"
         "temperature"
         "clock"
-        "tray"
       ];
       clock = {
         format-alt = "{:%Y-%m-%d}";
