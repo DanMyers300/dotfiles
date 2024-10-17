@@ -184,6 +184,7 @@
     bind = $mainMod, C, killactive,
     bind = $mainMod, Q, exit,
     bind = $mainMod, F, fullscreen
+    bind = $mainMod, M, fullscreen, 1
     
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
