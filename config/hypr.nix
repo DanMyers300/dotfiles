@@ -22,7 +22,7 @@
     ################
     
     # https://wiki.hyprland.org/Configuring/Monitors/
-    monitor = HDMI-A-1, disable #1920x1080, 1920x0, 1
+    monitor = HDMI-A-1, 1920x1080, 1920x0, 1
     monitor= DP-1, 1920x1080, 0x0, 1
     
     ###################

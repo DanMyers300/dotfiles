@@ -40,7 +40,19 @@
           exec tmux new-session
         fi
       fi
-      
+
+      function bt_toggle() {
+          local mac_address="90:62:3F:4F:28:B5"
+          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
+              bluetoothctl disconnect "$mac_address"
+              echo "Disconnected from $mac_address"
+          else
+              bluetoothctl connect "$mac_address"
+              echo "Connected to $mac_address"
+          fi
+      }
+      alias airpods='bt_toggle'
+
       # Alias Section
       alias vim='nvim'
       alias vi='nvim'
