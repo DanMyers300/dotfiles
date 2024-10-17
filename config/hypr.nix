@@ -14,7 +14,6 @@
     # https://wiki.hyprland.org/Configuring/Configuring-Hyprland/
     # source = ~/.config/hypr/myColors.conf
     
-    
     ################
     ### MONITORS ###
     ################
@@ -172,10 +171,10 @@
     ### KEYBINDINGSS ###
     ####################
     
-    # See https://wiki.hyprland.org/Configuring/Keywords/
-    $mainMod = SUPER # Sets "Windows" key as main modifier
+    # https://wiki.hyprland.org/Configuring/Keywords/
+    $mainMod = SUPER
     
-    # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+    # https://wiki.hyprland.org/Configuring/Binds/
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, C, killactive,
     bind = $mainMod, Q, exit,
