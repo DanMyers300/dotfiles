@@ -22,10 +22,7 @@
     settings = [{
       height = 30;
       layer = "top";
-      position = "bottom";
       tray = { spacing = 10; };
-      modules-center = [ "sway/window" ];
-      modules-left = [ "sway/workspaces" "sway/mode" ];
       modules-right = [
         "pulseaudio"
         "network"
