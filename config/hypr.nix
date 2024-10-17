@@ -37,7 +37,7 @@
     ### AUTOSTART ###
     #################
     exec-once = waybar
-    exec-once = blueman--applet
+    exec-once = blueman-applet
     
     #############################
     ### ENVIRONMENT VARIABLES ###
