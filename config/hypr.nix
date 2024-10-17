@@ -8,6 +8,8 @@
   wayland.windowManager.hyprland.enable = true;
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  programs.waybar.enable = true;
+
   wayland.windowManager.hyprland.extraConfig = ''
     # https://wiki.hyprland.org/Configuring/Configuring-Hyprland/
     # source = ~/.config/hypr/myColors.conf
@@ -37,7 +39,7 @@
     # exec-once = $terminal
     # exec-once = nm-applet &
     # exec-once = waybar & hyprpaper & firefox
-    
+    exec-once = waybar
     
     #############################
     ### ENVIRONMENT VARIABLES ###
@@ -232,12 +234,6 @@
     
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-    
-    # Example windowrule v1
-    # windowrule = float, ^(kitty)$
-    
-    # Example windowrule v2
-    # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
     
     windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
   '';
