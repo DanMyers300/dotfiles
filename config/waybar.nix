@@ -29,6 +29,8 @@
         "cpu"
         "memory"
         "temperature"
+        "clock"
+        "tray"
       ];
       clock = {
         format-alt = "{:%Y-%m-%d}";
