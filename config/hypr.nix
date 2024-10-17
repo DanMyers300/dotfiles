@@ -19,7 +19,7 @@
     ################
     
     # https://wiki.hyprland.org/Configuring/Monitors/
-    monitor= HDMI-A-1, 1920x1080, 1920x0, 1
+    monitor = HDMI-A-1, disable #1920x1080, 1920x0, 1
     monitor= DP-1, 1920x1080, 0x0, 1
     
     ###################
@@ -28,8 +28,9 @@
     
     # https://wiki.hyprland.org/Configuring/Keywords/
     $terminal = alacritty
-    $fileManager = dolphin
-    $menu = wofi --show drun
+    $browser = firefox
+    #$fileManager = 
+    #$menu =
     
     
     #################
@@ -59,7 +60,7 @@
     # https://wiki.hyprland.org/Configuring/Variables/#general
     general { 
         gaps_in = 5
-        gaps_out = 20
+        gaps_out = 5
     
         border_size = 2
     
@@ -178,12 +179,13 @@
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, C, killactive,
     bind = $mainMod, Q, exit,
+    bind = $mainMod, F, exec, $browser
     
     # Move focus with mainMod + arrow keys
-    bind = $mainMod, left, movefocus, l
-    bind = $mainMod, right, movefocus, r
-    bind = $mainMod, up, movefocus, u
-    bind = $mainMod, down, movefocus, d
+    bind = $mainMod, H, movefocus, l
+    bind = $mainMod, L, movefocus, r
+    bind = $mainMod, K, movefocus, u
+    bind = $mainMod, J, movefocus, d
     
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, workspace, 1
@@ -208,10 +210,6 @@
     bind = $mainMod SHIFT, 8, movetoworkspace, 8
     bind = $mainMod SHIFT, 9, movetoworkspace, 9
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
-    
-    # Example special workspace (scratchpad)
-    bind = $mainMod, S, togglespecialworkspace, magic
-    bind = $mainMod SHIFT, S, movetoworkspace, special:magic
     
     # Scroll through existing workspaces with mainMod + scroll
     bind = $mainMod, mouse_down, workspace, e+1
