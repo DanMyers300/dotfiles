@@ -13,6 +13,8 @@ environment.systemPackages = with pkgs; [
   btop
   baobab
   ripgrep
+  bluez-tools
+  blueman
 
 # Programming Lang
   zig
