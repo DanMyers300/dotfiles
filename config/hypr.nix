@@ -183,9 +183,9 @@
     ### --- System --- ###
     bind = $mainMod, C, killactive,
     bind = $mainMod, Q, exit,
-    bind = $mainMod SHIFT, F, float
-    bind = $mainMod, F, fullscreen
-    bind = $mainMod, M, fullscreen, 1
+    bind = $mainMod SHIFT, F, togglefloating,
+    bind = $mainMod, F, fullscreen,
+    bind = $mainMod, M, fullscreen, 1,
     
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
