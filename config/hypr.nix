@@ -5,10 +5,13 @@
   pkgs,
   ...
 } : {
+
+  imports = [
+    ./waybar.nix
+  ]
+
   wayland.windowManager.hyprland.enable = true;
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  programs.waybar.enable = true;
 
   wayland.windowManager.hyprland.extraConfig = ''
     # https://wiki.hyprland.org/Configuring/Configuring-Hyprland/
