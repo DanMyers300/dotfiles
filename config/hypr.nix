@@ -177,12 +177,13 @@
 
     ### --- Applications --- ###
     bind = $mainMod, T, exec, $terminal
-    bind = $mainMod, F, exec, $browser
+    bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
 
     ### --- System --- ###
     bind = $mainMod, C, killactive,
     bind = $mainMod, Q, exit,
+    bind = $mainMod, F, fullscreen
     
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
