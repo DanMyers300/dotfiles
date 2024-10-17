@@ -23,6 +23,7 @@ environment.systemPackages = with pkgs; [
   pavucontrol
   qemu
   gnome-extension-manager
+  hyprlock
 
 ];
 }
