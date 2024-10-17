@@ -178,6 +178,7 @@
     ### --- Applications --- ###
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, F, exec, $browser
+    bind = $mainMod, I, exec, pavucontrol
 
     ### --- System --- ###
     bind = $mainMod, C, killactive,
