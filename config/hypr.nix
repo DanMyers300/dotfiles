@@ -181,6 +181,7 @@
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
+    bind = $mainMod CTRL, S, exec, steam
 
     ### --- System --- ###
     bind = $mainMod, C, killactive,

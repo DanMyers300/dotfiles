@@ -15,6 +15,7 @@ environment.systemPackages = with pkgs; [
   ripgrep
   bluez-tools
   blueman
+  nvtopPackages.amd
 
 # Programming Lang
   zig
