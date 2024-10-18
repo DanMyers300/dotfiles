@@ -12,6 +12,5 @@
     ollama
     nerdfonts
     sway-contrib.grimshot
-    redshift
   ];
 }
