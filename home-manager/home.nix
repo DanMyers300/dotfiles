@@ -16,6 +16,7 @@
     ../config/bash.nix
     ../config/tmux.nix
     ../config/hypr.nix
+    ../config/redshift.nix
   ];
 
   nixpkgs = {
