@@ -189,8 +189,8 @@
     bind = $mainMod ALT, F, togglefloating
     bind = $mainMod, F, fullscreen, 1
     bind = $mainMod CTRL, F, fullscreen
-    bind = $mainMod SHIFT, H, movetoworkspace, 1
-    bind = $mainMod SHIFT, L, movetoworkspace, 2
+    bind = $mainMod CTRL, L, movetoworkspace, 1
+    bind = $mainMod CTLR, H, movetoworkspace, 2
     
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
