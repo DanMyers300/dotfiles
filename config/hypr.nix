@@ -190,7 +190,7 @@
     bind = $mainMod, F, fullscreen, 1
     bind = $mainMod CTRL, F, fullscreen
     bind = $mainMod CTRL, L, movetoworkspace, 1
-    bind = $mainMod CTLR, H, movetoworkspace, 2
+    bind = $mainMod CTRL, H, movetoworkspace, 2
     
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
