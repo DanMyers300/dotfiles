@@ -6,8 +6,11 @@
   ...
 } : {
 
-  services.redshift.enable = true;
-  services.geoclue2.enable = true;
-  location.provider = "geoclue2";
-
+  services = {
+    gammastep = {
+      enable = true;
+      latitude = "32.973531938214734";
+      longitude = "-96.71429473056209";
+    };
+  };
 }
