@@ -160,11 +160,10 @@
         workspace_swipe = false
     }
     
-    # Example per-device config
-    # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
+    # https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs
     device {
-        name = epic-mouse-v1
-        sensitivity = -0.5
+        name = pixart-hp-320m-usb-optical-mouse
+        sensitivity = -0.8
     }
     
     
@@ -189,8 +188,12 @@
     bind = $mainMod ALT, F, togglefloating
     bind = $mainMod, F, fullscreen, 1
     bind = $mainMod CTRL, F, fullscreen
-    bind = $mainMod CTRL, L, movetoworkspace, 1
-    bind = $mainMod CTRL, H, movetoworkspace, 2
+    bind = $mainMod SHIFT, L, movetoworkspace, 1
+    bind = $mainMod SHIFT, H, movetoworkspace, 2
+    bind = $mainMod CTRL, H, movewindow, l
+    bind = $mainMod CTRL, L, movewindow, r
+    bind = $mainMod CTRL, K, movewindow, u
+    bind = $mainMod CTRL, J, movewindow, d
     
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l

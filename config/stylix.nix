@@ -11,8 +11,8 @@
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/outrun-dark.yaml";
     image = pkgs.fetchurl {
-      url = "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg";
-      sha256 = "sha256-hZfEJif/zTzY+7UY0dn9++IztPEbzJrzjVFUxbasFkw";
+      url = "https://images.unsplash.com/photo-1511800453077-8c0afa94175f";
+      sha256 = "sha256-jGi50sy6Zjc1xuop670lFBA2UX3mvekB+EA4Fenjeek";
     };
     polarity = "dark";
     cursor = {
