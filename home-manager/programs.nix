@@ -12,5 +12,7 @@
     ollama
     nerdfonts
     sway-contrib.grimshot
+    wofi
+    signal-desktop
   ];
 }

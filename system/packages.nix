@@ -13,9 +13,6 @@ environment.systemPackages = with pkgs; [
   btop
   baobab
   ripgrep
-  bluez-tools
-  blueman
-  nvtopPackages.amd
 
 # Programming Lang
   zig
@@ -28,6 +25,9 @@ environment.systemPackages = with pkgs; [
   qemu
   gnome-extension-manager
   hyprlock
+  bluez-tools
+  blueman
+  nvtopPackages.amd
 
 ];
 }

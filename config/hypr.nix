@@ -33,8 +33,7 @@
     $terminal = alacritty
     $browser = firefox
     #$fileManager = 
-    #$menu =
-    
+    $menu = wofi --show drun
     
     #################
     ### AUTOSTART ###
@@ -163,7 +162,7 @@
     # https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs
     device {
         name = pixart-hp-320m-usb-optical-mouse
-        sensitivity = -0.8
+        sensitivity = -0.9
     }
     
     
@@ -181,6 +180,7 @@
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
     bind = $mainMod CTRL, S, exec, steam
+    bind = $mainMod, S, exec, $menu
 
     ### --- System --- ###
     bind = $mainMod, C, killactive,

@@ -102,7 +102,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
 ### --- Version --- ###
