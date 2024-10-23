@@ -33,13 +33,13 @@
       alias miniserver="ssh -X dan@192.168.1.16"
       
       # Enable tmux on startup
-      if [ -z "$TMUX" ]; then
-        if tmux has-session 2>/dev/null; then
-          :
-        else
-          exec tmux new-session
-        fi
-      fi
+      #if [ -z "$TMUX" ]; then
+      #  if tmux has-session 2>/dev/null; then
+      #    :
+      #  else
+      #    exec tmux new-session
+      #  fi
+      #fi
 
       function bt_toggle() {
           local mac_address="90:62:3F:4F:28:B5"

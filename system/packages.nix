@@ -18,6 +18,7 @@ environment.systemPackages = with pkgs; [
   zig
   python3
   nodejs_22
+  jdk
 
 # System Tools
   mullvad-vpn
@@ -28,6 +29,7 @@ environment.systemPackages = with pkgs; [
   bluez-tools
   blueman
   nvtopPackages.amd
+  swtpm
 
 ];
 }
