@@ -13,5 +13,6 @@
     sway-contrib.grimshot
     wofi
     signal-desktop
+    wl-clipboard
   ];
 }
