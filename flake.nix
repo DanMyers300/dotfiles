@@ -65,7 +65,7 @@
       };
     };
 
-    #'home-manager --flake .#dan@nixos'
+    #'home-manager --flake .#dan@nixstation'
     homeConfigurations = {
       "dan@nixtop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;

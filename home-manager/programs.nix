@@ -5,26 +5,14 @@
   pkgs,
   ...
 } : {
-
   home.packages = with pkgs; [
     prismlauncher
-    baobab
-    alacritty
-    kitty
-    tmux
     qbittorrent
-    vlc
-    steam
+    ollama
+    nerdfonts
+    sway-contrib.grimshot
+    wofi
+    signal-desktop
+    wl-clipboard
   ];
-
-  programs = {
-    neovim = {
-      enable = true;
-      package = pkgs.unstable.neovim-unwrapped;
-      viAlias = true;
-      vimAlias = true;
-    };
-
-    home-manager.enable = true;
-  };
 }

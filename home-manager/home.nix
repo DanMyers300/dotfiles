@@ -8,9 +8,15 @@
 
   imports = [
     ./programs.nix
-    ./config/nvim/nvimrc.nix
-    ./config/nvim/nvimPlugins.nix
-    ./config/stylix.nix
+    ../config/nvim/nvimrc.nix
+    ../config/nvim/nvimPlugins.nix
+    ../config/nvim/nvimSettings.nix
+    ../config/stylix.nix
+    ../config/alacritty.nix
+    ../config/bash.nix
+    ../config/tmux.nix
+    ../config/hypr.nix
+    ../config/redshift.nix
   ];
 
   nixpkgs = {
@@ -29,5 +35,6 @@
     homeDirectory = "/home/dan";
   };
 
+  programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
 }
