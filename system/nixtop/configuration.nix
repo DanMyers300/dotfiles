@@ -9,7 +9,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../packages.nix
+      ../../packages.nix
       ../../config/steam.nix
     ];
 
