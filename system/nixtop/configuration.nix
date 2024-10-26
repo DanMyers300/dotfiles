@@ -9,8 +9,8 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./packages.nix
-      ../config/steam.nix
+      ../packages.nix
+      ../../config/steam.nix
     ];
 
 ### --- Boot loader --- ###

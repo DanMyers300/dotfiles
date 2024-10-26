@@ -61,13 +61,13 @@
     nixosConfigurations = {
       nixtop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./system/configuration.nix];
+        modules = [./system/nixtop/configuration.nix];
       };
     };
 
-    #'home-manager --flake .#dan@nixstation'
+    #'home-manager --flake .#dan'
     homeConfigurations = {
-      "dan@nixtop" = home-manager.lib.homeManagerConfiguration {
+      "dan" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
