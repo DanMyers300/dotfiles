@@ -90,18 +90,6 @@
   # Enable USB redirection
   # virtualisation.spiceUSBRedirection.enable = true;
 
-### --- Networking --- ###
-  networking.hostName = "nixstation";
-  networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    #allowedTCPPorts = [ 80 443 ];
-    #allowedUDPPortRanges = [
-      #{ from = 4000; to = 4007; }
-      #{ from = 8000; to = 8010; }
-    #];
-  };
-
 ### --- VPN --- ###
   services.mullvad-vpn.enable = true;
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
