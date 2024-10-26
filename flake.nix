@@ -65,6 +65,14 @@
       };
     };
 
+    #'nixos-rebuild --flake .#nixstation'
+    nixosConfigurations = {
+      nixstation = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./system/nixstation/configuration.nix];
+      };
+    };
+
     #'home-manager --flake .#dan'
     homeConfigurations = {
       "dan" = home-manager.lib.homeManagerConfiguration {
