@@ -72,6 +72,18 @@
         format = "{temperatureC}°C {icon}";
         format-icons = [ "" "" "" ];
       };
+      battery = {
+        states = {
+          good = 90;
+          warning = 30;
+          critical = 15;
+        };
+        format = "{capacity}% {icon}";
+        format-charging = "{capacity}% ";
+        format-plugged = "{capacity}% ";
+        format-alt = "{time} {icon}";
+        format-icons = [ "" "" "" "" "" ];
+      };
     }];
   };
 }
