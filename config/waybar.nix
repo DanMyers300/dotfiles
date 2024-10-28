@@ -44,7 +44,7 @@
       memory = { format = "{}%    |"; };
       network = {
         interval = 1;
-        format-alt = "{ifname}: {ipaddr}/{cidr}";
+        format-alt = "{ifname}: {ipaddr}/{cidr}  |";
         format-disconnected = "Disconnected ⚠  |";
         format-ethernet = "{ifname}: {ipaddr}/{cidr}   up: {bandwidthUpBits} down: {bandwidthDownBits}";
         format-linked = "{ifname} (No IP) ";
