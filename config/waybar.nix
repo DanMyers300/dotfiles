@@ -38,7 +38,7 @@
         tooltip-format = "{:%Y-%m-%d | %H:%M}";
       };
       cpu = {
-        format = "{usage}%   |";
+        format = "{usage}%    |";
         tooltip = false;
       };
       memory = { format = "{}%   |"; };
