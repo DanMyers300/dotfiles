@@ -54,9 +54,14 @@
       alias airpods='bt_toggle'
 
       # Alias Section
+      # -- configs -- #
+      alias hm='home-manager switch --flake /home/dan/dotfiles/#dan'
+
+      # -- Vim -- #
       alias vim='nvim'
       alias vi='nvim'
       alias v='nvim'
+      
       '';
   };
 }
