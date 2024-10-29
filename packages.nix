@@ -21,6 +21,8 @@ environment.systemPackages = with pkgs; [
   typescript
   nodejs_22
   jdk
+  lua54Packages.lua
+  lua54Packages.luacheck
 
 # System Tools
   mullvad-vpn
