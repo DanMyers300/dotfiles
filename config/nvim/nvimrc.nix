@@ -24,7 +24,6 @@ programs.neovim.extraConfig = ''
 
     set visualbell
 
-" Disable auto commenting in a new line
     autocmd Filetype * setlocal formatoptions-=c formatoptions-=r  formatoptions-=o
 
     set encoding=UTF-8
@@ -130,12 +129,6 @@ programs.neovim.extraConfig = ''
             call feedkeys("\<C-N>", 'n')
         end
     endfun
-
-" Closing compaction in insert mode
-    inoremap [ []<left>
-    inoremap ( ()<left>
-    inoremap { {}<left>
-    inoremap /* /**/<left><left>
 
 "------------------STATUS_LINE------------------
 
