@@ -14,5 +14,7 @@
     wofi
     signal-desktop
     wl-clipboard
+    luaformatter
+    webcord-vencord
   ];
 }
