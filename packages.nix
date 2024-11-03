@@ -23,8 +23,6 @@ environment.systemPackages = with pkgs; [
   jdk
   lua54Packages.lua
   lua54Packages.luacheck
-  cargo
-  rustc
 
 # System Tools
   mullvad-vpn

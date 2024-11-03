@@ -37,6 +37,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nixos-hardware,
     home-manager,
     stylix,
     ...
