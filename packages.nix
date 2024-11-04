@@ -31,7 +31,6 @@ environment.systemPackages = with pkgs; [
   gnome-extension-manager
   hyprlock
   bluez-tools
-  blueman
   nvtopPackages.amd
   swtpm
 
