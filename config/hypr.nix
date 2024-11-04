@@ -179,7 +179,6 @@
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
-    bind = $mainMod CTRL, S, exec, steam
     bind = $mainMod, S, exec, $menu
     bind = , print, exec, grimshot copy area
 

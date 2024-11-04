@@ -57,6 +57,24 @@
       # -- configs -- #
       alias hm='home-manager switch --flake /home/dan/dotfiles/#dan'
       alias nixstation='sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation'
+      function 8ap() {
+          device_address=$(bluetoothctl devices | grep 8ap | grep -o "[[:xdigit:]:]\{11,17\}")
+      
+          if [ -z "$device_address" ]; then
+              echo "Device not found."
+              return 1
+          fi
+      
+          connection_status=$(bluetoothctl info "$device_address" | grep "Connected:" | awk '{print $2}')
+      
+          if [ "$connection_status" = "yes" ]; then
+              bluetoothctl disconnect "$device_address"
+              echo "Disconnected from $device_address."
+          else
+              bluetoothctl connect "$device_address"
+              echo "Connected to $device_address."
+          fi
+      }
 
       # -- Vim -- #
       alias vim='nvim'
