@@ -94,13 +94,6 @@
   services.mullvad-vpn.enable = true;
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
 
-### --- UDEV --- ###
-# For game controllers
-  services.udev.packages = [
-    pkgs.adafruit-udev-rules
-    pkgs.steamcontroller-udev-rules
-  ];
-
 ### --- Audio --- ###
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;

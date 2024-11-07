@@ -33,4 +33,9 @@ environment.systemPackages = with pkgs; [
   lua54Packages.luacheck
 
 ];
+
+  services.udev.packages = [
+    pkgs.adafruit-udev-rules
+    pkgs.steamcontroller-udev-rules
+  ];
 }
