@@ -41,7 +41,7 @@
       #  fi
       #fi
 
-      function bt_toggle() {
+      function airpods() {
           local mac_address="90:62:3F:4F:28:B5"
           if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
               bluetoothctl disconnect "$mac_address"
@@ -51,30 +51,22 @@
               echo "Connected to $mac_address"
           fi
       }
-      alias airpods='bt_toggle'
+
+      function proController() {
+          local mac_address="E4:17:D8:C3:47:57"
+          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
+              bluetoothctl disconnect "$mac_address"
+              echo "Disconnected from $mac_address"
+          else
+              bluetoothctl connect "$mac_address"
+              echo "Connected to $mac_address"
+          fi
+      }
 
       # Alias Section
       # -- configs -- #
       alias hm='home-manager switch --flake /home/dan/dotfiles/#dan'
       alias nixstation='sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation'
-      function 8ap() {
-          device_address=$(bluetoothctl devices | grep 8ap | grep -o "[[:xdigit:]:]\{11,17\}")
-      
-          if [ -z "$device_address" ]; then
-              echo "Device not found."
-              return 1
-          fi
-      
-          connection_status=$(bluetoothctl info "$device_address" | grep "Connected:" | awk '{print $2}')
-      
-          if [ "$connection_status" = "yes" ]; then
-              bluetoothctl disconnect "$device_address"
-              echo "Disconnected from $device_address."
-          else
-              bluetoothctl connect "$device_address"
-              echo "Connected to $device_address."
-          fi
-      }
 
       # -- Vim -- #
       alias vim='nvim'

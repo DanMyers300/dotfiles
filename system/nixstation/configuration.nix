@@ -11,7 +11,6 @@
       ./hardware-configuration.nix
       ../../packages.nix
       ../../config/steam.nix
-      ../../config/8bitdo.nix
     ];
 
 ### --- Boot loader --- ###
