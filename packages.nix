@@ -33,8 +33,4 @@ environment.systemPackages = with pkgs; [
   lua54Packages.luacheck
 
 ];
-
-  services.udev.packages = [
-    pkgs.steamcontroller-udev-rules
-  ];
 }
