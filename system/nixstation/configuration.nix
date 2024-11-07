@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ../../packages.nix
       ../../config/steam.nix
+      ../../config/8bitdo.nix
     ];
 
 ### --- Boot loader --- ###
@@ -20,7 +21,6 @@
 ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  hardware.bluetooth.package = pkgs.bluez;
   services.blueman.enable = true;
 
 ### --- Localization --- ###
