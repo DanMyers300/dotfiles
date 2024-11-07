@@ -5,14 +5,22 @@
 } : {
 
 environment.systemPackages = with pkgs; [
-
-# Necessary
+# System Tools
+  mullvad-vpn
+  pavucontrol
+  qemu
+  gnome-extension-manager
+  hyprlock
+  bluez-tools
+  nvtopPackages.amd
+  swtpm
   git
   p7zip
   gcc
   btop
   baobab
   ripgrep
+  usbutils
 
 # Programming Lang
   zig
@@ -23,16 +31,6 @@ environment.systemPackages = with pkgs; [
   jdk
   lua54Packages.lua
   lua54Packages.luacheck
-
-# System Tools
-  mullvad-vpn
-  pavucontrol
-  qemu
-  gnome-extension-manager
-  hyprlock
-  bluez-tools
-  nvtopPackages.amd
-  swtpm
 
 ];
 }
