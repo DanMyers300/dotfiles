@@ -35,7 +35,6 @@ environment.systemPackages = with pkgs; [
 ];
 
   services.udev.packages = [
-    pkgs.adafruit-udev-rules
     pkgs.steamcontroller-udev-rules
   ];
 }
