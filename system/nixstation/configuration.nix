@@ -20,7 +20,7 @@
 ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  hardware.bluetooth.package = pkgs.bluezFull;
+  hardware.bluetooth.package = pkgs.bluez;
   services.blueman.enable = true;
 
 ### --- Localization --- ###
