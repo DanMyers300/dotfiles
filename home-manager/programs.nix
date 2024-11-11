@@ -16,5 +16,6 @@
     wl-clipboard
     luaformatter
     webcord-vencord
+    unstable.deno
   ];
 }
