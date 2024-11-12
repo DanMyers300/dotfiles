@@ -37,9 +37,12 @@ environment.systemPackages = with pkgs; [
   typescript
   nodejs_22
   jdk
+  #Lua
   lua54Packages.lua
   lua54Packages.luacheck
+  # Rust
   rustc
   cargo
+  cargo-generate
 ];
 }
