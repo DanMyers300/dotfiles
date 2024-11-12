@@ -20,7 +20,15 @@ environment.systemPackages = with pkgs; [
   btop
   baobab
   ripgrep
-  usbutils
+
+  # Arduino
+  #avrlibc
+  #pkgsCross.avr.buildPackages.gcc
+  #pkg-config
+  avrdude
+
+  # for game controllers:
+  linuxKernel.packages.linux_zen.xpadneo
 
 # Programming Lang
   zig
