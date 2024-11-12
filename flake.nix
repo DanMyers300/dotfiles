@@ -28,6 +28,7 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
+    ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
   };
 
   outputs = {
@@ -41,6 +42,7 @@
 
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    ravedude = ravedude.packages."${system}".default;
 
     unstable-overlays = {
       nixpkgs.overlays = [
