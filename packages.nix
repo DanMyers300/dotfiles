@@ -40,9 +40,5 @@ environment.systemPackages = with pkgs; [
   #Lua
   lua54Packages.lua
   lua54Packages.luacheck
-  # Rust
-  rustc
-  cargo
-  cargo-generate
 ];
 }
