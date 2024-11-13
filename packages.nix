@@ -39,6 +39,6 @@ environment.systemPackages = with pkgs; [
   jdk
   lua54Packages.lua
   lua54Packages.luacheck
-  rust-overlay.rust-bin.stable.latest.default
+  #rust.rust-bin.stable.latest.default
 ];
 }
