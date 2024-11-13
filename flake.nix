@@ -75,9 +75,7 @@
     nixosConfigurations = {
       nixstation = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./system/nixstation/configuration.nix
-        ];
+        modules = [./system/nixstation/configuration.nix];
       };
     };
 
