@@ -51,7 +51,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     ravedude = ravedude.packages."${system}".default;
 
-    unstable-overlay = {
+    unstableOverlay = {
       nixpkgs.overlays = [
         (final: prev: {
           unstable = import nixpkgs-unstable {
@@ -63,7 +63,7 @@
     };
 
     rustOverlay = {
-      nixpkgs.overlays = [ rust-overlay.overlays.default];
+      nixpkgs.overlays = [ rust-overlay.overlays.default ];
     };
 
   in {
@@ -92,7 +92,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          unstable-overlay
+          unstableOverlay
           stylix.homeManagerModules.stylix
           ./home-manager/home.nix
         ];
