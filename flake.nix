@@ -31,7 +31,11 @@
 
     # For Ardiunio
     ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
-    rust.url = "github:oxalica/rust-overlay";
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {
@@ -40,7 +44,7 @@
     nixpkgs-unstable,
     home-manager,
     stylix,
-    rust,
+    rust-overlay,
     ...
   } @ inputs: let inherit (self) outputs;
 
@@ -58,12 +62,6 @@
         })
       ];
     };
-
-    rust-overlay = {
-      url = rust.url;
-      inputs.nixpkgs.follows = nixpkgs-unstable;
-    };
-
   in {
 
     #'nixos-rebuild --flake .#nixtop'
