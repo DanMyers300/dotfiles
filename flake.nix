@@ -62,14 +62,8 @@
       ];
     };
 
-    rust-overlay = {
-      nixpkgs.overlays = [
-        (final: prev: {
-          rustOverlay = {
-            inherit rust-overlay;
-          };
-        })
-      ];
+    rustOverlay = {
+      nixpkgs.overlays = [ rust-overlay.overlays.default];
     };
 
   in {
@@ -87,7 +81,7 @@
       nixstation = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          rust-overlay
+          rustOverlay
           ./system/nixstation/configuration.nix];
       };
     };
