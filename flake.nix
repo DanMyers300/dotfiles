@@ -42,6 +42,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    rust-overlay,
     stylix,
     ...
   } @ inputs: let inherit (self) outputs;
@@ -61,6 +62,16 @@
       ];
     };
 
+    rust-overlay = {
+      nixpkgs.overlays = [
+        (final: prev: {
+          rustOverlay = {
+            inherit rust-overlay;
+          };
+        })
+      ];
+    };
+
   in {
 
     #'nixos-rebuild --flake .#nixtop'
@@ -75,7 +86,9 @@
     nixosConfigurations = {
       nixstation = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./system/nixstation/configuration.nix];
+        modules = [
+          rust-overlay
+          ./system/nixstation/configuration.nix];
       };
     };
 
