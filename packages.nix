@@ -38,6 +38,9 @@ environment.systemPackages = with pkgs; [
   jdk
   lua54Packages.lua
   lua54Packages.luacheck
-  rust-bin.stable.latest.default
+  #rust-bin.stable.latest.default     -- Enable if using flake overlay
+  rustup
+  ## Arduino
+  pkgsCross.avr.buildPackages.gcc
 ];
 }

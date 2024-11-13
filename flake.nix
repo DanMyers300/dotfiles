@@ -31,10 +31,6 @@
 
     # For Ardiunio
     ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   outputs = {
@@ -42,7 +38,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    rust-overlay,
     stylix,
     ...
   } @ inputs: let inherit (self) outputs;
@@ -61,11 +56,6 @@
         })
       ];
     };
-
-    rustOverlay = {
-      nixpkgs.overlays = [ rust-overlay.overlays.default ];
-    };
-
   in {
 
     #'nixos-rebuild --flake .#nixtop'
@@ -80,9 +70,7 @@
     nixosConfigurations = {
       nixstation = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          rustOverlay
-          ./system/nixstation/configuration.nix];
+        modules = [./system/nixstation/configuration.nix];
       };
     };
 
