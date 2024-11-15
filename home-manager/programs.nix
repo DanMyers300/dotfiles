@@ -7,7 +7,6 @@
 } : {
   home.packages = with pkgs; [
     prismlauncher
-    qbittorrent
     ollama
     nerdfonts
     sway-contrib.grimshot
