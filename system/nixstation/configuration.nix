@@ -56,7 +56,6 @@
   # Optional, hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-### --- Crucial Programs --- ###
   programs.firefox.enable = true;
   environment.variables.EDITOR = "nvim";
 
@@ -116,6 +115,10 @@
     description = "Dan";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
+
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+  '';
 
 ### --- Version --- ###
   system.stateVersion = "24.05";

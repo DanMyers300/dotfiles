@@ -10,11 +10,27 @@
     ollama
     nerdfonts
     sway-contrib.grimshot
+    hyprlock
     wofi
     signal-desktop
     wl-clipboard
     luaformatter
     webcord-vencord
+    ungoogled-chromium
+    libreoffice
+    gnome-extension-manager
+    btop
+    baobab
+    ripgrep
+    r2modman
+    bluez-tools
+    mullvad-vpn
+    pavucontrol
+    python3
+    typescript
     unstable.deno
+    jdk
+    lua54Packages.lua
+    lua54Packages.luacheck
   ];
 }
