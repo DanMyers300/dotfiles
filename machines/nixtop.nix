@@ -8,8 +8,8 @@
 
   imports =
     [
-      ./hardware-configuration.nix
-      ../../pkgs/steam.nix
+      ./hardware/nixtop-hardware.nix
+      ../pkgs/steam.nix
     ];
 
 ### --- Boot loader --- ###
