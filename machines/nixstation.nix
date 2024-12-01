@@ -8,7 +8,7 @@
 
   imports =
     [
-      ./hardware-configuration.nix
+      ./hardware/nixstation-hardware.nix
       ./packages.nix
       ../../pkgs/steam.nix
     ];
