@@ -7,12 +7,6 @@
 } : {
   home.packages = with pkgs; [
     prismlauncher
-    ollama
-    nerdfonts
-    sway-contrib.grimshot
-    hyprlock
-    wofi
-    signal-desktop
     wl-clipboard
     luaformatter
     webcord-vencord
@@ -22,7 +16,6 @@
     btop
     baobab
     ripgrep
-    r2modman
     bluez-tools
     mullvad-vpn
     pavucontrol
@@ -32,5 +25,8 @@
     jdk
     lua54Packages.lua
     lua54Packages.luacheck
+    git
+    p7zip
+    gcc
   ];
 }

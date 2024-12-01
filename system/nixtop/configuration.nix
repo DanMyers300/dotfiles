@@ -9,7 +9,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./packages.nix
       ../../config/steam.nix
     ];
 
@@ -118,5 +117,5 @@
   };
 
 ### --- Version --- ###
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
