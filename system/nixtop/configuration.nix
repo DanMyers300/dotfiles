@@ -83,12 +83,6 @@
   programs.firefox.enable = true;
   environment.variables.EDITOR = "nvim";
 
-### --- Virtualisation --- ###
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-  # Enable USB redirection
-  # virtualisation.spiceUSBRedirection.enable = true;
-
 ### --- VPN --- ###
   services.mullvad-vpn.enable = true;
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
