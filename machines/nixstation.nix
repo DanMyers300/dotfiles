@@ -10,7 +10,7 @@
     [
       ./hardware/nixstation-hardware.nix
       ./packages.nix
-      ../../pkgs/steam.nix
+      ../pkgs/steam.nix
     ];
 
 ### --- Boot loader --- ###
