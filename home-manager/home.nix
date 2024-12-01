@@ -8,15 +8,15 @@
 
   imports = [
     ./programs.nix
-    ../config/nvim/nvimrc.nix
-    ../config/nvim/nvimPlugins.nix
-    ../config/nvim/nvimSettings.nix
-    ../config/stylix.nix
-    ../config/alacritty.nix
-    ../config/bash.nix
-    ../config/tmux.nix
-    ../config/hypr.nix
-    ../config/redshift.nix
+    ../pkgs/nvim/nvimrc.nix
+    ../pkgs/nvim/nvimPlugins.nix
+    ../pkgs/nvim/nvimSettings.nix
+    ../pkgs/stylix.nix
+    ../pkgs/alacritty.nix
+    ../pkgs/bash.nix
+    ../pkgs/tmux.nix
+    ../pkgs/hypr.nix
+    ../pkgs/redshift.nix
   ];
 
   nixpkgs = {

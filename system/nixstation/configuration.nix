@@ -10,7 +10,7 @@
     [
       ./hardware-configuration.nix
       ./packages.nix
-      ../../config/steam.nix
+      ../../pkgs/steam.nix
     ];
 
 ### --- Boot loader --- ###

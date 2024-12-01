@@ -9,7 +9,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../config/steam.nix
+      ../../pkgs/steam.nix
     ];
 
 ### --- Boot loader --- ###
