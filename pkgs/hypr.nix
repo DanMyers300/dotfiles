@@ -75,10 +75,6 @@
     
         layout = dwindle
     }
-
-    shadow {
-      enabled = false
-    }
     
     # https://wiki.hyprland.org/Configuring/Variables/#decoration
     decoration {
