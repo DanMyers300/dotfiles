@@ -238,12 +238,6 @@ programs.neovim.extraConfig = ''
 " Spell-check on\off
     map <C-z> :setlocal spell! spelllang=en_us<CR>
 
-" Type jj to exit insert mode quickly.
-    inoremap jj <Esc>
-
-" Format a paragraph into lines
-    map Q gq<CR>
-
 " Set the space  as the leader key.
     let mapleader = " "
 

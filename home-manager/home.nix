@@ -36,5 +36,9 @@
   };
 
   programs.home-manager.enable = true;
+  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.settings = { 
+
+  }
   systemd.user.startServices = "sd-switch";
 }
