@@ -75,6 +75,10 @@
     
         layout = dwindle
     }
+
+    shadow {
+      enabled = false
+    }
     
     # https://wiki.hyprland.org/Configuring/Variables/#decoration
     decoration {
@@ -84,10 +88,10 @@
         active_opacity = 1.0
         inactive_opacity = 1.0
     
-        drop_shadow = true
-        shadow_range = 4
-        shadow_render_power = 3
-        col.shadow = rgba(1a1a1aee)
+        #drop_shadow = true
+        #shadow_range = 4
+        #shadow_render_power = 3
+        #col.shadow = rgba(1a1a1aee)
     
         # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur {
