@@ -8,6 +8,10 @@
   home.packages = with pkgs; [
     prismlauncher
     wl-clipboard
+    nerdfonts
+    sway-contrib.grimshot
+    hyprlock
+    wofi
     luaformatter
     webcord-vencord
     ungoogled-chromium

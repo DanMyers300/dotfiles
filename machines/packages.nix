@@ -17,10 +17,6 @@ environment.systemPackages = with pkgs; [
   avrdude
   pkgsCross.avr.buildPackages.gcc
   ollama
-  nerdfonts
-  sway-contrib.grimshot
-  hyprlock
-  wofi
   signal-desktop
   r2modman
 ];
