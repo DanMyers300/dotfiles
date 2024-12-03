@@ -19,5 +19,6 @@ environment.systemPackages = with pkgs; [
   ollama
   signal-desktop
   r2modman
+  gnome-extension-manager
 ];
 }

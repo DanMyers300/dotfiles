@@ -70,21 +70,32 @@
     nixosConfigurations = {
       nixstation = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./machines/nixstation.nix];
+        modules = [
+        ./machines/nixstation.nix
+        home-manager.nixosModules.home-manager
+        unstableOverlay
+        stylix.homeManagerModules.stylix
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.dan = import ./home-manager/home.nix;
+          home-manager.extraSpecialArgs = {inherit inputs outputs;};
+        }
+        ];
       };
     };
 
     #'home-manager --flake .#dan'
-    homeConfigurations = {
-      "dan" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          unstableOverlay
-          stylix.homeManagerModules.stylix
-          ./home-manager/home.nix
-        ];
-      };
-    };
+    #homeConfigurations = {
+    #  "dan" = home-manager.lib.homeManagerConfiguration {
+    #    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    #    extraSpecialArgs = {inherit inputs outputs;};
+    #    modules = [
+    #      unstableOverlay
+    #      stylix.homeManagerModules.stylix
+    #      ./home-manager/home.nix
+    #    ];
+    #  };
+    #};
   };
 }

@@ -16,7 +16,6 @@
     webcord-vencord
     ungoogled-chromium
     libreoffice
-    gnome-extension-manager
     btop
     baobab
     ripgrep
