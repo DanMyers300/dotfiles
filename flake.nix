@@ -26,7 +26,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    #home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
 
     # For Ardiunio
@@ -74,7 +74,7 @@
         ./machines/nixstation.nix
         home-manager.nixosModules.home-manager
         unstableOverlay
-        stylix.homeManagerModules.stylix
+        #stylix.homeManagerModules.stylix
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

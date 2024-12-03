@@ -11,7 +11,7 @@
     ../pkgs/nvim/nvimrc.nix
     ../pkgs/nvim/nvimPlugins.nix
     ../pkgs/nvim/nvimSettings.nix
-    ../pkgs/stylix.nix
+    #../pkgs/stylix.nix
     ../pkgs/alacritty.nix
     ../pkgs/bash.nix
     ../pkgs/tmux.nix
@@ -19,15 +19,12 @@
     ../pkgs/redshift.nix
   ];
 
-  nixpkgs = {
-    overlays = [
-      # neovim-nightly-overlay.overlays.default
-    ];
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
-  };
+  #nixpkgs = {
+  #  config = {
+  #    allowUnfree = true;
+  #    allowUnfreePredicate = _: true;
+  #  };
+  #};
 
   home = {
     stateVersion = "24.11";
