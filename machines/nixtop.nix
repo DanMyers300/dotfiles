@@ -9,6 +9,7 @@
   imports =
     [
       ./hardware/nixtop-hardware.nix
+      ./packages.nix
       ../pkgs/steam.nix
     ];
 
@@ -112,20 +113,4 @@
 
 ### --- Version --- ###
   system.stateVersion = "24.11";
-
-  environment.systemPackages = with pkgs; [
-    nvtopPackages.amd
-    btop
-    baobab
-    ripgrep
-    bluez-tools
-    mullvad-vpn
-    pavucontrol
-    gnome-extension-manager
-    git
-    p7zip
-    gcc
-    libreoffice
-    gnome-tweaks
-  ];
 }
