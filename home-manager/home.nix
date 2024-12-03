@@ -7,7 +7,6 @@
 } : {
 
   imports = [
-    ./programs.nix
     ../pkgs/nvim/nvimrc.nix
     ../pkgs/nvim/nvimPlugins.nix
     ../pkgs/nvim/nvimSettings.nix

@@ -26,7 +26,6 @@ environment.systemPackages = with pkgs; [
   linuxKernel.packages.linux_zen.xpadneo
 
   # Programming lang
-  #rust-bin.stable.latest.default     -- Enable if using flake overlay
   rustup
   lua54Packages.lua
 
@@ -39,7 +38,6 @@ environment.systemPackages = with pkgs; [
   swtpm
 
   # MISC
-  ollama
   signal-desktop
   r2modman
   prismlauncher
