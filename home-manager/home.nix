@@ -17,6 +17,7 @@
     ../pkgs/tmux.nix
     ../pkgs/hypr.nix
     ../pkgs/redshift.nix
+    ../pkgs/gnome.nix
   ];
 
   nixpkgs = {
