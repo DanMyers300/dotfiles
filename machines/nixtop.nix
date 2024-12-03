@@ -112,8 +112,8 @@
 
 ### --- Version --- ###
   system.stateVersion = "24.11";
+
   environment.systemPackages = with pkgs; [
-    # System
     nvtopPackages.amd
     btop
     baobab
@@ -126,5 +126,6 @@
     p7zip
     gcc
     libreoffice
+    gnome-tweaks
   ];
 }
