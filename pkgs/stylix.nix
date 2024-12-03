@@ -20,20 +20,11 @@
       size = 7;
       name = "Adwaita";
     };
-    fonts = {
-      sizes = {
-        applications = 10;
-        desktop = 10;
-        popups = 10;
-      };
-    };
-    targets = {
-      neovim = {
-        enable = true;
-        transparentBackground.main = true;
-        #transparentBackground.signColumn = true;
-      };
-    };
+    #targets = {
+    #  neovim = {
+    #    enable = true;
+    #    transparentBackground.main = true;
+    #  };
+    #};
   };
-
 }

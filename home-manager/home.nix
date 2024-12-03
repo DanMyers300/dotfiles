@@ -10,7 +10,6 @@
     ../pkgs/nvim/nvimrc.nix
     ../pkgs/nvim/nvimPlugins.nix
     ../pkgs/nvim/nvimSettings.nix
-    #../pkgs/stylix.nix
     ../pkgs/alacritty.nix
     ../pkgs/bash.nix
     ../pkgs/tmux.nix
@@ -25,9 +24,5 @@
   };
 
   programs.home-manager.enable = true;
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.settings = {
-  };
-  
   systemd.user.startServices = "sd-switch";
 }
