@@ -20,5 +20,30 @@ environment.systemPackages = with pkgs; [
   signal-desktop
   r2modman
   gnome-extension-manager
+  prismlauncher
+  wl-clipboard
+  nerdfonts
+  sway-contrib.grimshot
+  hyprlock
+  wofi
+  luaformatter
+  webcord-vencord
+  ungoogled-chromium
+  libreoffice
+  btop
+  baobab
+  ripgrep
+  bluez-tools
+  mullvad-vpn
+  pavucontrol
+  python3
+  typescript
+  unstable.deno
+  jdk
+  lua54Packages.lua
+  lua54Packages.luacheck
+  git
+  p7zip
+  gcc
 ];
 }

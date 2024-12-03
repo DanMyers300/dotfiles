@@ -19,13 +19,6 @@
     ../pkgs/redshift.nix
   ];
 
-  #nixpkgs = {
-  #  config = {
-  #    allowUnfree = true;
-  #    allowUnfreePredicate = _: true;
-  #  };
-  #};
-
   home = {
     stateVersion = "24.11";
     username = "dan";
@@ -35,8 +28,7 @@
   programs.home-manager.enable = true;
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
-
   };
-
+  
   systemd.user.startServices = "sd-switch";
 }
