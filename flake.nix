@@ -62,7 +62,18 @@
     nixosConfigurations = {
       nixtop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./machines/nixtop.nix];
+        modules = [
+        ./machines/nixtop.nix
+        home-manager.nixosModules.home-manager
+        unstableOverlay
+        #stylix.homeManagerModules.stylix
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.dan = import ./home-manager/home.nix;
+          home-manager.extraSpecialArgs = {inherit inputs outputs;};
+        }
+        ];
       };
     };
 
