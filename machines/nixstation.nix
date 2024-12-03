@@ -11,6 +11,7 @@
       ./hardware/nixstation-hardware.nix
       ./packages.nix
       ../pkgs/steam.nix
+      ../pkgs/gnome.nix
     ];
 
 ### --- Boot loader --- ###
@@ -47,7 +48,6 @@
 ### --- Gnome --- ###
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  dconf.enable = true;
 
 ### --- Hyprland --- ###
   programs.hyprland = {
