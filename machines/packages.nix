@@ -6,9 +6,6 @@
 environment.systemPackages = with pkgs; [
   # System
   nvtopPackages.amd
-  btop
-  baobab
-  ripgrep
   bluez-tools
   mullvad-vpn
   pavucontrol
@@ -18,9 +15,6 @@ environment.systemPackages = with pkgs; [
   gnome-extension-manager
   hyprlock
   wofi
-  git
-  p7zip
-  gcc
 
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
@@ -28,6 +22,7 @@ environment.systemPackages = with pkgs; [
   # Programming lang
   rustup
   lua54Packages.lua
+  gcc
 
   ## Arduino
   avrdude
@@ -37,10 +32,17 @@ environment.systemPackages = with pkgs; [
   qemu
   swtpm
 
-  # MISC
+  # Utils
   signal-desktop
+  libreoffice
+  btop
+  baobab
+  ripgrep
+  git
+  p7zip
+
+  # Games
   r2modman
   prismlauncher
-  libreoffice
 ];
 }
