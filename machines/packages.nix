@@ -33,7 +33,6 @@ environment.systemPackages = with pkgs; [
   swtpm
 
   # Utils
-  signal-desktop
   libreoffice
   btop
   baobab
