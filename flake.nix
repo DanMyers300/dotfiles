@@ -66,7 +66,7 @@
         ./machines/nixtop.nix
         home-manager.nixosModules.home-manager
         unstableOverlay
-        #stylix.nixosModules.stylix
+        stylix.nixosModules.stylix
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
