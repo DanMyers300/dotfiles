@@ -8,7 +8,7 @@
 
   stylix = {
     enable = true;
-    autoEnable = true;
+    autoEnable = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/outrun-dark.yaml";
     image = pkgs.fetchurl {
       url = "https://images.unsplash.com/photo-1511800453077-8c0afa94175f";
