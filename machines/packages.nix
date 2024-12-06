@@ -24,7 +24,6 @@ environment.systemPackages = with pkgs; [
     # Rust
   rustup
   lua54Packages.lua
-  libarchive
     # --
 
   ## Arduino
