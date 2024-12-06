@@ -64,7 +64,7 @@
 ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  # Enable USB redirection
+  virtualisation.docker.enable = true;
   # virtualisation.spiceUSBRedirection.enable = true;
 
 ### --- Networking --- ###
@@ -115,7 +115,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
   };
 
   services.udev.extraRules = ''
