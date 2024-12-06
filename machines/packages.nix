@@ -20,9 +20,12 @@ environment.systemPackages = with pkgs; [
   linuxKernel.packages.linux_zen.xpadneo
 
   # Programming lang
+  gcc
+    # Rust
   rustup
   lua54Packages.lua
-  gcc
+  libarchive
+    # --
 
   ## Arduino
   avrdude
