@@ -20,5 +20,13 @@
       size = 7;
       name = "Adwaita";
     };
+    fonts = {
+      sizes = {
+        applications = 10;
+        desktop = 10;
+        popups = 10;
+        terminal = 10;
+      };
+    };
   };
 }
