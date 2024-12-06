@@ -58,40 +58,38 @@
     };
   in {
 
-    #'nixos-rebuild --flake .#nixtop'
     nixosConfigurations = {
       nixtop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-        ./machines/nixtop.nix
-        home-manager.nixosModules.home-manager
-        unstableOverlay
-        stylix.nixosModules.stylix
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dan = import ./home-manager/home.nix;
-          home-manager.extraSpecialArgs = {inherit inputs outputs;};
-        }
+          ./machines/nixtop.nix
+          home-manager.nixosModules.home-manager
+          unstableOverlay
+          stylix.nixosModules.stylix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.dan = import ./home-manager/home.nix;
+            home-manager.extraSpecialArgs = {inherit inputs outputs;};
+          }
         ];
       };
     };
 
-    #'nixos-rebuild --flake .#nixstation'
     nixosConfigurations = {
       nixstation = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-        ./machines/nixstation.nix
-        home-manager.nixosModules.home-manager
-        unstableOverlay
-        stylix.nixosModules.stylix
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.dan = import ./home-manager/home.nix;
-          home-manager.extraSpecialArgs = {inherit inputs outputs;};
-        }
+          ./machines/nixstation.nix
+          home-manager.nixosModules.home-manager
+          unstableOverlay
+          stylix.nixosModules.stylix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.dan = import ./home-manager/home.nix;
+            home-manager.extraSpecialArgs = {inherit inputs outputs;};
+          }
         ];
       };
     };
