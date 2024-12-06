@@ -20,11 +20,5 @@
       size = 7;
       name = "Adwaita";
     };
-    #targets = {
-    #  neovim = {
-    #    enable = true;
-    #    transparentBackground.main = true;
-    #  };
-    #};
   };
 }

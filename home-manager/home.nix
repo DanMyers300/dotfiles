@@ -24,6 +24,14 @@
   };
 
   disabledModules = [ "${inputs.stylix}/modules/kubecolor/hm.nix" ];
+  stylix = {
+    targets = {
+      neovim = {
+        enable = true;
+        transparentBackground.main = true;
+      };
+    };
+  };
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
