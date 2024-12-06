@@ -9,7 +9,7 @@
   imports =
     [
       ./hardware/nixtop-hardware.nix
-      ./packages.nix
+      ../pkgs/packages.nix
       ../pkgs/steam.nix
     ];
 
