@@ -15,7 +15,6 @@
     ../pkgs/tmux.nix
     ../pkgs/hypr.nix
     ../pkgs/redshift.nix
-    ../pkgs/stylix.nix
   ];
 
   home = {
