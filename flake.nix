@@ -26,7 +26,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/master";
 
     # For Ardiunio
     ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
