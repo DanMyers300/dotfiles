@@ -15,6 +15,7 @@
     ../pkgs/tmux.nix
     ../pkgs/hypr.nix
     ../pkgs/redshift.nix
+    ../pkgs/stylix.nix
   ];
 
   home = {
@@ -22,6 +23,8 @@
     username = "dan";
     homeDirectory = "/home/dan";
   };
+
+  disabledModules = [ "${inputs.stylix}/modules/kubecolor/hm.nix" ];
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
