@@ -28,5 +28,8 @@
         terminal = 10;
       };
     };
+    targets = {
+      chromium.enable = false;
+    };
   };
 }
