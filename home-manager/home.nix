@@ -34,5 +34,6 @@
   };
 
   programs.home-manager.enable = true;
+  wayland.windowManager.hyprland.systemd.variables = ["--all"];
   systemd.user.startServices = "sd-switch";
 }
