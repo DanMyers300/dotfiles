@@ -57,6 +57,7 @@
   };
   # Optional, hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  wayland.windowManager.hyprland.systemd.variables = ["--all"];
 
   programs.firefox.enable = true;
   environment.variables.EDITOR = "nvim";
