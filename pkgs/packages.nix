@@ -25,6 +25,7 @@ environment.systemPackages = with pkgs; [
   rustup
   lua54Packages.lua
     # --
+  deno
 
   ## Arduino
   avrdude
@@ -48,5 +49,6 @@ environment.systemPackages = with pkgs; [
   prismlauncher
 
   #--
+  discord
 ];
 }
