@@ -34,7 +34,7 @@
     enable = true;
     ports = [ 22 ];
     settings = {
-      PasswordAuthentication = false;
+      PasswordAuthentication = true;
       AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
       UseDns = true;
       X11Forwarding = false;
@@ -109,7 +109,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    openssh.authorizedKeys.keyFiles = [../.ssh/authorized_keys];
+    #openssh.authorizedKeys.keyFiles = [../.ssh/authorized_keys];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
