@@ -109,7 +109,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    openssh.authorizedKeys.keyFiles = [/home/dan/.ssh/authorized_keys];
+    openssh.authorizedKeys.keyFiles = [../.ssh/authorized_keys];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
