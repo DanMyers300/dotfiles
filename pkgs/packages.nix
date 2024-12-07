@@ -26,7 +26,8 @@ environment.systemPackages = with pkgs; [
   lua54Packages.lua
     # --
   deno
-  python3
+  python311
+  python311Packages.pip
 
   ## Arduino
   avrdude

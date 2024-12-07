@@ -29,7 +29,7 @@
       PATH="$PATH:/home/dan/.local/bin"
       
       # Easy SSH access
-      alias danserver="ssh -X danserver@192.168.1.23"
+      alias danserver="ssh -X danserver@192.168.1.15"
       alias miniserver="ssh -X dan@192.168.1.16"
       
       # Enable tmux on startup
