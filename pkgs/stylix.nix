@@ -17,7 +17,7 @@
     polarity = "dark";
     cursor = {
       package = pkgs.adwaita-icon-theme;
-      size = 7;
+      size = 2;
       name = "Adwaita";
     };
     fonts = {

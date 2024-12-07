@@ -67,6 +67,7 @@
       # -- configs -- #
       alias hm='home-manager switch --flake /home/dan/dotfiles/#dan'
       alias nixstation='sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation'
+      alias nixtop='sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixtop'
 
       # -- Vim -- #
       alias vim='nvim'
