@@ -27,7 +27,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     stylix.url = "github:danth/stylix/release-24.11";
-    private.url = "git+file:///home/dan/.private";
+    private.url = "git+file:///home/dan/.private?branch=main";
 
     # For Ardiunio
     ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
@@ -67,7 +67,6 @@
           home-manager.nixosModules.home-manager
           unstableOverlay
           stylix.nixosModules.stylix
-          private.auth_keys
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
