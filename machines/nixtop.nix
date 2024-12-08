@@ -110,7 +110,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    #openssh.authorizedKeys.keyFiles = [ private.main ];
+    openssh.authorizedKeys.keyFiles = [ private.ssh ];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
