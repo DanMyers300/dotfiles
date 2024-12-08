@@ -67,6 +67,7 @@
           home-manager.nixosModules.home-manager
           unstableOverlay
           stylix.nixosModules.stylix
+          private.auth_keys
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

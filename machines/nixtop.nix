@@ -1,4 +1,4 @@
-{ 
+{
   inputs,
   lib,
   config,
@@ -110,7 +110,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    openssh.authorizedKeys.keyFiles = [ private.ssh ];
+    openssh.authorizedKeys.keyFiles = private.auth_keys;
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
