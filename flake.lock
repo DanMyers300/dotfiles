@@ -282,21 +282,6 @@
         "type": "github"
       }
     },
-    "private": {
-      "locked": {
-        "lastModified": 1733686372,
-        "narHash": "sha256-cOfExr9oOrGKQfPawvwIDazIcFax0/K43gcODaHyiBM=",
-        "ref": "refs/heads/main",
-        "rev": "99a6a940e891384927e1ecbead99c25627251d4e",
-        "revCount": 30,
-        "type": "git",
-        "url": "file:///home/dan/.private"
-      },
-      "original": {
-        "type": "git",
-        "url": "file:///home/dan/.private"
-      }
-    },
     "ravedude": {
       "inputs": {
         "naersk": "naersk",
