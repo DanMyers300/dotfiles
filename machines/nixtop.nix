@@ -6,7 +6,7 @@
   private,
   ...
 }:
-  let ssh_key = ${private.auth_keys.nixstation}; in
+  let ssh_key = inputs.private.auth_keys.nixstation; in
 {
 
   imports =
@@ -37,11 +37,12 @@
     enable = true;
     ports = [ 22 ];
     settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+      PasswordAuthentication = false;
+      AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      PermitRootLogin = "prohibit-password";
     };
   };
 
@@ -112,7 +113,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    openssh.authorizedKeys.keys = [${ssh_key}];
+    openssh.authorizedKeys.keys = ["${ssh_key}"];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
