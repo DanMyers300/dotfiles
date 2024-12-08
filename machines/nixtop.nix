@@ -6,7 +6,7 @@
   private,
   ...
 }:
-  let ssh_key = private.auth_keys.nixstation; in
+  let ssh_key = ${private.auth_keys.nixstation}; in
 {
 
   imports =
@@ -112,7 +112,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    openssh.authorizedKeys.keys = [ssh_key];
+    openssh.authorizedKeys.keys = [${ssh_key}];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
