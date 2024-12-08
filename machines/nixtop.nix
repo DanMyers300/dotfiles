@@ -3,7 +3,8 @@
   lib,
   config,
   pkgs,
-  ... 
+  private,
+  ...
 }: {
 
   imports =
@@ -109,7 +110,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    #openssh.authorizedKeys.keyFiles = [../.ssh/authorized_keys];
+    #openssh.authorizedKeys.keyFiles = [ private.main ];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
