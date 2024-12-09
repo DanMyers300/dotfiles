@@ -9,11 +9,15 @@ environment.systemPackages = with pkgs; [
   bluez-tools
   mullvad-vpn
   pavucontrol
+
+  # Hyprland
   wl-clipboard
   nerdfonts
   sway-contrib.grimshot
   wofi
-  gnomeExtensions.paperwm
+
+  # Gnome
+  gnome-tweaks
 
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
