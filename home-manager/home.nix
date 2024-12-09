@@ -13,7 +13,6 @@
     ../pkgs/alacritty.nix
     ../pkgs/bash.nix
     ../pkgs/tmux.nix
-    ../pkgs/hypr.nix
     ../pkgs/redshift.nix
   ];
 
@@ -47,6 +46,5 @@
   ];
 
   programs.home-manager.enable = true;
-  wayland.windowManager.hyprland.systemd.variables = ["--all"];
   systemd.user.startServices = "sd-switch";
 }
