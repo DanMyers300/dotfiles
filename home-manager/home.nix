@@ -38,10 +38,10 @@
     settings."org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
-        paperwm
+        paperwm.extensionUuid
       ];
-    }
-  }
+    };
+  };
 
   programs.home-manager.enable = true;
   wayland.windowManager.hyprland.systemd.variables = ["--all"];
