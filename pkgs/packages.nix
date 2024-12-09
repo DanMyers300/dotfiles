@@ -12,9 +12,8 @@ environment.systemPackages = with pkgs; [
   wl-clipboard
   nerdfonts
   sway-contrib.grimshot
-  gnome-extension-manager
-  hyprlock
   wofi
+  gnomeExtensions.paperwm
 
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
@@ -52,5 +51,6 @@ environment.systemPackages = with pkgs; [
 
   #--
   discord
+  python312Packages.grip
 ];
 }
