@@ -37,14 +37,18 @@
 
   dconf = {
     enable = true;
-    settings."org/gnome/shell" = {
-      disable-user-extensions = false;
-      enabled-extensions = with pkgs.gnomeExtensions; [
-        paperwm.extensionUuid
-      ];
+    settings = {
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = with pkgs.gnomeExtensions; [
+          paperwm.extensionUuid
+        ];
+      };
+
+      "org/gnome/shell/extensions/paperwm" = {
+      };
     };
   };
-
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
