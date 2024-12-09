@@ -33,6 +33,16 @@
     };
   };
 
+  dconf = {
+    enable = true;
+    settings."org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = with pkgs.gnomeExtensions; [
+        paperwm
+      ];
+    }
+  }
+
   programs.home-manager.enable = true;
   wayland.windowManager.hyprland.systemd.variables = ["--all"];
   systemd.user.startServices = "sd-switch";
