@@ -76,10 +76,11 @@
 ### --- Gnome --- ###
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  programs.dconf.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
-  ]) ++ (with pkgs.gnome; [
+    gedit # text editor
     cheese # webcam tool
     gnome-music
     epiphany # web browser
@@ -93,10 +94,6 @@
     gnome-contacts
     gnome-initial-setup
   ]);
-  programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [
-    gnome.gnome-tweaks
-  ];
 
 ### --- Hyprland --- ###
   programs.hyprland = {
