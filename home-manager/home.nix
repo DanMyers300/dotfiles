@@ -42,6 +42,9 @@
       ];
     };
   };
+  home.packages = with pkgs; [
+    gnomeExtensions.paperwm
+  ];
 
   programs.home-manager.enable = true;
   wayland.windowManager.hyprland.systemd.variables = ["--all"];
