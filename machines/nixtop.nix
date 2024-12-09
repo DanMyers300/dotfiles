@@ -97,7 +97,7 @@
   programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
-  ]
+  ];
 
 ### --- Hyprland --- ###
   programs.hyprland = {
