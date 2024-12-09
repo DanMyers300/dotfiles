@@ -33,15 +33,15 @@
     };
   };
 
-  dconf = {
-    enable = true;
-    settings."org/gnome/shell" = {
-      disable-user-extensions = false;
-      enabled-extensions = with pkgs.gnomeExtensions; [
-        paperwm.extensionUuid
-      ];
-    };
-  };
+  #dconf = {
+  #  enable = true;
+  #  settings."org/gnome/shell" = {
+  #    disable-user-extensions = false;
+  #    enabled-extensions = with pkgs.gnomeExtensions; [
+  #      paperwm.extensionUuid
+  #    ];
+  #  };
+  #};
 
   programs.home-manager.enable = true;
   wayland.windowManager.hyprland.systemd.variables = ["--all"];
