@@ -20,6 +20,9 @@
     stateVersion = "24.11";
     username = "dan";
     homeDirectory = "/home/dan";
+    packages = with pkgs; [
+      gnomeExtensions.paperwm
+    ];
   };
 
   disabledModules = [ "${inputs.stylix}/modules/kubecolor/hm.nix" ];
@@ -41,9 +44,7 @@
       ];
     };
   };
-  home.packages = with pkgs; [
-    gnomeExtensions.paperwm
-  ];
+
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
