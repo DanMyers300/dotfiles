@@ -11,6 +11,7 @@
     ../pkgs/nvim/nvimPlugins.nix
     ../pkgs/nvim/nvimSettings.nix
     ../pkgs/alacritty.nix
+    ../pkgs/hypr.nix
     ../pkgs/bash.nix
     ../pkgs/tmux.nix
     ../pkgs/redshift.nix
