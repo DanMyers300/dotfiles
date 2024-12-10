@@ -55,6 +55,6 @@ environment.systemPackages = with pkgs; [
 
   #--
   discord
-  python312Packages.grip
+  ollama
 ];
 }
