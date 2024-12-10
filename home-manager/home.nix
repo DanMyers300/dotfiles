@@ -43,7 +43,6 @@
         disable-user-extensions = false;
         enabled-extensions = with pkgs.gnomeExtensions; [
           paperwm.extensionUuid
-          just-perfection.extensionUuid
         ];
       };
 
