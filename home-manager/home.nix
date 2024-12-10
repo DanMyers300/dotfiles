@@ -13,6 +13,7 @@
     ../pkgs/alacritty.nix
     ../pkgs/bash.nix
     ../pkgs/tmux.nix
+    ../pkgs/hypr.nix
     ../pkgs/redshift.nix
   ];
 
