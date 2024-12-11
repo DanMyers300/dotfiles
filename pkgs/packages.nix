@@ -10,15 +10,6 @@ environment.systemPackages = with pkgs; [
   mullvad-vpn
   pavucontrol
 
-  # Hyprland
-  wl-clipboard
-  nerdfonts
-  sway-contrib.grimshot
-  wofi
-
-  # Gnome
-  gnome-tweaks
-
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
 
@@ -53,8 +44,6 @@ environment.systemPackages = with pkgs; [
   # Games
   r2modman
   prismlauncher
-
-  #--
   discord
 ];
 }
