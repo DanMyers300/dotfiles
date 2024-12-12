@@ -22,6 +22,7 @@
     homeDirectory = "/home/dan";
     packages = with pkgs; [
       gnomeExtensions.paperwm
+      gnomeExtensions.fullscreen-avoider
     ];
   };
 
@@ -43,6 +44,7 @@
         enabled-extensions = with pkgs.gnomeExtensions; [
           paperwm.extensionUuid
           status-icons.extensionUuid
+          fullscreen-avoider.extensionUuid
         ];
       };
 
