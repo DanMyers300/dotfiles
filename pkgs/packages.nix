@@ -10,6 +10,7 @@ environment.systemPackages = with pkgs; [
   mullvad-vpn
   pavucontrol
 
+
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
 
