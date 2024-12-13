@@ -10,6 +10,11 @@ environment.systemPackages = with pkgs; [
   mullvad-vpn
   pavucontrol
 
+  # Hyprland
+  wl-clipboard
+  nerdfonts
+  sway-contrib.grimshot
+  wofi
 
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
