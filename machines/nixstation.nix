@@ -73,7 +73,6 @@
 ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  virtualisation.docker.enable = true;
   # virtualisation.spiceUSBRedirection.enable = true;
 
 ### --- Networking --- ###
@@ -92,7 +91,6 @@
     enable = false;
     ports = [ 22 ];
     settings = {
-      PasswordAuthentication = true;
       AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
       UseDns = true;
       X11Forwarding = false;
@@ -124,7 +122,7 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
   services.udev.extraRules = ''
