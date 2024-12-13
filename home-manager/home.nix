@@ -21,8 +21,7 @@
     username = "dan";
     homeDirectory = "/home/dan";
     packages = with pkgs; [
-      gnomeExtensions.paperwm
-      gnomeExtensions.fullscreen-avoider
+      gnomeExtensions.transparent-top-bar
       vesktop
     ];
   };
@@ -43,13 +42,9 @@
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = with pkgs.gnomeExtensions; [
-          paperwm.extensionUuid
           status-icons.extensionUuid
           transparent-top-bar.extensionUuid
         ];
-      };
-
-      "org/gnome/shell/extensions/paperwm" = {
       };
     };
   };
