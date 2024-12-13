@@ -23,6 +23,7 @@
     packages = with pkgs; [
       gnomeExtensions.paperwm
       gnomeExtensions.fullscreen-avoider
+      vesktop
     ];
   };
 
@@ -44,7 +45,7 @@
         enabled-extensions = with pkgs.gnomeExtensions; [
           paperwm.extensionUuid
           status-icons.extensionUuid
-          fullscreen-avoider.extensionUuid
+          transparent-top-bar.extensionUuid
         ];
       };
 
