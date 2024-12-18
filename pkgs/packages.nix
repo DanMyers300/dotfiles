@@ -21,10 +21,8 @@ environment.systemPackages = with pkgs; [
 
   # Programming lang
   gcc
-    # Rust
   rustup
   lua54Packages.lua
-    # --
   deno
   python311
   python311Packages.pip
@@ -46,7 +44,6 @@ environment.systemPackages = with pkgs; [
   ripgrep
   git
   p7zip
-  ungoogled-chromium
 
   # Games
   r2modman
