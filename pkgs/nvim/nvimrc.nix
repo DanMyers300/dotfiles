@@ -225,7 +225,7 @@ map Q gq<CR>
 let mapleader = " "
 
 " Open oil.nvim
-map <leader>o :Oil<CR>
+"map <leader>o :Oil<CR>
 
 " Split the window. y - y axis | x - x axis 
 map <leader>y :split<space><CR>
@@ -294,5 +294,6 @@ nnoremap <f10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 
 " Exit term mode
 tnoremap <Esc> <C-\><C-n>
+
 '';
 }
