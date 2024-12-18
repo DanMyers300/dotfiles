@@ -40,6 +40,7 @@ environment.systemPackages = with pkgs; [
   # Utils
   libreoffice
   htop
+  btop
   nvtopPackages.full
   baobab
   ripgrep
