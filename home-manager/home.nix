@@ -7,9 +7,7 @@
 } : {
 
   imports = [
-    ../pkgs/nvim/nvimrc.nix
-    ../pkgs/nvim/nvimPlugins.nix
-    ../pkgs/nvim/nvimSettings.nix
+    ../pkgs/nvim.nix
     ../pkgs/alacritty.nix
     ../pkgs/bash.nix
     ../pkgs/tmux.nix
