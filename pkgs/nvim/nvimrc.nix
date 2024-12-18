@@ -274,17 +274,18 @@ nnoremap <leader>r <cmd>registers<CR>
 " Clear search results
 map <leader>b <cmd>noh<CR>
 
+" Not installed
 " WhichKey
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+"nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " Lazy
-nnoremap <silent> <leader>m :Lazy <CR>
+"nnoremap <silent> <leader>m :Lazy <CR>
 
 " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+"nnoremap <leader>ff <cmd>Telescope find_files<cr>
+"nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+"nnoremap <leader>fb <cmd>Telescope buffers<cr>
+"nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Output the current syntax group
 nnoremap <f10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
