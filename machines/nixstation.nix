@@ -8,6 +8,7 @@
 
   imports =
     [
+      ../pkgs/nvim.nix
       ./hardware/nixstation-hardware.nix
       ../pkgs/packages.nix
       ../pkgs/steam.nix
