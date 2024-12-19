@@ -5,8 +5,8 @@
     package = pkgs.unstable.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
-    plugins = [
-      pkgs.vimPlugins.catppuccin-nvim
+    plugins = with pkgs.vimPlugins; [
+      catppuccin-nvim
     ];
     extraConfig = ''
       """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
