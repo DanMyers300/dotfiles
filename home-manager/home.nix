@@ -25,16 +25,6 @@
     ];
   };
 
-  disabledModules = [ "${inputs.stylix}/modules/kubecolor/hm.nix" ];
-  stylix = {
-    targets = {
-      neovim = {
-        enable = true;
-        transparentBackground.main = true;
-      };
-    };
-  };
-
   dconf = {
     enable = true;
     settings = {

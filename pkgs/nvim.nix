@@ -6,7 +6,7 @@
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      catppuccin-nvim
+      #catppuccin-nvim
       oil-nvim
       nvim-whichkey-setup-lua
       telescope-nvim

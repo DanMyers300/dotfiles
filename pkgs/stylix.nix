@@ -6,6 +6,7 @@
   ...
 } : {
 
+  disabledModules = [ "${inputs.stylix}/modules/kubecolor/hm.nix" ];
   stylix = {
     enable = true;
     autoEnable = true;
@@ -30,6 +31,7 @@
     };
     targets = {
       chromium.enable = false;
+      neovim.enable = false;
     };
   };
 }
