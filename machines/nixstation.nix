@@ -9,7 +9,6 @@
   imports =
     [
       ./hardware/nixstation-hardware.nix
-      ../pkgs/nvim.nix
       ../pkgs/packages.nix
       ../pkgs/steam.nix
       ../pkgs/stylix.nix
