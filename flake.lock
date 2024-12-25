@@ -283,6 +283,21 @@
         "type": "github"
       }
     },
+    "private": {
+      "locked": {
+        "lastModified": 1733687286,
+        "narHash": "sha256-o7CvCGAoGfDBUetrhNFvBcdbmVjZ1TnXj+weLWJRSGk=",
+        "ref": "refs/heads/main",
+        "rev": "095fd6788478054c801ec2bf8b073d51441c938b",
+        "revCount": 31,
+        "type": "git",
+        "url": "file:///home/dan/.private"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/dan/.private"
+      }
+    },
     "ravedude": {
       "inputs": {
         "naersk": "naersk",
@@ -310,6 +325,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "private": "private",
         "ravedude": "ravedude",
         "stylix": "stylix"
       }
