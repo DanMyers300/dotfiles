@@ -1,14 +1,15 @@
-{ 
+{
   inputs,
   lib,
   config,
   pkgs,
-  ... 
+  ...
 }: {
 
   imports =
     [
       ./hardware/nixstation-hardware.nix
+      ../pkgs/nvim.nix
       ../pkgs/packages.nix
       ../pkgs/steam.nix
       ../pkgs/stylix.nix
@@ -49,6 +50,23 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    gedit # text editor
+    cheese # webcam tool
+    gnome-music
+    epiphany # web browser
+    geary # email reader
+    gnome-characters
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+    yelp # Help view
+    gnome-contacts
+    gnome-initial-setup
+  ]);
 
 ### --- Hyprland --- ###
   programs.hyprland = {
@@ -64,7 +82,8 @@
 ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
+  virtualisation.waydroid.enable = true;
   # virtualisation.spiceUSBRedirection.enable = true;
 
 ### --- Networking --- ###
@@ -83,7 +102,6 @@
     enable = false;
     ports = [ 22 ];
     settings = {
-      PasswordAuthentication = true;
       AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
       UseDns = true;
       X11Forwarding = false;
@@ -115,12 +133,20 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
+
+  services.ollama = {
+    enable = true;
+    acceleration = "rocm";
+    environmentVariables = {
+      HSA_OVERRIDE_GFX_VERSION = "11.0.0";
+    };
+  };
 
 ### --- Version --- ###
   system.stateVersion = "24.11";

@@ -282,6 +282,7 @@
         "type": "github"
       }
     },
+<<<<<<< HEAD
     "private": {
       "locked": {
         "lastModified": 1733687286,
@@ -297,6 +298,8 @@
         "url": "file:///home/dan/.private"
       }
     },
+=======
+>>>>>>> main
     "ravedude": {
       "inputs": {
         "naersk": "naersk",
@@ -324,7 +327,10 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
+<<<<<<< HEAD
         "private": "private",
+=======
+>>>>>>> main
         "ravedude": "ravedude",
         "stylix": "stylix"
       }

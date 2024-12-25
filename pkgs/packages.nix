@@ -16,18 +16,13 @@ environment.systemPackages = with pkgs; [
   sway-contrib.grimshot
   wofi
 
-  # Gnome
-  gnome-tweaks
-
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
 
   # Programming lang
   gcc
-    # Rust
   rustup
   lua54Packages.lua
-    # --
   deno
   python311
   python311Packages.pip
@@ -42,19 +37,16 @@ environment.systemPackages = with pkgs; [
 
   # Utils
   libreoffice
+  htop
   btop
+  nvtopPackages.full
   baobab
   ripgrep
   git
   p7zip
-  ungoogled-chromium
 
   # Games
   r2modman
   prismlauncher
-
-  #--
-  discord
-  python312Packages.grip
 ];
 }
