@@ -12,6 +12,7 @@
   imports =
     [
       ./hardware/nixtop-hardware.nix
+      ../pkgs/nvim.nix
       ../pkgs/packages.nix
       ../pkgs/steam.nix
       ../pkgs/stylix.nix
