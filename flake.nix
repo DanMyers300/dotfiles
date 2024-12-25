@@ -27,7 +27,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     stylix.url = "github:danth/stylix/release-24.11";
-    #private.url = "git+file:///home/dan/.private";
+    private.url = "git+file:///home/dan/.private";
 
     # For Ardiunio
     ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
@@ -38,7 +38,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    #private,
+    private,
     stylix,
     ...
   } @ inputs: let inherit (self) outputs;
