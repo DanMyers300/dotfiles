@@ -1,12 +1,12 @@
 {
+  inputs,
   pkgs,
-  ghostty,
   ...
 } : {
 
-environment.systemPackages = with pkgs ghostty; [
+environment.systemPackages = with pkgs; [
 
-  ghostty.packages.x86_64-linux.default
+  inputs.ghostty.packages.x86_64-linux.default
 
   # System
   nvtopPackages.amd

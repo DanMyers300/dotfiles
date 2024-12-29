@@ -8,7 +8,6 @@
 
   imports = [
     ../pkgs/nvim.nix
-    ../pkgs/alacritty.nix
     ../pkgs/hypr.nix
     ../pkgs/bash.nix
     ../pkgs/tmux.nix
