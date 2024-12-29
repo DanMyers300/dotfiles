@@ -28,6 +28,9 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     stylix.url = "github:danth/stylix/release-24.11";
     #private.url = "git+file:///home/dan/.private";
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
 
     # For Ardiunio
     ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
@@ -40,6 +43,7 @@
     home-manager,
     #private,
     stylix,
+    ghostty,
     ...
   } @ inputs: let inherit (self) outputs;
 
@@ -64,6 +68,11 @@
       nixtop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+          {
+            environment.systemPackages = [
+              ghostty.packages.x86_64-linux.default
+            ];
+          }
           ./machines/nixtop.nix
           home-manager.nixosModules.home-manager
           unstableOverlay

@@ -1,9 +1,13 @@
 {
   pkgs,
+  ghostty,
   ...
 } : {
 
-environment.systemPackages = with pkgs; [
+environment.systemPackages = with pkgs ghostty; [
+
+  ghostty.packages.x86_64-linux.default
+
   # System
   nvtopPackages.amd
   bluez-tools
