@@ -38,7 +38,7 @@
 
   home.file = {
     ".config/ghostty" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/dan/dotfiles/home-manager/.config/ghostty";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/dan/dotfiles/.config/ghostty";
     };
   };
 

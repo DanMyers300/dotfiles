@@ -1,0 +1,9 @@
+#--- GHOSTTY CONFIG #---
+
+theme = Aura
+
+brackground-opacity = 0.7
+
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+
