@@ -1,9 +1,52 @@
-#--- GHOSTTY CONFIG #---
+#        .-""""-.
+#       / -   -  \
+#      |  .-. .- |
+#      |  \o| |o (
+#      \     ^    \
+#      |'.  )--'  /|
+#     / / '-. .-'`\ \
+#    / /'---` `---'\ \
+#    '.__.       .__.'
+#        `|     |`
+#         |     \
+#         \      '--.
+#          '.        `\
+#            `'---.   |
+#               ,__) /
+#                `..'
 
-theme = Aura
 
-background-opacity = 0.7
+# ---
+# FUNCTION
+# ---
+
+clipboard-read = allow
+clipboard-paste-protection = false
+scrollback-limit = 10_000
+
+
+# ---
+# THEME
+# ---
+
+theme = Hardcore
+
+
+# ---
+# DECORATION
+# ---
+gtk-tabs-location = hidden
+font-family = {{ terminal_font }}
+font-size = 11
+window-theme = ghostty
+window-decoration = false
+background-opacity = 0.8
+background-blur-radius = 20
+
+
+# ---
+# KEYBINDS
+# ---
 
 keybind = alt+h=goto_split:left
 keybind = alt+l=goto_split:right
-
