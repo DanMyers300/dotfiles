@@ -28,6 +28,7 @@ environment.systemPackages = with pkgs; [
   rustup
   lua54Packages.lua
   deno
+  nodejs
   python311
   python311Packages.pip
 
