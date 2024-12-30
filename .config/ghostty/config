@@ -50,3 +50,5 @@ background-blur-radius = 20
 
 keybind = alt+h=goto_split:left
 keybind = alt+l=goto_split:right
+keybind = ctrl+alt+l=next_tab
+keybind = ctrl+alt+h=previous_tab
