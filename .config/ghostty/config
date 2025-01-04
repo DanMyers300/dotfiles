@@ -35,8 +35,8 @@ theme = Rippedcasts
 # ---
 # DECORATION
 # ---
+
 gtk-tabs-location = hidden
-#font-family = {{ terminal_font }}
 font-size = 11
 window-theme = ghostty
 window-decoration = false
