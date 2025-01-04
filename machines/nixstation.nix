@@ -18,6 +18,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+### --- Kernel --- ###
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
 ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -76,7 +79,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.firefox.enable = true;
-  environment.variables.EDITOR = "nvim";
 
 ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;
@@ -86,15 +88,21 @@
   # virtualisation.spiceUSBRedirection.enable = true;
 
 ### --- Networking --- ###
-  networking.hostName = "nixstation";
-  networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    #allowedTCPPorts = [ 22 ];
-    #allowedUDPPortRanges = [
-      #{ from = 4000; to = 4007; }
-      #{ from = 8000; to = 8010; }
-    #];
+  networking = {
+    hostName = "nixstation";
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      #allowedTCPPorts = [ 22 ];
+      #allowedUDPPortRanges = [
+        #{ from = 4000; to = 4007; }
+        #{ from = 8000; to = 8010; }
+      #];
+    };
+    extraHosts =
+      ''
+        192.168.1.15 danserver
+      '';
   };
 
   services.openssh = {
@@ -135,16 +143,23 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
+### --- Config for game controller --- ###
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
 
+### --- LLMs --- ###
   services.ollama = {
     enable = true;
     acceleration = "rocm";
     environmentVariables = {
       HSA_OVERRIDE_GFX_VERSION = "11.0.0";
     };
+  };
+
+### --- ENV VARs --- ###
+  environment.variables = {
+    EDITOR = "nvim";
   };
 
 ### --- Version --- ###

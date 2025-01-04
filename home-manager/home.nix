@@ -40,7 +40,12 @@
     ".config/ghostty" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/dan/dotfiles/.config/ghostty";
     };
+    ".config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/dan/dotfiles/.config/nvim";
+    };
   };
+
+  stylix.targets.neovim.enable = false;
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
