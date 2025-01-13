@@ -49,6 +49,7 @@ environment.systemPackages = with pkgs; [
   ripgrep
   git
   p7zip
+  ungoogled-chromium
 
   # Games
   r2modman

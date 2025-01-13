@@ -102,6 +102,7 @@
     extraHosts =
       ''
         192.168.1.15 danserver
+	192.168.1.9 nixtop
       '';
   };
 
