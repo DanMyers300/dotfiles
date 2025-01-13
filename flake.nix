@@ -68,11 +68,6 @@
       nixtop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          {
-            environment.systemPackages = [
-              ghostty.packages.x86_64-linux.default
-            ];
-          }
           ./machines/nixtop.nix
           home-manager.nixosModules.home-manager
           unstableOverlay

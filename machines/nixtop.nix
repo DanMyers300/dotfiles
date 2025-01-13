@@ -13,8 +13,6 @@
     [
       ./hardware/nixtop-hardware.nix
       ../pkgs/nvim.nix
-      ../pkgs/packages.nix
-      ../pkgs/steam.nix
       ../pkgs/stylix.nix
     ];
 
@@ -138,4 +136,16 @@
 
 ### --- Version --- ###
   system.stateVersion = "24.11";
+
+### --- Packages --- ###
+  environment.systemPackages = with pkgs; [
+    bluez-tools
+    mullvad-vpn
+    pavucontrol
+    htop
+    baobab
+    ripgrep
+    git
+    p7zip
+  ];
 }
