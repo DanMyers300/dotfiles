@@ -36,10 +36,10 @@ theme = Rippedcasts
 # DECORATION
 # ---
 
-gtk-tabs-location = hidden
+gtk-tabs-location = top
 font-size = 11
 window-theme = ghostty
-window-decoration = false
+window-decoration = true
 background-opacity = 0.8
 background-blur-radius = 20
 
