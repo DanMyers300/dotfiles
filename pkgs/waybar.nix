@@ -23,6 +23,9 @@
       height = 30;
       layer = "top";
       tray = { spacing = 10; };
+      modules-left = [
+        "hyprland/workspaces"
+      ];
       modules-right = [
         "tray"
         "pulseaudio"
@@ -84,6 +87,11 @@
         format-plugged = "{capacity}%";
         format-alt = "{time} {icon}";
         format-icons = [ "" "" "" "" "" ];
+      };
+      "hyprland/workspaces" = {
+        format = "{name}";
+        on-click = "activate";
+        sort-by-number = true;
       };
     }];
   };

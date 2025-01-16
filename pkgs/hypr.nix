@@ -24,7 +24,7 @@
     
     # https://wiki.hyprland.org/Configuring/Monitors/
     monitor = DP-1, 1920x1080, 0x0, 1
-    monitor = HDMI-A-1, 1920x1080, 1920x0, 1
+    monitor = HDMI-A-1, disable# 1920x1080, 1920x0, 1
     
     ###################
     ### MY PROGRAMS ###
@@ -232,6 +232,10 @@
     bind = $mainMod SHIFT, 8, movetoworkspace, 8
     bind = $mainMod SHIFT, 9, movetoworkspace, 9
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
+
+    # Move workspace to another monitor with CTRL + ALT + SHIFT + MOD + h/l
+    bind = CTRL ALT $mainMod SHIFT, h, movecurrentworkspacetomonitor, l
+    bind = CTRL ALT $mainMod SHIFT, l, movecurrentworkspacetomonitor, r
     
     # Scroll through existing workspaces with mainMod + scroll
     bind = $mainMod, mouse_down, workspace, e+1
