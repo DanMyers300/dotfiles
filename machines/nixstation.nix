@@ -93,11 +93,11 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      #allowedTCPPorts = [ 4321 ];
-      #allowedUDPPortRanges = [
-        #{ from = 4321; to = 4321; }
+      allowedTCPPorts = [ 5173 ];
+      allowedUDPPortRanges = [
+        { from = 5173; to = 5173; }
         #{ from = 8000; to = 8010; }
-      #];
+      ];
     };
     extraHosts =
       ''

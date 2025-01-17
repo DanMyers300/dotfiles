@@ -196,8 +196,6 @@
     bind = $mainMod ALT, F, togglefloating
     bind = $mainMod, F, fullscreen, 1
     bind = $mainMod CTRL, F, fullscreen
-    bind = $mainMod SHIFT, L, movetoworkspace, 1
-    bind = $mainMod SHIFT, H, movetoworkspace, 2
     bind = $mainMod CTRL, H, movewindow, l
     bind = $mainMod CTRL, L, movewindow, r
     bind = $mainMod CTRL, K, movewindow, u
