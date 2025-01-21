@@ -24,14 +24,15 @@ vim.opt.undofile = true
 vim.opt.undoreload = 10000
 
 vim.opt.listchars = {
-  trail = '.',      -- Show trailing spaces as dots
-  tab = '→·',       -- Show tabs as an arrow followed by a dot
-  nbsp = '␣',       -- Show non-breaking spaces (optional)
-  space = '.',      -- Show leading spaces as dots
-  extends = '›',    -- Show when a line extends off-screen (optional)
-  precedes = '‹',   -- Show when a line precedes off-screen (optional)
+  trail = '.',
+  tab = '→·',
+  lead = '.',
+  leadmultispace = '.',
+  nbsp = '␣',
+  extends = '›',
+  precedes = '‹',
 }
-vim.opt.list = true -- Enable showing invisible characters
+vim.opt.list = true
 
 vim.o.statuscolumn = "%=%s %l %r |"
 
