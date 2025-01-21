@@ -6,53 +6,35 @@
 
 environment.systemPackages = with pkgs; [
 
+  # Utils
+  git
+  btop
   inputs.ghostty.packages.x86_64-linux.default
-
-  # System
-  nvtopPackages.amd
+  p7zip
+  ripgrep
   bluez-tools
+  baobab
+  nvtopPackages.amd
+  nvtopPackages.full
   mullvad-vpn
   pavucontrol
+  libreoffice
+  ungoogled-chromium
 
   # Hyprland
   wl-clipboard
   nerdfonts
   sway-contrib.grimshot
   wofi
-
-  # Game pads
-  linuxKernel.packages.linux_zen.xpadneo
-
-  # Programming lang
-  gcc
-  rustup
-  lua54Packages.lua
-  deno
-  nodejs
-  python311
-  python311Packages.pip
-
-  ## Arduino
-  avrdude
-  pkgsCross.avr.buildPackages.gcc
-
   # Virtualization
   qemu
   swtpm
 
-  # Utils
-  libreoffice
-  htop
-  btop
-  nvtopPackages.full
-  baobab
-  ripgrep
-  git
-  p7zip
-  ungoogled-chromium
-
   # Games
   r2modman
   prismlauncher
+  # Game pads
+  linuxKernel.packages.linux_zen.xpadneo
+
 ];
 }
