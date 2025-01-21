@@ -56,7 +56,10 @@
         ];
       };
 
-      machines = [ "nixtop" "nixstation" ];
+      machines = [
+        "nixtop"
+        "nixstation"
+      ];
 
       mkNixosConfig = machine: nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
