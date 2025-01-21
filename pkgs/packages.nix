@@ -20,6 +20,7 @@ environment.systemPackages = with pkgs; [
   pavucontrol
   libreoffice
   ungoogled-chromium
+  nodejs
 
   # Hyprland
   wl-clipboard
