@@ -29,7 +29,6 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     stylix.url = "github:danth/stylix/release-24.11";
     ghostty.url = "github:ghostty-org/ghostty";
-    ravedude.url = "github:Rahix/avr-hal?dir=ravedude";
   };
 
   outputs = {
@@ -39,14 +38,12 @@
   home-manager,
   stylix,
   ghostty,
-  ravedude,
   ...
   } @ inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      ravedudePkg = ravedude.packages."${system}".default;
 
       unstableOverlay = {
         nixpkgs.overlays = [
