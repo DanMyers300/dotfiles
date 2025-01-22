@@ -21,6 +21,7 @@ environment.systemPackages = with pkgs; [
   ungoogled-chromium
   nodejs
   typescript
+  typescript-language-server
 
   # Hyprland
   wl-clipboard
