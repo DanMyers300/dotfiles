@@ -30,14 +30,10 @@
 
       function add_ssh_keys() {
           eval "$(ssh-agent -s)" > /dev/null 2>&1
-      
           for key in $(find ~/.ssh -type f -not -name "*.pub" -not -name "known_hosts*" -not -name "*.bak"); do
               key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
               if ! ssh-add -l | grep -qF "$key_fingerprint"; then
-                  echo "Adding SSH key: $key"
-                  ssh-add "$key"
-              else
-                  echo "SSH key already added: $key"
+                  ssh-add "$key" > /dev/null 2>&1
               fi
           done
       }
