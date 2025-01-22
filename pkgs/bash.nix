@@ -29,19 +29,18 @@
       PATH="$PATH:/home/dan/.local/bin"
 
       function add_ssh_keys() {
-        # Start the SSH agent if it's not already running
-        eval "$(ssh-agent -s)" > /dev/null 2>&1
-
-        # Loop through all the private keys in ~/.ssh
-        for key in $(find ~/.ssh -type f -name "id_*" -not -name "*.pub"); do
-            # Check if the key is already added to the SSH agent
-            if ! ssh-add -l | grep -q "$(ssh-keygen -lf $key | awk '{print $2}')"; then
-                ssh-add "$key"
-            fi
-        done
+          eval "$(ssh-agent -s)" > /dev/null 2>&1
+      
+          for key in $(find ~/.ssh -type f -not -name "*.pub" -not -name "known_hosts*" -not -name "*.bak"); do
+              key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
+              if ! ssh-add -l | grep -qF "$key_fingerprint"; then
+                  echo "Adding SSH key: $key"
+                  ssh-add "$key"
+              else
+                  echo "SSH key already added: $key"
+              fi
+          done
       }
-
-      # Call the function to add SSH keys when the shell starts
       add_ssh_keys
 
       function airpods() {
