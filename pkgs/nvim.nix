@@ -7,6 +7,7 @@
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       vim-sleuth
+      nvim-lspconfig
     ];
   };
 }

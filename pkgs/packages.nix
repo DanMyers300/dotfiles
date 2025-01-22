@@ -6,7 +6,6 @@
 
 environment.systemPackages = with pkgs; [
 
-  # Utils
   git
   btop
   inputs.ghostty.packages.x86_64-linux.default
@@ -21,12 +20,14 @@ environment.systemPackages = with pkgs; [
   libreoffice
   ungoogled-chromium
   nodejs
+  typescript
 
   # Hyprland
   wl-clipboard
   nerdfonts
   sway-contrib.grimshot
   wofi
+
   # Virtualization
   qemu
   swtpm
