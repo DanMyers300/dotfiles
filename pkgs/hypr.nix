@@ -49,7 +49,12 @@
     
     env = XCURSOR_SIZE,24
     env = HYPRCURSOR_SIZE,24
+
+    #####################
+    ###   SSH  KEYS   ###
+    #####################
     
+    exec-once = ssh-add ~/.ssh/github
     
     #####################
     ### LOOK AND FEEL ###
