@@ -3,7 +3,7 @@
 ## Flake.nix
 
 This contains the main functionality of the nixos configuration.
-My primary computer is nixstation but I have a machine agnostic function to setup my flakes.
+My primary computer is nixstation but I have a machine agnostic flake.
 The machine specific items are in the /machines directory.
 
 ## Home manager
