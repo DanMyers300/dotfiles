@@ -60,6 +60,8 @@
               echo "Connected to $mac_address"
           fi
       }
+
+      alias nixstation="sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation"
       '';
   };
 }
