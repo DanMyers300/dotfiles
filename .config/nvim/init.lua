@@ -47,3 +47,24 @@ end)
 vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', ':bn<CR>', { noremap = true, silent = true })
+
+-- Set up ts_ls (TypeScript language server)
+local lspconfig = require('lspconfig')
+lspconfig.ts_ls.setup({})
+
+-- Attach keybindings when the LSP connects to a buffer
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client.name == 'tsserver' then
+      -- Go to definition
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = args.buf, desc = 'Go to definition' })
+
+      -- Hover documentation
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf, desc = 'Hover documentation' })
+
+      -- Rename symbol
+      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = args.buf, desc = 'Rename symbol' })
+    end
+  end,
+})
