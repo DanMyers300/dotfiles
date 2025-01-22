@@ -57,8 +57,8 @@
       };
 
       machines = [
-        "nixtop"
         "nixstation"
+        "nixtop"
       ];
 
       mkNixosConfig = machine: nixpkgs.lib.nixosSystem {
