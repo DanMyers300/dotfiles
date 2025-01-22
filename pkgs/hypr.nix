@@ -238,6 +238,12 @@
     # Scroll through existing workspaces with mainMod + scroll
     bind = $mainMod, mouse_down, workspace, e+1
     bind = $mainMod, mouse_up, workspace, e-1
+
+    # Move to the left workspace
+    bind = $mainMod ALT, h, workspace, -1
+    
+    # Move to the right workspace
+    bind = $mainMod ALT, l, workspace, +1
     
     # Move/resize windows with mainMod + LMB/RMB and dragging
     bindm = $mainMod, mouse:272, movewindow
