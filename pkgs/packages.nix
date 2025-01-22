@@ -20,8 +20,6 @@ environment.systemPackages = with pkgs; [
   libreoffice
   ungoogled-chromium
   nodejs
-  typescript
-  typescript-language-server
 
   # Hyprland
   wl-clipboard
