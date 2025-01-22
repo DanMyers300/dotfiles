@@ -28,6 +28,22 @@
       PATH="$PATH:/opt/nvim-linux64/bin"
       PATH="$PATH:/home/dan/.local/bin"
 
+      function add_ssh_keys() {
+        # Start the SSH agent if it's not already running
+        eval "$(ssh-agent -s)" > /dev/null 2>&1
+
+        # Loop through all the private keys in ~/.ssh
+        for key in $(find ~/.ssh -type f -name "id_*" -not -name "*.pub"); do
+            # Check if the key is already added to the SSH agent
+            if ! ssh-add -l | grep -q "$(ssh-keygen -lf $key | awk '{print $2}')"; then
+                ssh-add "$key"
+            fi
+        done
+      }
+
+      # Call the function to add SSH keys when the shell starts
+      add_ssh_keys
+
       function airpods() {
           local mac_address="90:62:3F:4F:28:B5"
           if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
