@@ -1,6 +1,20 @@
 { pkgs ? import <nixpkgs> {} }:
 
 {
+
+  node = pkgs.mkShell {
+    name = "node-env";
+    buildInputs = with pkgs; [
+      nodejs
+      nodePackages.typescript-language-server
+    ];
+
+    shellHook = ''
+      export NODE_VERSION=$(node --version)
+      echo "Welcome to the Node development environment! Node version: $NODE_VERSION"
+    '';
+  };
+
   zig = pkgs.mkShell {
     name = "zig-env";
     buildInputs = [
