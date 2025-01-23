@@ -22,7 +22,6 @@
 #
 
 {
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -32,13 +31,13 @@
   };
 
   outputs = {
-  self,
-  nixpkgs,
-  nixpkgs-unstable,
-  home-manager,
-  stylix,
-  ghostty,
-  ...
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    stylix,
+    ghostty,
+    ...
   } @ inputs:
     let
       inherit (self) outputs;
@@ -77,10 +76,14 @@
         ];
       };
 
+      shells = import ./shells.nix { inherit pkgs; };
+
     in {
       nixosConfigurations = builtins.listToAttrs (map (machine: {
         name = machine;
         value = mkNixosConfig machine;
       }) machines);
+
+      devShells.${system} = shells;
     };
 }
