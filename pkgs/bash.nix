@@ -1,77 +1,68 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-} : {
-  programs.bash = {
-    enable = true;
-    bashrcExtra = ''
-      # If not running interactively, don't do anything
-      case $- in
-      *i*) ;;
-      *) return ;;
-      esac
-      
-      # History
-      HISTCONTROL=ignoreboth
-      shopt -s histappend
-      HISTSIZE=1000
-      HISTFILESIZE=2000
-      
-      # check the window size after each command and, if necessary,
-      # update the values of LINES and COLUMNS.
-      shopt -s checkwinsize
-      
-      # Path settings
-      PATH="$PATH:/opt/nvim-linux64/bin"
-      PATH="$PATH:/home/dan/.local/bin"
+{ ... } : { programs.bash = { enable = true; bashrcExtra = ''
 
-      function add_ssh_keys() {
-          eval "$(ssh-agent -s)" > /dev/null 2>&1
-          for key in $(find ~/.ssh -type f -not -name "*.pub" -not -name "known_hosts*" -not -name "*.bak"); do
-              key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
-              if ! ssh-add -l | grep -qF "$key_fingerprint"; then
-                  ssh-add "$key" > /dev/null 2>&1
-              fi
-          done
-      }
-      add_ssh_keys
+# If not running interactively, don't do anything
+case $- in
+*i*) ;;
+*) return ;;
+esac
 
-      function airpods() {
-          local mac_address="90:62:3F:4F:28:B5"
-          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
-              bluetoothctl disconnect "$mac_address"
-              echo "Disconnected from $mac_address"
-          else
-              bluetoothctl connect "$mac_address"
-              echo "Connected to $mac_address"
-          fi
-      }
+# History
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
 
-      function proController() {
-          local mac_address="E4:17:D8:C3:47:57"
-          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
-              bluetoothctl disconnect "$mac_address"
-              echo "Disconnected from $mac_address"
-          else
-              bluetoothctl connect "$mac_address"
-              echo "Connected to $mac_address"
-          fi
-      }
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
-      function toggle_second_monitor() {
-          monitor_state=$(hyprctl monitors | awk '/Monitor HDMI-A-1/{flag=1} flag && /disabled:/{print $2; exit}')
-      
-          if [ "$monitor_state" == "false" ]; then
-              hyprctl keyword monitor "HDMI-A-1, disable"
-          else
-              hyprctl keyword monitor "HDMI-A-1, preferred, auto, 1"
-          fi
-      }
+# Path settings
+PATH="$PATH:/opt/nvim-linux64/bin"
+PATH="$PATH:/home/dan/.local/bin"
 
-      alias nixstation="sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation"
-      '';
-  };
+function add_ssh_keys() {
+    eval "$(ssh-agent -s)" > /dev/null 2>&1
+    for key in $(find ~/.ssh -type f -not -name "*.pub" -not -name "known_hosts*" -not -name "*.bak"); do
+        key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
+        if ! ssh-add -l | grep -qF "$key_fingerprint"; then
+            ssh-add "$key" > /dev/null 2>&1
+        fi
+    done
 }
+add_ssh_keys
+
+function airpods() {
+    local mac_address="90:62:3F:4F:28:B5"
+    if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
+        bluetoothctl disconnect "$mac_address"
+        echo "Disconnected from $mac_address"
+    else
+        bluetoothctl connect "$mac_address"
+        echo "Connected to $mac_address"
+    fi
+}
+
+function proController() {
+    local mac_address="E4:17:D8:C3:47:57"
+    if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
+        bluetoothctl disconnect "$mac_address"
+        echo "Disconnected from $mac_address"
+    else
+        bluetoothctl connect "$mac_address"
+        echo "Connected to $mac_address"
+    fi
+}
+
+function toggle_second_monitor() {
+    monitor_state=$(hyprctl monitors | awk '/Monitor HDMI-A-1/{flag=1} flag && /disabled:/{print $2; exit}')
+
+    if [ "$monitor_state" == "false" ]; then
+        hyprctl keyword monitor "HDMI-A-1, disable"
+    else
+        hyprctl keyword monitor "HDMI-A-1, preferred, auto, 1"
+    fi
+}
+
+alias nixstation="sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation"
+
+'';};}
