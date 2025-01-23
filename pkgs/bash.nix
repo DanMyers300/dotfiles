@@ -66,10 +66,8 @@
       
           if [ "$monitor_state" == "false" ]; then
               hyprctl keyword monitor "HDMI-A-1, disable"
-              echo "Second monitor turned off."
           else
-              hyprctl keyword monitor "HDMI-A-1, 1920x1080@60, 0x0, 1"
-              echo "Second monitor turned on."
+              hyprctl keyword monitor "HDMI-A-1, preferred, auto, 1"
           fi
       }
 
