@@ -37,12 +37,12 @@ vim.opt.list = true
 vim.o.statuscolumn = "%=%s %l %r |"
 
 -- mini-term
-vim.keymap.set("n", "<space>st", function()
-  vim.cmd.vnew()
-  vim.cmd.term()
-  vim.cmd.wincmd("J")
-  vim.api.nvim_win_set_height(0,5)
-end)
+--vim.keymap.set("n", "<space>st", function()
+--  vim.cmd.vnew()
+--  vim.cmd.term()
+--  vim.cmd.wincmd("J")
+--  vim.api.nvim_win_set_height(0,5)
+--end)
 
 vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', { noremap = true, silent = true })
