@@ -61,6 +61,18 @@
           fi
       }
 
+      function toggle_second_monitor() {
+          monitor_state=$(hyprctl monitors | awk '/Monitor HDMI-A-1/{flag=1} flag && /disabled:/{print $2; exit}')
+      
+          if [ "$monitor_state" == "false" ]; then
+              hyprctl keyword monitor "HDMI-A-1, disable"
+              echo "Second monitor turned off."
+          else
+              hyprctl keyword monitor "HDMI-A-1, 1920x1080@60, 0x0, 1"
+              echo "Second monitor turned on."
+          fi
+      }
+
       alias nixstation="sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation"
       '';
   };

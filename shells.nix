@@ -11,7 +11,7 @@
 
     shellHook = ''
       export NODE_VERSION=$(node --version)
-      echo "Welcome to the Node development environment! Node version: $NODE_VERSION"
+      export PS1="(node $NODE_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
     '';
   };
 
@@ -23,7 +23,7 @@
 
     shellHook = ''
       export ZIG_VERSION=$(zig version)
-      echo "Welcome to the Zig development environment! Zig version: $ZIG_VERSION"
+      export PS1="(zig v$ZIG_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
     '';
   };
 
@@ -35,7 +35,8 @@
     ];
 
     shellHook = ''
-      echo "Welcome to the Rust development environment!"
+      export RUST_VERSION=$(rustc --version | awk '{print $2}')
+      export PS1="(rust v$RUST_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
     '';
   };
 
@@ -47,7 +48,8 @@
     ];
 
     shellHook = ''
-      echo "Welcome to the Python development environment!"
+      export PYTHON_VERSION=$(python3 --version | awk '{print $2}')
+      export PS1="(python v$PYTHON_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
     '';
   };
 }
