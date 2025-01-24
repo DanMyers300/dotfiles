@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-} : {
+{ config, pkgs, ... } : {
 
   imports = [
     ../pkgs/nvim.nix
