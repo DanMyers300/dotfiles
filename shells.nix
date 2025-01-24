@@ -6,6 +6,7 @@
     name = "node-env";
     buildInputs = with pkgs; [
       nodejs
+      typescript
       nodePackages.typescript-language-server
     ];
 
