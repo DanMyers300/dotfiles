@@ -1,16 +1,17 @@
 { pkgs ? import <nixpkgs> {} }:{
 
-  node = pkgs.mkShell {
+  js = pkgs.mkShell {
     name = "node-env";
     buildInputs = with pkgs; [
       nodejs
+      bun
+      deno
       typescript
       nodePackages.typescript-language-server
     ];
 
     shellHook = ''
-      export NODE_VERSION=$(node --version)
-      export PS1="(node $NODE_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
+      export PS1="(js) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
     '';
   };
 
