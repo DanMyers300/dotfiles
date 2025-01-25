@@ -1,7 +1,6 @@
 #           ▜███▙       ▜███▙  ▟███▛
 #            ▜███▙       ▜███▙▟███▛
 #             ▜███▙       ▜██████▛
-#      ▟█████████████████▙ ▜████▛     ▟▙
 #     ▟███████████████████▙ ▜███▙    ▟██▙
 #            ▄▄▄▄▖           ▜███▙  ▟███▛
 #           ▟███▛             ▜██▛ ▟███▛
@@ -27,7 +26,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     stylix.url = "github:danth/stylix/release-24.11";
-    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs = {
@@ -36,7 +34,6 @@
     nixpkgs-unstable,
     home-manager,
     stylix,
-    ghostty,
     ...
   } @ inputs:
     let

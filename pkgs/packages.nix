@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   pkgs,
   ...
 } : {
@@ -8,7 +9,7 @@ environment.systemPackages = with pkgs; [
 
   git
   btop
-  inputs.ghostty.packages.x86_64-linux.default
+  ghostty
   p7zip
   ripgrep
   bluez-tools
