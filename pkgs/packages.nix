@@ -13,18 +13,21 @@ environment.systemPackages = with pkgs; [
   ripgrep
   bluez-tools
   baobab
-  nvtopPackages.amd
-  nvtopPackages.full
   mullvad-vpn
   pavucontrol
-  libreoffice
-  ungoogled-chromium
 
   # Hyprland
   wl-clipboard
   nerdfonts
   sway-contrib.grimshot
   wofi
+
+  ] ++ (if config.networking.hostName == "nixstation" then [
+
+  libreoffice
+  ungoogled-chromium
+  nvtopPackages.amd
+  nvtopPackages.full
 
   # Virtualization
   qemu
@@ -36,5 +39,5 @@ environment.systemPackages = with pkgs; [
   # Game pads
   linuxKernel.packages.linux_zen.xpadneo
 
-];
+  ] else []);
 }
