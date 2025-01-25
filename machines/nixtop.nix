@@ -23,7 +23,7 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 ];
+    #allowedTCPPorts = [ 22 ];
     #allowedUDPPortRanges = [
       #{ from = 4000; to = 4007; }
       #{ from = 8000; to = 8010; }
@@ -31,7 +31,7 @@
   };
 
   services.openssh = {
-    enable = true;
+    enable = false;
     ports = [ 22 ];
     settings = {
       PasswordAuthentication = false;
