@@ -94,7 +94,7 @@
 
 ### --- Hyprland --- ###
   programs.hyprland = {
-    enable = false;
+    enable = true;
     xwayland.enable = true;
   };
   # Optional, hint Electron apps to use Wayland:
