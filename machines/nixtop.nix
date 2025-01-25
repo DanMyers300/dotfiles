@@ -5,9 +5,7 @@
   pkgs,
   private,
   ...
-}:
-  let ssh_key = inputs.private.auth_keys.nixstation; in
-{
+}:{
 
   imports =
     [
