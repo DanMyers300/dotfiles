@@ -22,7 +22,12 @@ PATH="$PATH:/home/dan/.local/bin"
 
 function add_ssh_keys() {
     eval "$(ssh-agent -s)" > /dev/null 2>&1
-    for key in $(find ~/.ssh -type f -not -name "*.pub" -not -name "known_hosts*" -not -name "*.bak"); do
+    # Exclude public keys, backups, known_hosts, and authorized_keys
+    for key in $(find ~/.ssh -type f \
+        -not -name "*.pub" \
+        -not -name "known_hosts*" \
+        -not -name "*.bak" \
+        -not -name "authorized_keys"); do
         key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
         if ! ssh-add -l | grep -qF "$key_fingerprint"; then
             ssh-add "$key" > /dev/null 2>&1
