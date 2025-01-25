@@ -1,6 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
-
-{
+{ pkgs ? import <nixpkgs> {} }:{
 
   node = pkgs.mkShell {
     name = "node-env";
