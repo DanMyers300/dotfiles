@@ -11,6 +11,7 @@
     [
       ./hardware/nixtop-hardware.nix
       ../pkgs/nvim.nix
+      ../pkgs/packages.nix
       ../pkgs/stylix.nix
     ];
 
@@ -128,22 +129,10 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    openssh.authorizedKeys.keys = ["${ssh_key}"];
+    #openssh.authorizedKeys.keys = ["${ssh_key}"];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
 ### --- Version --- ###
   system.stateVersion = "24.11";
-
-### --- Packages --- ###
-  environment.systemPackages = with pkgs; [
-    bluez-tools
-    mullvad-vpn
-    pavucontrol
-    htop
-    baobab
-    ripgrep
-    git
-    p7zip
-  ];
 }
