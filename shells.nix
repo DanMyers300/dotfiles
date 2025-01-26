@@ -52,4 +52,19 @@
       export PS1="(python v$PYTHON_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
     '';
   };
+
+  java = pkgs.mkShell {
+    name = "java-env";
+    buildInputs = with pkgs; [
+      jdk23
+      gradle
+      fabric-installer
+    ];
+
+    shellHook = ''
+      export JAVA_VERSION=$(java --version | awk 'NR==1 {print $2}')
+      export PS1="(java v$JAVA_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
+    '';
+  };
+
 }
