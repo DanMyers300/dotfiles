@@ -34,9 +34,6 @@
     ".config/ghostty" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/dan/dotfiles/.config/ghostty";
     };
-    ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/dan/dotfiles/.config/nvim";
-    };
   };
 
   stylix.targets.neovim.enable = false;
