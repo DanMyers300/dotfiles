@@ -63,6 +63,7 @@
 
     shellHook = ''
       export LD_LIBRARY_PATH="''${LD_LIBRARY_PATH}''${LD_LIBRARY_PATH:+:}${pkgs.libglvnd}/lib"
+
       export JAVA_VERSION=$(java --version | awk 'NR==1 {print $2}')
       export PS1="(java v$JAVA_VERSION) \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]\$ "
     '';
