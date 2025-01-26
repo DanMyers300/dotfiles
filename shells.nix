@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:{
+{ pkgs, unstable, ... }:{
 
   js = pkgs.mkShell {
     name = "node-env";
@@ -57,7 +57,7 @@
     name = "java-env";
     buildInputs = with pkgs; [
       jdk23
-      gradle
+      unstable.gradle
       fabric-installer
     ];
 

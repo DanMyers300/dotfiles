@@ -40,40 +40,31 @@
       inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
-      unstableOverlay = {
-        nixpkgs.overlays = [
-          (final: prev: {
-            unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          })
-        ];
-      };
+      unstable = nixpkgs-unstable.legacyPackages.${system};
 
       machines = [
         "nixstation"
         "nixtop"
       ];
 
+      shells = import ./shells.nix {
+        inherit pkgs unstable;
+      };
+
       mkNixosConfig = machine: nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           (./machines + "/${machine}.nix")
           home-manager.nixosModules.home-manager
-          unstableOverlay
           stylix.nixosModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.dan = import ./home-manager/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs outputs; };
+            home-manager.extraSpecialArgs = { inherit unstable inputs outputs; };
           }
         ];
       };
-
-      shells = import ./shells.nix { inherit pkgs; };
 
     in {
       nixosConfigurations = builtins.listToAttrs (map (machine: {
