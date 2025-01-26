@@ -109,14 +109,19 @@
       vim.cmd('colorscheme tokyonight')
 
       require'nvim-treesitter.configs'.setup {
-        parser_install_dir = "${pkgs.vimPlugins.nvim-treesitter}/parser",
-        auto_install = false,
-        ensure_installed = {"java"},
+        auto_install = true,
+        ensure_installed = {},
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
         },
+        parser_install_dir = vim.fn.stdpath("data") .. "/treesitter/parsers",
+        extra_parser_paths = {
+          vim.fn.stdpath("data") .. "/treesitter/parsers",
+        },
       }
+      
+      vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter/parsers")
     '';
   };
 }
