@@ -110,7 +110,7 @@
     enable = false;
     ports = [ 22 ];
     settings = {
-      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+      AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
@@ -151,12 +151,15 @@
 
 ### --- LLMs --- ###
   services.ollama = {
-    enable = true;
+    enable = false; # Set to false for now as it doesn't support my graphics card
     acceleration = "rocm";
+    rocmOverrideGfx = "11.0.1";
     environmentVariables = {
-      HSA_OVERRIDE_GFX_VERSION = "11.0.0";
+      HCC_AMDGPU_TARGET = "gfx1101";
+      ROCR_VISIBLE_DEVICES = "gfx1101";
     };
   };
+  nixpkgs.config.rocmSupport = true;
 
 ### --- ENV VARs --- ###
   environment.variables = {
