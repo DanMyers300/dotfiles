@@ -10,9 +10,21 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelParams = ["amdgpu.sg_display=0"];
+  boot.kernelModules = [ "kvm-amd" "amdgpu" ];
+  boot.kernelParams = [
+    "amdgpu.sg_display=0"
+    "radeon.si_support=0"   # Disable legacy Southern Islands support
+    "amdgpu.si_support=1"   # Enable modern AMDGPU driver
+  ];
   boot.extraModulePackages = [ ];
+
+  systemd.tmpfiles.rules = [
+    "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.clr}"
+  ];
+
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ec10e966-15c0-4526-9b06-45c16a14f549";

@@ -155,8 +155,7 @@
     acceleration = "rocm";
     rocmOverrideGfx = "11.0.1";
     environmentVariables = {
-      HCC_AMDGPU_TARGET = "gfx1101";
-      ROCR_VISIBLE_DEVICES = "gfx1101";
+      HSA_OVERRIDE_GFX_VERSION = "11.0.1";
     };
   };
   nixpkgs.config.rocmSupport = true;
