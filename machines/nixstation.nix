@@ -84,7 +84,6 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   virtualisation.podman.enable = true;
-  virtualisation.docker.enable = true;
   # virtualisation.waydroid.enable = true;
   # virtualisation.spiceUSBRedirection.enable = true;
 
