@@ -151,7 +151,7 @@
 
 ### --- LLMs --- ###
   services.ollama = {
-    enable = false; # Set to false for now as it doesn't support my graphics card
+    enable = true;
     acceleration = "rocm";
     rocmOverrideGfx = "11.0.1";
     environmentVariables = {
