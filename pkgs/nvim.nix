@@ -16,12 +16,19 @@
       cmp_luasnip
       (nvim-treesitter.withPlugins (p: [
         p.tree-sitter-java
+        p.tree-sitter-vim
+        p.tree-sitter-typescript
+        p.tree-sitter-tsx
+        p.tree-sitter-lua
+        p.tree-sitter-nix
       ]))
       tokyonight-nvim
     ];
     extraPackages = with pkgs; [
       gcc
       stdenv.cc.cc
+      nodePackages.typescript-language-server
+      nodePackages.vscode-langservers-extracted
     ];
     extraLuaConfig = ''
       vim.g.mapleader = ' '
@@ -59,15 +66,29 @@
       }
       vim.opt.list = true
       
-      
       vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>l', ':bn<CR>', { noremap = true, silent = true })
+
+      vim.opt.termguicolors = true
       
+      vim.cmd('colorscheme tokyonight')
+
+      require'nvim-treesitter.configs'.setup {
+        auto_install = true,
+        ensure_installed = {},
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        parser_install_dir = vim.fn.stdpath("data") .. "/treesitter/parsers",
+        extra_parser_paths = {
+          vim.fn.stdpath("data") .. "/treesitter/parsers",
+        },
+      }
       
-      local lspconfig = require('lspconfig')
-      lspconfig.ts_ls.setup({})
-      
+      vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter/parsers")
+
       local cmp = require'cmp'
       
       cmp.setup({
@@ -94,34 +115,22 @@
           { name = 'buffer' },
         })
       })
+
+      local lspconfig = require'lspconfig'
       
+      lspconfig.ts_ls.setup({})
+
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
-          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = args.buf, desc = 'Go to definition' })
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf, desc = 'Hover documentation' })
-          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = args.buf, desc = 'Rename symbol' })
-        end,
-      })
-      
-      vim.opt.termguicolors = true
-      
-      vim.cmd('colorscheme tokyonight')
-
-      require'nvim-treesitter.configs'.setup {
-        auto_install = true,
-        ensure_installed = {},
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        parser_install_dir = vim.fn.stdpath("data") .. "/treesitter/parsers",
-        extra_parser_paths = {
-          vim.fn.stdpath("data") .. "/treesitter/parsers",
-        },
-      }
-      
-      vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter/parsers")
+          print("Attached LSP client: " .. client.name)
+          
+          local opts = { buffer = args.buf }
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+        end
+      }) 
     '';
   };
 }
