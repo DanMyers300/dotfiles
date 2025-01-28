@@ -5,7 +5,6 @@
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      vim-sleuth
       {
         plugin = nvim-lspconfig;
         config = ''
@@ -27,21 +26,73 @@
           EOF
         '';
       }
-      nvim-cmp
+      vim-sleuth
+      {
+        plugin = nvim-cmp;
+        config = ''
+          lua << EOF
+          local cmp = require'cmp'
+          cmp.setup({
+            snippet = {
+              expand = function(args)
+                require('luasnip').lsp_expand(args.body)
+              end,
+            },
+            mapping = {
+              ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+              ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+              ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+              ['<C-y>'] = cmp.config.disable,
+              ['<C-e>'] = cmp.mapping({
+                i = cmp.mapping.abort(),
+                c = cmp.mapping.close(),
+              }),
+              ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            },
+            sources = cmp.config.sources({
+              { name = 'nvim_lsp' },
+              { name = 'luasnip' },
+            }, {
+              { name = 'buffer' },
+            })
+          })
+          EOF
+        '';
+      }
       cmp-nvim-lsp
       cmp-buffer
       cmp-path
       cmp-cmdline
       luasnip
       cmp_luasnip
-      (nvim-treesitter.withPlugins (p: [
-        p.tree-sitter-java
-        p.tree-sitter-vim
-        p.tree-sitter-typescript
-        p.tree-sitter-tsx
-        p.tree-sitter-lua
-        p.tree-sitter-nix
-      ]))
+      {
+        plugin = (nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-java
+          p.tree-sitter-vim
+          p.tree-sitter-typescript
+          p.tree-sitter-tsx
+          p.tree-sitter-lua
+          p.tree-sitter-nix
+        ]));
+        config = ''
+          lua << EOF
+          require'nvim-treesitter.configs'.setup {
+            auto_install = true,
+            ensure_installed = {},
+            highlight = {
+              enable = true,
+              additional_vim_regex_highlighting = false,
+            },
+            parser_install_dir = vim.fn.stdpath("data") .. "/treesitter/parsers",
+            extra_parser_paths = {
+              vim.fn.stdpath("data") .. "/treesitter/parsers",
+            },
+          }
+          
+          vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter/parsers")
+          EOF
+        '';
+      }
       tokyonight-nvim
     ];
     extraPackages = with pkgs; [
@@ -93,48 +144,6 @@
       vim.opt.termguicolors = true
       
       vim.cmd('colorscheme tokyonight')
-
-      require'nvim-treesitter.configs'.setup {
-        auto_install = true,
-        ensure_installed = {},
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        parser_install_dir = vim.fn.stdpath("data") .. "/treesitter/parsers",
-        extra_parser_paths = {
-          vim.fn.stdpath("data") .. "/treesitter/parsers",
-        },
-      }
-      
-      vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter/parsers")
-
-      local cmp = require'cmp'
-      
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-          end,
-        },
-        mapping = {
-          ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-          ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-          ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-          ['<C-y>'] = cmp.config.disable,
-          ['<C-e>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-          }),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        },
-        sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-        }, {
-          { name = 'buffer' },
-        })
-      })
     '';
   };
 }
