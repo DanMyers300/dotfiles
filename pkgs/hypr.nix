@@ -40,6 +40,7 @@
     ### AUTOSTART ###
     #################
     exec-once = blueman-applet
+    exec-once = steam
     
     #############################
     ### ENVIRONMENT VARIABLES ###
