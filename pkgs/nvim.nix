@@ -6,7 +6,27 @@
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
       vim-sleuth
-      nvim-lspconfig
+      {
+        plugin = nvim-lspconfig;
+        config = ''
+          lua << EOF
+          local lspconfig = require('lspconfig')
+          lspconfig.ts_ls.setup({})
+
+          vim.api.nvim_create_autocmd('LspAttach', {
+            callback = function(args)
+              local client = vim.lsp.get_client_by_id(args.data.client_id)
+              print("Attached LSP client: " .. client.name)
+              
+              local opts = { buffer = args.buf }
+              vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+              vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+              vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+            end
+          })
+          EOF
+        '';
+      }
       nvim-cmp
       cmp-nvim-lsp
       cmp-buffer
@@ -115,22 +135,6 @@
           { name = 'buffer' },
         })
       })
-
-      local lspconfig = require'lspconfig'
-      
-      lspconfig.ts_ls.setup({})
-
-      vim.api.nvim_create_autocmd('LspAttach', {
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          print("Attached LSP client: " .. client.name)
-          
-          local opts = { buffer = args.buf }
-          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-        end
-      }) 
     '';
   };
 }
