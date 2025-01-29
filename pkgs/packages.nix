@@ -3,42 +3,40 @@
   config,
   pkgs,
   ...
-} : {
+}:
 
-environment.systemPackages = with pkgs; [
+{
+  environment.systemPackages = with pkgs; let
+    common = [
+      git btop ghostty p7zip ripgrep
+      bluez-tools baobab mullvad-vpn pavucontrol
+    ];
 
-  git
-  btop
-  ghostty
-  p7zip
-  ripgrep
-  bluez-tools
-  baobab
-  mullvad-vpn
-  pavucontrol
+    hyprland = [wl-clipboard nerdfonts sway-contrib.grimshot wofi];
 
-  # Hyprland
-  wl-clipboard
-  nerdfonts
-  sway-contrib.grimshot
-  wofi
+    nvtop = [
+      nvtopPackages.amd nvtopPackages.full
+    ];
 
-  ] ++ (if config.networking.hostName == "nixstation" then [
+    games = [
+      r2modman prismlauncher
+      linuxKernel.packages.linux_zen.xpadneo
+    ];
 
-  libreoffice
-  ungoogled-chromium
-  nvtopPackages.amd
-  nvtopPackages.full
+    virtualization = [qemu swtpm];
+    
+    office = [
+      libreoffice ungoogled-chromium
+    ];
 
-  # Virtualization
-  qemu
-  swtpm
+    # Define host -> package combinations
+    hostProfiles = {
+      nixstation = [games nvtop hyprland virtualization office];
+      nixtop = [hyprland office];
+    };
 
-  # Games
-  r2modman
-  prismlauncher
-  # Game pads
-  linuxKernel.packages.linux_zen.xpadneo
-
-  ] else []);
+    hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
+    
+  in
+    common ++ hostPackages;
 }

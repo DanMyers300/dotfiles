@@ -11,18 +11,6 @@
           lua << EOF
           local lspconfig = require('lspconfig')
           lspconfig.ts_ls.setup({})
-
-          vim.api.nvim_create_autocmd('LspAttach', {
-            callback = function(args)
-              local client = vim.lsp.get_client_by_id(args.data.client_id)
-              print("Attached LSP client: " .. client.name)
-              
-              local opts = { buffer = args.buf }
-              vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-              vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-              vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-            end
-          })
           EOF
         '';
       }
@@ -92,9 +80,12 @@
           lua << EOF
           local config = {
             cmd = {'${pkgs.jdt-language-server}/bin/jdtls'},
-            root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]) or vim.loop.cwd(),
+            root_dir = vim.fs.dirname(vim.fs.find({
+              'gradlew',
+              'mvnw'
+            }, { upward = true })[1]) or vim.loop.cwd(),
           }
-          require('jdtls').start_or_attach(config)  -- 🚀 LAUNCH INTO A BLACK HOLE OF BUGS
+          require('jdtls').start_or_attach(config)
           EOF
         '';
       }
@@ -111,7 +102,6 @@
       gcc
       stdenv.cc.cc
       nodePackages.typescript-language-server
-      nodePackages.vscode-langservers-extracted
       jdt-language-server
     ];
     extraLuaConfig = ''
@@ -155,6 +145,18 @@
       vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>l', ':bn<CR>', { noremap = true, silent = true })
+
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          print("Attached LSP client: " .. client.name)
+          
+          local opts = { buffer = args.buf }
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+        end
+      })
     '';
   };
 }
