@@ -93,9 +93,9 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 5173 ];
-      allowedUDPPortRanges = [
-        { from = 5173; to = 5173; }
+      #allowedTCPPorts = [ 5173 ];
+      #allowedUDPPortRanges = [
+        #{ from = 5173; to = 5173; }
         #{ from = 8000; to = 8010; }
       ];
     };
