@@ -97,7 +97,7 @@
       #allowedUDPPortRanges = [
         #{ from = 5173; to = 5173; }
         #{ from = 8000; to = 8010; }
-      ];
+      #];
     };
     extraHosts =
       ''
