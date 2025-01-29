@@ -26,7 +26,6 @@
           EOF
         '';
       }
-      vim-sleuth
       {
         plugin = nvim-cmp;
         config = ''
@@ -59,12 +58,6 @@
           EOF
         '';
       }
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      luasnip
-      cmp_luasnip
       {
         plugin = (nvim-treesitter.withPlugins (p: [
           p.tree-sitter-java
@@ -93,6 +86,25 @@
           EOF
         '';
       }
+      {
+        plugin = nvim-jdtls;
+        config = ''
+          lua << EOF
+          local config = {
+            cmd = {'${pkgs.jdt-language-server}/bin/jdtls'},
+            root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]) or vim.loop.cwd(),
+          }
+          require('jdtls').start_or_attach(config)  -- 🚀 LAUNCH INTO A BLACK HOLE OF BUGS
+          EOF
+        '';
+      }
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      luasnip
+      cmp_luasnip
+      vim-sleuth
       tokyonight-nvim
     ];
     extraPackages = with pkgs; [
@@ -100,12 +112,15 @@
       stdenv.cc.cc
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
+      jdt-language-server
     ];
     extraLuaConfig = ''
+      vim.cmd('colorscheme tokyonight')
       vim.g.mapleader = ' '
       vim.g.maplocalleader = ' '
       
       vim.opt.filetype = "on"
+      vim.opt.termguicolors = true
       vim.opt.spell = false
       vim.opt.number = true
       vim.opt.relativenumber = true
@@ -126,6 +141,7 @@
       vim.opt.undodir = vim.fn.expand("~/.nvim/backup")
       vim.opt.undofile = true
       vim.opt.undoreload = 10000
+      vim.opt.list = true
       vim.opt.listchars = {
         trail = '.',
         tab = '→·',
@@ -135,15 +151,10 @@
         extends = '›',
         precedes = '‹',
       }
-      vim.opt.list = true
       
       vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>l', ':bn<CR>', { noremap = true, silent = true })
-
-      vim.opt.termguicolors = true
-      
-      vim.cmd('colorscheme tokyonight')
     '';
   };
 }
