@@ -15,12 +15,6 @@
     homeDirectory = "/home/dan";
   };
 
-  home.file = {
-    ".config/ghostty" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/dan/dotfiles/.config/ghostty";
-    };
-  };
-
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
 }
