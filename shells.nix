@@ -7,7 +7,6 @@
       bun
       deno
       typescript
-      nodePackages.typescript-language-server
     ];
 
     shellHook = ''
