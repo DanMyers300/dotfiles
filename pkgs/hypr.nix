@@ -25,13 +25,14 @@
     # https://wiki.hyprland.org/Configuring/Monitors/
     monitor = DP-1, preferred, 0x0, 1
     monitor = HDMI-A-1, preferred, 1920x0, 1
+    monitor = , preferred, auto, 1
     
     ###################
     ### MY PROGRAMS ###
     ###################
     
     # https://wiki.hyprland.org/Configuring/Keywords/
-    $terminal = alacritty
+    $terminal = ghostty
     $browser = firefox
     #$fileManager = 
     $menu = wofi --show drun

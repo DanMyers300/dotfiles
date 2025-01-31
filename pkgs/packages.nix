@@ -26,13 +26,16 @@
     virtualization = [qemu swtpm];
     
     office = [
-      libreoffice ungoogled-chromium
+      libreoffice
     ];
+
+    chrome = [ ungoogled-chromium ];
 
     # Define host -> package combinations
     hostProfiles = {
-      nixstation = [games nvtop hyprland virtualization office];
-      nixtop = [hyprland office];
+      nixstation = [games nvtop chrome hyprland virtualization office];
+      nixtop = [hyprland chrome office];
+      nixvm = [chrome];
     };
 
     hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
