@@ -4,7 +4,7 @@
   config,
   pkgs,
   ...
-}: {
+}:{
 
   imports =
     [
@@ -55,9 +55,11 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
+    gnome-music
+    gnome-contacts
+    gnome-initial-setup
     gedit # text editor
     cheese # webcam tool
-    gnome-music
     epiphany # web browser
     geary # email reader
     gnome-characters
@@ -66,8 +68,6 @@
     hitori # sudoku game
     atomix # puzzle game
     yelp # Help view
-    gnome-contacts
-    gnome-initial-setup
   ]);
 
 ### --- Hyprland --- ###
