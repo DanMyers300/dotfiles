@@ -25,7 +25,6 @@
     # https://wiki.hyprland.org/Configuring/Monitors/
     monitor = DP-1, preferred, 0x0, 1
     monitor = HDMI-A-1, preferred, 1920x0, 1
-    monitor = , preferred, auto, 1
     
     ###################
     ### MY PROGRAMS ###
