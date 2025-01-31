@@ -31,7 +31,7 @@
     ###################
     
     # https://wiki.hyprland.org/Configuring/Keywords/
-    $terminal = ghostty
+    $terminal = alacritty
     $browser = firefox
     #$fileManager = 
     $menu = wofi --show drun
