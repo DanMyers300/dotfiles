@@ -8,7 +8,7 @@
 {
   environment.systemPackages = with pkgs; let
     common = [
-      git btop ghostty p7zip ripgrep
+      git btop ghostty p7zip ripgrep vesktop
       bluez-tools baobab mullvad-vpn pavucontrol
     ];
 
@@ -31,7 +31,7 @@
 
     chrome = [ ungoogled-chromium ];
 
-    # Define host -> package combinations
+    #--- HOSTS ---#
     hostProfiles = {
       nixstation = [games nvtop chrome hyprland virtualization office];
       nixtop = [hyprland chrome office];
