@@ -8,7 +8,7 @@
 {
   environment.systemPackages = with pkgs; let
     common = [
-      git btop p7zip ripgrep vesktop
+      git btop p7zip ripgrep vesktop bitwarden-desktop
       bluez-tools baobab mullvad-vpn pavucontrol
     ];
 

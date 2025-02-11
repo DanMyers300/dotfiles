@@ -4,7 +4,7 @@
     name = "node-env";
     buildInputs = with pkgs; [
       nodejs
-      bun
+      unstable.bun
       deno
       typescript
     ];

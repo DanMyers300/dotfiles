@@ -69,6 +69,7 @@
     atomix # puzzle game
     yelp # Help view
   ]);
+  security.pam.services.gdm-password.enableGnomeKeyring = true;
 
 ### --- Hyprland --- ###
   programs.hyprland = {
