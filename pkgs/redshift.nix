@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-} : {
+{...} : {
 
   services = {
     gammastep = {

@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; let
     common = [
       git btop p7zip ripgrep vesktop bitwarden-desktop
-      bluez-tools baobab mullvad-vpn pavucontrol
+      bluez-tools baobab mullvad-vpn pavucontrol fastfetch
     ];
 
     hyprland = [wl-clipboard nerdfonts sway-contrib.grimshot wofi];
