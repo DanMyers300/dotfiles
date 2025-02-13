@@ -48,8 +48,8 @@
     
     # See https://wiki.hyprland.org/Configuring/Environment-variables/
     
-    env = XCURSOR_SIZE,16
-    env = HYPRCURSOR_SIZE,16
+    env = XCURSOR_SIZE,8
+    env = HYPRCURSOR_SIZE,8
     env = GDK_SCALE=1 ghostty
 
     #####################
