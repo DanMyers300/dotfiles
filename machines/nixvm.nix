@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware/nixvm-hardware.nix
+      ../pkgs/packages.nix
     ];
 
   boot.loader.grub.enable = true;
