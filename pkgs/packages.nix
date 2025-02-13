@@ -7,9 +7,14 @@
 
 {
   environment.systemPackages = with pkgs; let
+
+    minimal = [
+      git btop p7zip ripgrep fastfetch
+    ];
+
     common = [
-      git btop p7zip ripgrep vesktop bitwarden-desktop
-      bluez-tools baobab mullvad-vpn pavucontrol fastfetch
+      vesktop bitwarden-desktop pavucontrol
+      bluez-tools baobab mullvad-vpn
     ];
 
     hyprland = [wl-clipboard nerdfonts sway-contrib.grimshot wofi];
@@ -33,13 +38,12 @@
 
     #--- HOSTS ---#
     hostProfiles = {
-      nixstation = [games nvtop chrome hyprland virtualization office];
-      nixtop = [hyprland chrome office];
-      nixvm = [chrome];
+      nixstation = [common games nvtop chrome hyprland virtualization office];
+      nixtop = [common hyprland chrome office];
     };
 
     hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
     
   in
-    common ++ hostPackages;
+    minimal ++ hostPackages;
 }
