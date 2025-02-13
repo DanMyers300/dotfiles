@@ -6,9 +6,12 @@
       ./hardware/nixvm-hardware.nix
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/vda";
+    useOSProber = true;
+    extraPackages = [ pkgs.os-prober ];
+  };
 
   networking = {
     hostName = "nixvm";
