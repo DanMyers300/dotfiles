@@ -15,6 +15,7 @@
     "amdgpu.sg_display=0"
     "radeon.si_support=0"   # Disable legacy Southern Islands support
     "amdgpu.si_support=1"   # Enable modern AMDGPU driver
+    "amd_iommu=on"          # GPU passthrough
   ];
   boot.extraModulePackages = [ ];
 

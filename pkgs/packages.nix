@@ -40,7 +40,7 @@
     hostProfiles = {
       nixstation = [common games nvtop chrome hyprland virtualization office];
       nixtop = [common hyprland chrome office];
-      nixvm = [hyprland];
+      nixvm = [];
     };
 
     hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
