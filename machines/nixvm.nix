@@ -52,6 +52,11 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   services.openssh = {
     enable = true;
     ports = [ 22 ];
