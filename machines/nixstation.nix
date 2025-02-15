@@ -53,6 +53,7 @@
   services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
+    gnome-connections
     gnome-photos
     gnome-tour
     gnome-music
