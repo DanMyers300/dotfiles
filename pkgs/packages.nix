@@ -24,7 +24,7 @@
     ];
 
     games = [
-      r2modman prismlauncher
+      r2modman prismlauncher steamConf
       linuxKernel.packages.linux_zen.xpadneo
     ];
 
@@ -35,6 +35,16 @@
     ];
 
     chrome = [ ungoogled-chromium ];
+
+    steamConf =
+      {
+        hardware.steam-hardware.enable = true;
+        programs.steam = {
+          enable = true;
+          remotePlay.openFirewall = true;
+          dedicatedServer.openFirewall = true;
+          localNetworkGameTransfers.openFirewall = true;
+      };};
 
     #--- HOSTS ---#
     hostProfiles = {

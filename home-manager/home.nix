@@ -1,12 +1,12 @@
 { config, pkgs, unstable, ... } : {
 
   imports = [
-    ../pkgs/nvim.nix
-    ../pkgs/alacritty.nix
-    ../pkgs/hypr.nix
-    ../pkgs/bash.nix
-    ../pkgs/tmux.nix
-    ../pkgs/redshift.nix
+    ./configs/nvim.nix
+    ./configs/alacritty.nix
+    ./configs/hypr.nix
+    ./configs/bash.nix
+    ./configs/tmux.nix
+    ./configs/redshift.nix
   ];
 
   home = {
