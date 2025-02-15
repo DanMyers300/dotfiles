@@ -45,7 +45,6 @@
       machines = [
         "nixstation"
         "nixtop"
-	"nixvm"
       ];
 
       shells = import ./shells.nix {
