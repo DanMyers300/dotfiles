@@ -125,12 +125,47 @@
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-  
+   enable = true;
+   alsa.enable = true;
+   alsa.support32Bit = true;
+   pulse.enable = true;
+   wireplumber.extraConfig."51-disable-suspension" = {
+     "monitor.alsa.rules" = [
+       {
+         "matches" = [
+           {
+             "node.name" = "~alsa_input.*";
+           }
+           {
+             "node.name" = "~alsa_output.*";
+           }
+         ];
+         "actions" = {
+           "update-props" = {
+             "session.suspend-timeout-seconds" = 0;
+           };
+         };
+       }
+     ];
+     "monitor.bluez.rules" = [
+       {
+         "matches" = [
+           {
+             "node.name" = "~bluez_input.*";
+           }
+           {
+             "node.name" = "~bluez_output.*";
+           }
+         ];
+         "actions" = {
+           "update-props" = {
+             "session.suspend-timeout-seconds" = 0;
+           };
+         };
+       }
+     ];
+   };
+  }; 
 ### --- Package settings --- ###
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
