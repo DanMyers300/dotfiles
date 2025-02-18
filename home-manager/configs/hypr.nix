@@ -25,6 +25,7 @@
     # https://wiki.hyprland.org/Configuring/Monitors/
     monitor = DP-1, preferred, 0x0, 1
     monitor = HDMI-A-1, preferred, 1920x0, 1
+    monitor = HDMI-A-2, preferred, auto-right, 1
     
     ###################
     ### MY PROGRAMS ###
@@ -48,9 +49,8 @@
     
     # See https://wiki.hyprland.org/Configuring/Environment-variables/
     
-    env = XCURSOR_SIZE,8
-    env = HYPRCURSOR_SIZE,8
-    env = GDK_SCALE=1 ghostty
+    env = XCURSOR_SIZE,32
+    env = HYPRCURSOR_SIZE,32
 
     #####################
     ###   SSH  KEYS   ###
