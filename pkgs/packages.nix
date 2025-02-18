@@ -17,7 +17,9 @@
       bluez-tools baobab mullvad-vpn
     ];
 
-    hyprland = [wl-clipboard nerdfonts sway-contrib.grimshot wofi];
+    hyprland = [
+      wl-clipboard nerdfonts sway-contrib.grimshot wofi
+      ];
 
     nvtop = [
       nvtopPackages.amd nvtopPackages.full

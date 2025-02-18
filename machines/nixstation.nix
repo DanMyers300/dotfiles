@@ -70,7 +70,6 @@
     atomix # puzzle game
     yelp # Help view
   ]);
-  security.pam.services.gdm-password.enableGnomeKeyring = true;
 
 ### --- Hyprland --- ###
   programs.hyprland = {
@@ -166,13 +165,14 @@
        }
      ];
    };
-  }; 
+  };
+
 ### --- Package settings --- ###
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = false;
-  
+
 ### --- User setup --- ###
   users.users.dan = {
     isNormalUser = true;

@@ -42,6 +42,7 @@
     #################
     exec-once = blueman-applet
     exec-once = steam
+    exec-once = "hyprctl setcursor rose-pine-hyprcursor 18"
     
     #############################
     ### ENVIRONMENT VARIABLES ###
@@ -49,8 +50,10 @@
     
     # See https://wiki.hyprland.org/Configuring/Environment-variables/
     
-    env = XCURSOR_SIZE,32
-    env = HYPRCURSOR_SIZE,32
+    env = XCURSOR_SIZE,8
+    env = XCURSOR_THEME,Bibata-Modern-Classic
+    env = HYPRCURSOR_SIZE,24
+    env = HYPRCURSOR_THEME,Bibata-Modern-Classic
 
     #####################
     ###   SSH  KEYS   ###

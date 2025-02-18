@@ -17,9 +17,9 @@
     };
     polarity = "dark";
     cursor = {
-      package = pkgs.adwaita-icon-theme;
-      size = 12;
-      name = "Adwaita";
+      package = pkgs.bibata-cursors;
+      size = 8;
+      name = "Bibata-Modern-Classic";
     };
     fonts = {
       sizes = {
