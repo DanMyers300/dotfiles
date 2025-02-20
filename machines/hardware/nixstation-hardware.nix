@@ -27,6 +27,8 @@
     rocmPackages.clr.icd
   ];
 
+  hardware.graphics.enable = true;
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ec10e966-15c0-4526-9b06-45c16a14f549";
       fsType = "ext4";
