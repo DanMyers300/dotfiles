@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; let
 
     minimal = [
-      git btop p7zip ripgrep fastfetch
+      git xxd btop p7zip ripgrep fastfetch
     ];
 
     common = [
@@ -22,7 +22,7 @@
       ];
 
     nvtop = [
-      nvtopPackages.amd nvtopPackages.full
+      nvtopPackages.amd
     ];
 
     games = [

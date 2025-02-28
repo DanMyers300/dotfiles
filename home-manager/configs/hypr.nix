@@ -33,7 +33,7 @@
     
     # https://wiki.hyprland.org/Configuring/Keywords/
     $terminal = alacritty
-    $browser = firefox
+    $browser = chromium
     #$fileManager = 
     $menu = wofi --show drun
     

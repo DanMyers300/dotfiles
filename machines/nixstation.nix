@@ -42,10 +42,15 @@
   };
 
 ### --- Xserver setup --- ###
-  services.xserver.enable = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+    displayManager.sessionCommands = ''
+      xhost +local:
+    '';
   };
 
 ### --- Gnome --- ###
@@ -76,8 +81,6 @@
     enable = true;
     xwayland.enable = true;
   };
-
-  programs.firefox.enable = true;
 
 ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;

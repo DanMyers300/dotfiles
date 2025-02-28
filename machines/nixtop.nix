@@ -101,7 +101,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
 ### --- Crucial Programs --- ###
-  programs.firefox.enable = true;
   environment.variables.EDITOR = "nvim";
 
 ### --- VPN --- ###
