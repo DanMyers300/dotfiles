@@ -1,22 +1,17 @@
 { ... } : { programs.bash = { enable = true; bashrcExtra = ''
 
-# If not running interactively, don't do anything
 case $- in
 *i*) ;;
 *) return ;;
 esac
 
-# History
 HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Path settings
 PATH="$PATH:/opt/nvim-linux64/bin"
 PATH="$PATH:/home/dan/.local/bin"
 
@@ -57,17 +52,4 @@ function proController() {
         echo "Connected to $mac_address"
     fi
 }
-
-function toggle_second_monitor() {
-    monitor_state=$(hyprctl monitors | awk '/Monitor HDMI-A-1/{flag=1} flag && /disabled:/{print $2; exit}')
-
-    if [ "$monitor_state" == "false" ]; then
-        hyprctl keyword monitor "HDMI-A-1, disable"
-    else
-        hyprctl keyword monitor "HDMI-A-1, preferred, auto, 1"
-    fi
-}
-
-alias nixstation="sudo nixos-rebuild switch --flake /home/dan/dotfiles/#nixstation"
-
 '';};}
