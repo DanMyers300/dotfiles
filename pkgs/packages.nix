@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; let
 
     minimal = [
-      git xxd btop p7zip ripgrep fastfetch
+      git git-lfs xxd btop p7zip ripgrep fastfetch
     ];
 
     common = [
