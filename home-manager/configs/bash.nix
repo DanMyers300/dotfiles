@@ -52,4 +52,6 @@ function proController() {
         echo "Connected to $mac_address"
     fi
 }
+
+alias v='vi'
 '';};}
