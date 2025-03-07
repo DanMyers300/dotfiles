@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  unstable,
   pkgs,
   ...
 }:
@@ -36,8 +37,12 @@
 
     chrome = [ ungoogled-chromium ];
 
+    ladyBird = with unstable; [ ladybird ];
+  
+    rain = [ inputs.rain-mixer.packages.${system}.default ];
+
     hostProfiles = {
-      nixstation = [common games nvtop chrome hyprland virtualization office];
+      nixstation = [common rain games nvtop chrome ladyBird hyprland virtualization office];
       nixtop = [common hyprland chrome office];
     };
 
