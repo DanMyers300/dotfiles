@@ -19,6 +19,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+### --- Kernel --- ###
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+### --- Bluetooth --- ###
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
 # Networking
   networking.hostName = "nixtop";
   networking.networkmanager.enable = true;
@@ -44,11 +52,6 @@
     };
   };
 
-### --- Bluetooth --- ###
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
-
 ### --- Localization --- ###
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -65,10 +68,15 @@
   };
 
 ### --- Xserver setup --- ###
-  services.xserver.enable = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+    displayManager.sessionCommands = ''
+      xhost +local:
+    '';
   };
 
 ### --- Gnome --- ###
