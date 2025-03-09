@@ -60,13 +60,13 @@
         format-icons = {
           car = "";
           default = [ "" "" "" ];
-          handsfree = "";
+          handsfree = "";
           headphones = "";
-          headset = "";
+          headset = "";
           phone = "";
           portable = "";
         };
-        format-muted = " |    |  {format_source}  |";
+        format-muted = " |  No   |  {format_source}  |";
         format-source = "{volume}% ";
         format-source-muted = " ";
         on-click = "pavucontrol";
@@ -83,7 +83,7 @@
           critical = 15;
         };
         format = "{icon}   {capacity}% |";
-        format-charging = "{capacity}% ";
+        format-charging = "{capacity}% ";
         format-plugged = "{capacity}%";
         format-alt = "{time} {icon}";
         format-icons = [ "" "" "" "" "" ];
