@@ -22,28 +22,20 @@
       wl-clipboard nerdfonts sway-contrib.grimshot wofi
       ];
 
-    nvtop = [
-      nvtopPackages.amd
-    ];
-
     games = [
       r2modman prismlauncher
       linuxKernel.packages.linux_zen.xpadneo
     ];
 
-    virtualization = [qemu swtpm];
-    
-    office = [ libreoffice ];
-
-    chrome = [ ungoogled-chromium ];
-
-    ladyBird = with unstable; [ ladybird ];
-  
     rain = [ inputs.rain-mixer.packages.${system}.default ];
 
     hostProfiles = {
-      nixstation = [common rain games nvtop chrome ladyBird hyprland virtualization office];
-      nixtop = [common hyprland chrome];
+      nixstation = [
+        common rain games [nvtopPackages.amd]
+        [ungoogled-chromium] hyprland
+        [qemu swtpm] [libreoffice]
+      ];
+      nixtop = [common hyprland [ungoogled-chromium] [libreoffice]];
     };
 
     hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
