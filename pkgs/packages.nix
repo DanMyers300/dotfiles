@@ -34,6 +34,7 @@
         common rain games [nvtopPackages.amd]
         [ungoogled-chromium] hyprland
         [qemu swtpm] [libreoffice]
+        [rpcs3]
       ];
       nixtop = [common hyprland [ungoogled-chromium] [libreoffice]];
     };
