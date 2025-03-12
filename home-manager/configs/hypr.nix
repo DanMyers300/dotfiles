@@ -198,6 +198,7 @@
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
     bind = $mainMod, S, exec, $menu
+    bind = $mainMod, e, exec, nautilus
     bind = , print, exec, grimshot copy area
 
     ### --- System --- ###
