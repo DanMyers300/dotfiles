@@ -33,8 +33,8 @@
     
     # https://wiki.hyprland.org/Configuring/Keywords/
     $terminal = alacritty
-    $browser = chromium
-    #$fileManager = 
+    $browser = firefox
+    $fileManager = nautilus
     $menu = wofi --show drun
     
     #################
@@ -198,7 +198,7 @@
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
     bind = $mainMod, S, exec, $menu
-    bind = $mainMod, e, exec, nautilus
+    bind = $mainMod, e, exec, $fileManager
     bind = , print, exec, grimshot copy area
 
     ### --- System --- ###
