@@ -23,7 +23,7 @@
       ];
 
     games = [
-      r2modman prismlauncher
+      prismlauncher
       linuxKernel.packages.linux_zen.xpadneo
     ];
 
