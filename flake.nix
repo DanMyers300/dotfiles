@@ -25,6 +25,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
+    zen-browser.url = "github:DanMyers300/zen-browser-flake";
     stylix.url = "github:danth/stylix/release-24.11";
     rain-mixer.url = "github:danmyers300/rain-mixer";
   };
@@ -35,7 +36,6 @@
     nixpkgs-unstable,
     home-manager,
     stylix,
-    rain-mixer,
     ...
   } @ inputs:
     let
@@ -54,7 +54,7 @@
       };
 
       mkNixosConfig = machine: nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit unstable inputs outputs rain-mixer; };
+        specialArgs = { inherit unstable inputs outputs; };
         modules = [
           (./machines + "/${machine}.nix")
           home-manager.nixosModules.home-manager

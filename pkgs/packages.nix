@@ -27,11 +27,13 @@
       linuxKernel.packages.linux_zen.xpadneo
     ];
 
-    rain = [ inputs.rain-mixer.packages.${system}.default ];
+    rain = [ inputs.rain-mixer.packages."${system}".default ];
+
+    zen = [ inputs.zen-browser.packages."${system}".default ];
 
     hostProfiles = {
       nixstation = [
-        common rain games [nvtopPackages.amd]
+        common rain games zen [nvtopPackages.amd]
         [ungoogled-chromium] hyprland
         [qemu swtpm] [libreoffice]
         [rpcs3] [firefox]
