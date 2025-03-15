@@ -9,13 +9,14 @@
 {
   environment.systemPackages = with pkgs; let
 
-    minimal = [
-      git git-lfs xxd btop p7zip ripgrep fastfetch
+    cli = [
+      git git-lfs xxd btop
+      p7zip ripgrep bluez-tools
     ];
 
-    common = [
-      vesktop bitwarden-desktop pavucontrol
-      bluez-tools baobab mullvad-vpn
+    gui = [
+      bitwarden-desktop pavucontrol
+      baobab mullvad-vpn
     ];
 
     hyprland = [
@@ -33,12 +34,12 @@
 
     hostProfiles = {
       nixstation = [
-        common rain games zen [nvtopPackages.amd]
-        [ungoogled-chromium] hyprland
+        gui rain games zen hyprland
+        [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice]
-        [rpcs3] [firefox]
+        [rpcs3]
       ];
-      nixtop = [common hyprland [ungoogled-chromium] [libreoffice]];
+      nixtop = [gui hyprland [ungoogled-chromium] [libreoffice]];
     };
 
     hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
