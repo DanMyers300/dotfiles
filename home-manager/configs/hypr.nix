@@ -33,7 +33,7 @@
     
     # https://wiki.hyprland.org/Configuring/Keywords/
     $terminal = alacritty
-    $browser = firefox
+    $browser = zen
     $fileManager = nautilus
     $menu = wofi --show drun
     
