@@ -45,5 +45,5 @@
     hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
     
   in
-    minimal ++ hostPackages;
+    cli ++ hostPackages;
 }
