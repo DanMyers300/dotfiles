@@ -60,10 +60,12 @@
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.dan = import ./home-manager/home.nix;
-            home-manager.extraSpecialArgs = { inherit unstable inputs outputs; };
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.dan = import ./home-manager/home.nix;
+              extraSpecialArgs = { inherit unstable inputs outputs; };
+            };
           }
         ];
       };
