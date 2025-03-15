@@ -12,8 +12,8 @@
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/outrun-dark.yaml";
     image = pkgs.fetchurl {
-      url = "https://images.unsplash.com/photo-1511800453077-8c0afa94175f";
-      sha256 = "sha256-jGi50sy6Zjc1xuop670lFBA2UX3mvekB+EA4Fenjeek";
+      url = "https://images.pexels.com/photos/1428277/pexels-photo-1428277.jpeg";
+      sha256 = "sha256-oFQRvK/AVTCcOMrNboWSTBB5FQNz7AffDKObKqH8Usk=";
     };
     polarity = "dark";
     cursor = {
