@@ -42,8 +42,8 @@
       nixtop = [gui hyprland [ungoogled-chromium] [libreoffice]];
     };
 
-    hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
+    hostPackages = cli ++ lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
     
   in
-    cli ++ hostPackages;
+    hostPackages;
 }
