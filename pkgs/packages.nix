@@ -36,7 +36,7 @@
       nixstation = [
         gui rain games zen hyprland
         [ungoogled-chromium] [nvtopPackages.amd]
-        [qemu swtpm] [libreoffice] [rpcs3] [gimp]
+        [qemu swtpm] [libreoffice] [gimp]
       ];
       nixtop = [gui hyprland [ungoogled-chromium] [libreoffice]];
     };
