@@ -1,18 +1,18 @@
 scheme: "Dark Vibrant"
 author: "Dan Myers (http://danmyers.net)"
-base00: "121212"
-base01: "1e1e1e"
-base02: "2e2e2e"
-base03: "4a4a4a"
-base04: "a0a0a0"
-base05: "f6f6f6"
-base06: "e0e0e0"
-base07: "ffffff"
-base08: "ff4b4b"
-base09: "ff9e4a"
-base0A: "fee564"
-base0B: "6fe46f"
-base0C: "4cd8d8"
-base0D: "4aa8ff"
-base0E: "d17fff"
-base0F: "ff6b4a"
+base00: "121212"  # Background
+base01: "1e1e1e"  # Foreground
+base02: "2e2e2e"  # Comments
+base03: "4a4a4a"  # Secondary text
+base04: "a0a0a0"  # Constants
+base05: "f6f6f6"  # Variables
+base06: "e0e0e0"  # Strings
+base07: "ffffff"  # Symbols
+base08: "ff4b4b"  # Errors
+base09: "ff9e4a"  # Warnings
+base0F: "ff6b4a"  # Exceptions
+base0A: "fee564"  # Function names
+base0B: "6fe46f"  # Method calls
+base0C: "2ee2d5"  # Function definitions
+base0D: "4aa8ff"  # Class names
+base0E: "d17fff"  # Type definitions
