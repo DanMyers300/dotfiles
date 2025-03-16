@@ -10,7 +10,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
+    base16Scheme = builtins.toPath ../home-manager/themes/dark-vibrant.yaml;
     image = pkgs.fetchurl {
       url = "https://images.pexels.com/photos/1428277/pexels-photo-1428277.jpeg";
       sha256 = "sha256-oFQRvK/AVTCcOMrNboWSTBB5FQNz7AffDKObKqH8Usk=";
@@ -28,9 +28,6 @@
         popups = 10;
         terminal = 10;
       };
-    };
-    targets = {
-      chromium.enable = false;
     };
   };
 }

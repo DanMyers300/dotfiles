@@ -1,5 +1,10 @@
 { pkgs, unstable, ... }: {
-  stylix.targets.neovim.enable = false;
+  stylix.targets.neovim = {
+    transparentBackground = {
+      main = true;
+      signColumn = true;
+    };
+  };
   programs.neovim = {
     enable = true;
     package = unstable.neovim-unwrapped;
@@ -75,21 +80,6 @@
           EOF
         '';
       }
-      #{
-      #  plugin = nvim-jdtls;
-      #  config = ''
-      #    lua << EOF
-      #    local config = {
-      #      cmd = {'${pkgs.jdt-language-server}/bin/jdtls'},
-      #      root_dir = vim.fs.dirname(vim.fs.find({
-      #        'gradlew',
-      #        'mvnw'
-      #      }, { upward = true })[1]) or vim.loop.cwd(),
-      #    }
-      #    require('jdtls').start_or_attach(config)
-      #    EOF
-      #  '';
-      #}
       cmp-nvim-lsp
       cmp-buffer
       cmp-path
@@ -97,16 +87,13 @@
       luasnip
       cmp_luasnip
       vim-sleuth
-      tokyonight-nvim
     ];
     extraPackages = with pkgs; [
       gcc
       stdenv.cc.cc
       nodePackages.typescript-language-server
-      #jdt-language-server
     ];
     extraLuaConfig = ''
-      vim.cmd('colorscheme tokyonight')
       vim.g.mapleader = ' '
       vim.g.maplocalleader = ' '
       
