@@ -1,18 +1,18 @@
 scheme: "Dark Vibrant"
 author: "Dan Myers (http://danmyers.net)"
-base00: "121212" # Darker background for better contrast
-base01: "1e1e1e" # Slightly lighter for secondary background
-base02: "2e2e2e" # Smooth transition for UI elements
-base03: "4a4a4a" # Dark gray for subtle highlights
-base04: "a0a0a0" # Medium gray for muted text
-base05: "c0c0c0" # Light gray for primary text
-base06: "e0e0e0" # Brighter gray for highlights
-base07: "ffffff" # Pure white for maximum contrast
-base08: "ff4b4b" # Vibrant red for errors or highlights
-base09: "ff9e4a" # Warm orange for warnings or accents
-base0A: "ffd966" # Bright golden yellow for attention-grabbing elements
-base0B: "6dfc6d" # Vibrant green for success or confirmations
-base0C: "4cd8d8" # Bright cyan for informational elements
-base0D: "4aa8ff" # Vibrant blue for links or focus
-base0E: "d17fff" # Bright purple for special elements
-base0F: "ff6b4a" # Warm red-orange for secondary accents
+base00: "121212"
+base01: "1e1e1e"
+base02: "2e2e2e"
+base03: "4a4a4a"
+base04: "a0a0a0"
+base05: "f6f6f6"
+base06: "e0e0e0"
+base07: "ffffff"
+base08: "ff4b4b"
+base09: "ff9e4a"
+base0A: "e7d57b"
+base0B: "6fe46f"
+base0C: "4cd8d8"
+base0D: "4aa8ff"
+base0E: "d17fff"
+base0F: "ff6b4a"
