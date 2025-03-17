@@ -23,8 +23,7 @@
       wl-clipboard nerdfonts sway-contrib.grimshot wofi
       ];
 
-    games = [
-      prismlauncher
+    gamecontroller = [
       linuxKernel.packages.linux_zen.xpadneo
     ];
 
@@ -34,7 +33,7 @@
 
     hostProfiles = {
       nixstation = [
-        gui rain games zen hyprland
+        gui rain gamecontroller zen hyprland
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [gimp]
       ];
