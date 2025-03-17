@@ -37,7 +37,7 @@
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [gimp]
       ];
-      nixtop = [gui hyprland [ungoogled-chromium] [libreoffice]];
+      nixtop = [ gui hyprland ];
     };
 
     hostPackages = cli ++ lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
