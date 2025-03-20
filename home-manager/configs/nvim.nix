@@ -1,4 +1,5 @@
-{ pkgs, unstable, ... }: {
+{ pkgs, unstable, ... }:
+{
   stylix.targets.neovim = {
     transparentBackground = {
       main = true;
@@ -17,8 +18,30 @@
           lua << EOF
           local lspconfig = require('lspconfig')
           lspconfig.ts_ls.setup({})
-          EOF
-        '';
+          EOF'';
+      }
+      {
+        plugin = pkgs.rust-analyzer;
+        config = ''
+          lua << EOF
+          local lspconfig = require('lspconfig')
+          lspconfig.rust_analyzer.setup {
+            settings = {
+              ["rust-analyzer"] = {
+                -- Other Settings ...
+                procMacro = {
+                  ignored = {
+                    leptos_macro = {
+                      -- optional:
+                      -- "component",
+                      -- "server",
+                    },
+                  },
+                },
+              },
+            }
+          }
+          EOF'';
       }
       {
         plugin = nvim-cmp;
@@ -49,8 +72,7 @@
               { name = 'buffer' },
             })
           })
-          EOF
-        '';
+          EOF'';
       }
       {
         plugin = (nvim-treesitter.withPlugins (p: [
@@ -75,10 +97,8 @@
               vim.fn.stdpath("data") .. "/treesitter/parsers",
             },
           }
-          
           vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter/parsers")
-          EOF
-        '';
+          EOF'';
       }
       cmp-nvim-lsp
       cmp-buffer
@@ -92,11 +112,11 @@
       gcc
       stdenv.cc.cc
       nodePackages.typescript-language-server
+      rust-analyzer
     ];
     extraLuaConfig = ''
       vim.g.mapleader = ' '
       vim.g.maplocalleader = ' '
-      
       vim.opt.filetype = "on"
       vim.opt.termguicolors = true
       vim.opt.spell = false
@@ -129,16 +149,22 @@
         extends = '›',
         precedes = '‹',
       }
-      
-      vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>l', ':bn<CR>', { noremap = true, silent = true })
-
+      vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', {
+        noremap = true,
+        silent = true
+      })
+      vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', {
+        noremap = true,
+        silent = true
+      })
+      vim.api.nvim_set_keymap('n', '<leader>l', ':bn<CR>', {
+        noremap = true,
+        silent = true
+      })
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
           print("Attached LSP client: " .. client.name)
-          
           local opts = { buffer = args.buf }
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
