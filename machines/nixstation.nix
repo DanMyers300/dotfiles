@@ -53,9 +53,11 @@
     '';
   };
 
-  services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "hyprland";
-  services.xrdp.openFirewall = true;
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "Hyprland";
+    openFirewall = true;
+  };
 
 ### --- Gnome --- ###
   services.xserver.displayManager.gdm.enable = true;
