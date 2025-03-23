@@ -31,7 +31,7 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
-    #allowedTCPPorts = [ 22 ];
+    allowedTCPPorts = [ 22 ];
     #allowedUDPPortRanges = [
       #{ from = 4000; to = 4007; }
       #{ from = 8000; to = 8010; }
@@ -39,15 +39,15 @@
   };
 
   services.openssh = {
-    enable = false;
+    enable = true;
     ports = [ 22 ];
     settings = {
-      PasswordAuthentication = false;
+      PasswordAuthentication = true;
       AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
       # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-      PermitRootLogin = "prohibit-password";
+      PermitRootLogin = "yes";
     };
   };
 
@@ -135,7 +135,6 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
-    #openssh.authorizedKeys.keys = ["${ssh_key}"];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
