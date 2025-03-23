@@ -43,11 +43,12 @@
     ports = [ 22 ];
     settings = {
       PasswordAuthentication = true;
+      PubkeyAuthentication = false;
       AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
       # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-      PermitRootLogin = "yes";
+      PermitRootLogin = "no";
     };
   };
 
