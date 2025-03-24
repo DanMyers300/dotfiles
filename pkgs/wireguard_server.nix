@@ -2,7 +2,7 @@
   # enable NAT
   networking.nat.enable = true;
   networking.nat.externalInterface = "wlp15s0";
-  networking.nat.internalInterfaces = [ "wlp15s0" ];
+  networking.nat.internalInterfaces = [ "wg0" ];
   networking.firewall = {
     allowedUDPPorts = [ 51820 ];
   };
