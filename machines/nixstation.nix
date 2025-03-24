@@ -12,7 +12,6 @@
       ../pkgs/packages.nix
       ../pkgs/steam.nix
       ../pkgs/stylix.nix
-      ../pkgs/wireguard_server.nix
     ];
 
 ### --- Boot loader --- ###
@@ -103,24 +102,17 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 53 ];
-      allowedUDPPorts = [ 53 51820 ];
+      #allowedTCPPorts = [ 5173 ];
+      #allowedUDPPortRanges = [
+        #{ from = 5173; to = 5173; }
+        #{ from = 8000; to = 8010; }
+      #];
     };
-    extraHosts = ''
-      192.168.1.15 danserver
-      192.168.1.9 nixtop
-    '';
-    nat = {
-      enable = true;
-      enableIPv6 = true;
-      externalInterface = "wlp15s0";
-      internalInterfaces = [ "wg0" ];
-    };
-  };
-  
-  services.dnsmasq = {
-    enable = true;
-    settings.interface = "wg0";
+    extraHosts =
+      ''
+        192.168.1.15 danserver
+        192.168.1.9 nixtop
+      '';
   };
 
   services.openssh = {
