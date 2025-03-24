@@ -8,7 +8,6 @@
       peers = [
         {
           publicKey = "u+eaiU6StocT1FyiWMuae6a24eV8zm73xH+363b0BSs=";
-          presharedKeyFile = "/home/dan/wireguard-keys/preshared_from_peer0_key";
           allowedIPs = [ "0.0.0.0/0" "::/0" ];
           endpoint = "192.168.1.16:51820";
           persistentKeepalive = 25;

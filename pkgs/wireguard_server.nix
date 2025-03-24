@@ -1,4 +1,4 @@
-{
+{ pkgs, ...}:{
   networking.wg-quick.interfaces = {
     # "wg0" is the network interface name. You can name the interface arbitrarily.
     wg0 = {
@@ -28,7 +28,6 @@
       peers = [
         { # peer0
           publicKey = "u+eaiU6StocT1FyiWMuae6a24eV8zm73xH+363b0BSs=";
-          presharedKeyFile = "/home/dan/wireguard-keys/preshared_from_peer0_key";
           allowedIPs = [ "10.0.0.2/32" "fdc9:281f:04d7:9ee9::2/128" ];
         }
       ];
