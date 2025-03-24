@@ -12,6 +12,7 @@
       ../pkgs/packages.nix
       ../pkgs/stylix.nix
       ../pkgs/steam.nix
+      ../pkgs/wireguard_client.nix
     ];
 
 ### --- Boot loader --- ###
