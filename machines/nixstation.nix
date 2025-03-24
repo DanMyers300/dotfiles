@@ -102,17 +102,24 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      #allowedTCPPorts = [ 5173 ];
-      #allowedUDPPortRanges = [
-        #{ from = 5173; to = 5173; }
-        #{ from = 8000; to = 8010; }
-      #];
+      allowedTCPPorts = [ 53 ];
+      allowedUDPPorts = [ 53 51820 ];
     };
-    extraHosts =
-      ''
-        192.168.1.15 danserver
-	192.168.1.9 nixtop
-      '';
+    extraHosts = ''
+      192.168.1.15 danserver
+      192.168.1.9 nixtop
+    '';
+    nat = {
+      enable = true;
+      enableIPv6 = true;
+      externalInterface = "wlp15s0";
+      internalInterfaces = [ "wg0" ];
+    };
+  };
+  
+  services.dnsmasq = {
+    enable = true;
+    settings.interface = "wg0";
   };
 
   services.openssh = {
