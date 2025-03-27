@@ -8,12 +8,12 @@ This flake provides a modular NixOS configuration with machine-agnostic core set
 ## Directory Structure
 ```
 .
-├── flake.nix          # Main flake configuration
-├── machines/          # Machine-specific configurations (nixstation, nixtop)
-├── home-manager/      # Home Manager user configurations
-├── pkgs/              # Custom packages and overlays
-├── shells.nix        # Development shell environments
-└── .config            # Explicitly managed config files (see note below)
+├── flake.nix            # Main flake configuration
+├── machines/            # Machine-specific configurations (nixstation, nixtop)
+├── home-manager/        # Home Manager configurations
+│   └── config/          # Configuration files
+├── pkgs/                # Custom packages and overlays
+└── shells.nix           # Development shell environments
 ```
 
 ---
@@ -29,7 +29,7 @@ This flake provides a modular NixOS configuration with machine-agnostic core set
 - Includes custom packages:
   - `zen-browser`: Custom browser configuration
   - `stylix`: Theme manager integration
-  - `rain-mixer`: Custom audio tools
+  - `rain-mixer`: Custom audio player
 
 ### 3. Development Environment
 - Pre-configured dev shells via `shells.nix`
@@ -45,15 +45,7 @@ This flake provides a modular NixOS configuration with machine-agnostic core set
 
 ---
 
-## Notable Design Choices
-### .config Directory
-> "That's an anti-pattern!"  
-> **Response**: This repository intentionally includes `.config` files for:  
-> - Centralized configuration management  
-> - Easier version control of user-specific settings  
-> - Simplified deployment across machines  
-
-### Home Manager Integration
+## Home Manager Integration
 Home Manager is tightly integrated into the NixOS configuration using:
 ```nix
 home-manager = {
@@ -70,18 +62,12 @@ home-manager = {
 ```bash
 # Deploy to specific machine
 nixos-rebuild switch --flake .#<machine-name>
-
-# Update Home Manager
-home-manager switch
 ```
 
 ### Development
 ```bash
 # Enter dev shell
 nix develop .#shells
-
-# Test configuration
-nix build --show-trace
 ```
 
 ---
