@@ -53,12 +53,6 @@
     '';
   };
 
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "Hyprland";
-    openFirewall = true;
-  };
-
 ### --- Gnome --- ###
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -102,26 +96,25 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      #allowedTCPPorts = [ 5173 ];
-      #allowedUDPPortRanges = [
-        #{ from = 5173; to = 5173; }
-        #{ from = 8000; to = 8010; }
-      #];
+      allowedTCPPorts = [ 22 ];
     };
     extraHosts =
       ''
         192.168.1.15 danserver
+        192.168.1.11 mac
         192.168.1.9 nixtop
       '';
   };
 
   services.openssh = {
-    enable = false;
+    enable = true;
     ports = [ 22 ];
     settings = {
       AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
@@ -150,6 +143,9 @@
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEVdbTZeHyd3Hy5Yz1eQWKg+4xhKt3blqFLjjrgtnsH dan@nixtop"
+    ];
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
   };
 

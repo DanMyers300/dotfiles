@@ -37,7 +37,7 @@
         gui rain gamecontroller zen hyprland
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [gimp] [cozy]
-        [wireguard-tools]
+        [wireguard-tools] [prismlauncher]
       ];
       nixtop = [ gui zen hyprland [remmina] [openvpn] ];
     };
