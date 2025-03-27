@@ -113,11 +113,3 @@ Using my zen browser flake:
   zen = [ inputs.zen-browser.packages."${system}".default ];
 ```
 
----
-
-## FAQ
-**Q: Why use both stable and unstable channels?**  
-A: Allows testing new packages while maintaining system stability
-
-**Q: What's the purpose of `shells.nix`?**  
-A: Provides pre-configured development environments via `nix develop`
