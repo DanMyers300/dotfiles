@@ -89,7 +89,6 @@ Place new packages in `./pkgs/packages.nix` or their own file in `./pkgs`.
 | `home-manager`     | User configuration management            |
 | `stylix`           | Theme management integration             |
 | `zen-browser`      | Custom browser configuration flake       |
-|--------------------|------------------------------------------|
 ---
 
 ## Why This Structure?
