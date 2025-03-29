@@ -26,6 +26,7 @@
     monitor = DP-1, preferred, 0x0, 1
     monitor = HDMI-A-1, preferred, 1920x0, 1
     monitor = HDMI-A-2, disable #preferred, auto-right, 1
+    monitor = eDP-1, preferred, 0x0, 0.666667
     
     ###################
     ### MY PROGRAMS ###
@@ -194,6 +195,8 @@
     # https://wiki.hyprland.org/Configuring/Binds/
 
     ### --- Applications --- ###
+    bindl=,switch:Lid Switch, exec, hyprlock
+
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
