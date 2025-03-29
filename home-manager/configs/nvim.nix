@@ -33,7 +33,7 @@
                   ignored = {
                     leptos_macro = {
                       -- optional:
-                      -- "component",
+                      -- "component"u
                       -- "server",
                     },
                   },
