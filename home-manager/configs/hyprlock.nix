@@ -10,6 +10,7 @@
 
       background = [
         {
+          path = "~/dotfiles/background.jpeg";
           blur_passes = 3;
           blur_size = 8;
         }
