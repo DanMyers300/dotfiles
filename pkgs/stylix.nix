@@ -11,10 +11,7 @@
     enable = true;
     autoEnable = true;
     base16Scheme = builtins.toPath ../home-manager/themes/default-dark.yaml;
-    image = pkgs.fetchurl {
-      url = "https://images.pexels.com/photos/1428277/pexels-photo-1428277.jpeg";
-      sha256 = "sha256-oFQRvK/AVTCcOMrNboWSTBB5FQNz7AffDKObKqH8Usk=";
-    };
+    image = ../background.jpeg;
     polarity = "dark";
     cursor = {
       package = pkgs.bibata-cursors;

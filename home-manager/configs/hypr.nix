@@ -186,7 +186,7 @@
     
     
     ####################
-    ### KEYBINDINGSS ###
+    ### KEYBINDINGS ###
     ####################
     
     # https://wiki.hyprland.org/Configuring/Keywords/
@@ -214,7 +214,8 @@
     bind = $mainMod CTRL, L, movewindow, r
     bind = $mainMod CTRL, K, movewindow, u
     bind = $mainMod CTRL, J, movewindow, d
-    
+    bind = CTRL ALT, Delete, exec, hyprlock
+
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
     bind = $mainMod, L, movefocus, r
@@ -264,7 +265,7 @@
     bindm = $mainMod, mouse:273, resizewindow
 
     # Mute
-    bind = SUPER, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle    
+    bind = SUPER, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
     ##############################
     ### WINDOWS AND WORKSPACES ###
@@ -273,6 +274,6 @@
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
     
-    windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+    windowrulev2 = suppressevent maximize, class:.*
   '';
 }
