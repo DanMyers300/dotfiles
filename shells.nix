@@ -28,9 +28,10 @@
 
   rust = pkgs.mkShell {
     name = "rust-env";
-    buildInputs = [
-      pkgs.rustc
-      pkgs.cargo
+    buildInputs = with pkgs; [
+      rustc
+      cargo
+      clippy
     ];
 
     shellHook = ''
@@ -41,9 +42,9 @@
 
   python = pkgs.mkShell {
     name = "python-env";
-    buildInputs = [
-      pkgs.python3
-      pkgs.python3Packages.pip
+    buildInputs = with pkgs; [
+      python3
+      python3Packages.pip
     ];
 
     shellHook = ''

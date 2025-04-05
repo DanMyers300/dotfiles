@@ -28,7 +28,12 @@
           lspconfig.rust_analyzer.setup {
             settings = {
               ["rust-analyzer"] = {
-                -- Other Settings ...
+                diagnostics = {
+                  enable = true,
+                },
+                checkOnSave = {
+                  command = "clippy",
+                },
                 procMacro = {
                   ignored = {
                     leptos_macro = {
@@ -170,6 +175,13 @@
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
         end
+      })
+      vim.diagnostic.config({
+        virtual_text = true, -- Show diagnostics inline (on the same line)
+        signs = true,        -- Show signs in the sign column
+        underline = true,    -- Underline problematic code
+        update_in_insert = false, -- Update diagnostics only in normal mode
+        severity_sort = true, -- Sort diagnostics by severity
       })
     '';
   };
