@@ -39,9 +39,9 @@
         gui rain games zen hyprland
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [gimp] [cozy]
-        [wireguard-tools]
+        [wireguard-tools] [tigervnc]
       ];
-      nixtop = [ gui zen hyprland [remmina] [openvpn] ];
+      nixtop = [ gui zen hyprland [openvpn] ];
     };
 
     hostPackages = cli ++ lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
