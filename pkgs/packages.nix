@@ -28,6 +28,7 @@
       linuxKernel.packages.linux_zen.xpadneo
       prismlauncher
       ryujinx
+      cemu
     ];
 
     rain = [ inputs.rain-mixer.packages."${system}".default ];

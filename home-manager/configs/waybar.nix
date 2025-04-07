@@ -13,6 +13,7 @@
 
       window#waybar {
         background: transparent;
+        background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
         border-bottom: none;
       }
     '';
