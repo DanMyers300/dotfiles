@@ -8,6 +8,9 @@
         background-color: rgba(0, 0, 0, 0.5);
         border-bottom: none;
       }
+      #clock {
+        margin-right: 10px;
+      }
     '';
     settings = [
       {
