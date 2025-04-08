@@ -60,7 +60,7 @@
             phone = "";
             portable = "";
           };
-          format-muted = " | No   | {format_source} |";
+          format-muted = "  |  No   |  {format_source}  |";
           format-source = "{volume}% ";
           format-source-muted = " ";
           on-click = "pavucontrol";
