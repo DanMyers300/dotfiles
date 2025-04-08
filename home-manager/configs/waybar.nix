@@ -49,8 +49,8 @@
         };
         pulseaudio = {
           format = "  |  {volume}% {icon}    |  {format_source}  |";
-          format-bluetooth = "  |  {volume}% {icon}    |  {format_source}  |";
-          format-bluetooth-muted = "   {icon} {format_source}";
+          format-bluetooth = "  |  {volume}% {icon}  |  {format_source}  |";
+          format-bluetooth-muted = "   {icon} {format_source}  ";
           format-icons = {
             car = "";
             default = [ "" "" "" ];
@@ -60,7 +60,7 @@
             phone = "";
             portable = "";
           };
-          format-muted = "|No  |{format_source} |";
+          format-muted = " | No   | {format_source} |";
           format-source = "{volume}% ";
           format-source-muted = " ";
           on-click = "pavucontrol";
