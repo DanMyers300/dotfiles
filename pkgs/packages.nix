@@ -42,7 +42,7 @@
         [qemu swtpm] [libreoffice] [gimp] [cozy]
         [wireguard-tools] [tigervnc]
       ];
-      nixtop = [ gui zen hyprland [openvpn] ];
+      nixtop = [ [brightnessctl] rain gui zen hyprland [openvpn] ];
     };
 
     hostPackages = cli ++ lib.concatLists (hostProfiles."${config.networking.hostName}" or []);

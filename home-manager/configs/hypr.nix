@@ -217,6 +217,8 @@
     bind = $mainMod CTRL, K, movewindow, u
     bind = $mainMod CTRL, J, movewindow, d
     bind = CTRL ALT, Delete, exec, hyprlock
+    bind = ,XF86MonBrightnessDown, exec, brightnessctl s 10%-
+    bind = ,XF86MonBrightnessUp, exec, brightnessctl s +10%
 
     # Move focus with mainMod + vim binds
     bind = $mainMod, H, movefocus, l
