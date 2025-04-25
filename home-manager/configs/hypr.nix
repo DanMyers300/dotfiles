@@ -217,6 +217,10 @@
     bind = $mainMod CTRL, K, movewindow, u
     bind = $mainMod CTRL, J, movewindow, d
     bind = CTRL ALT, Delete, exec, hyprlock
+    bind = ,XF86AudioLowerVolume, exec, pactl -- set-sink-volume 0 -10%
+    bind = ,XF86AudioRaiseVolume, exec, pactl -- set-sink-volume 0 +10%
+    bind = ,XF86AudioMute, exec, pactl -- set-sink-mute 0 toggle
+    bind = ,XF86AudioMicMute, exec, pactl -- set-source-mute 0 toggle
     bind = ,XF86MonBrightnessDown, exec, brightnessctl s 10%-
     bind = ,XF86MonBrightnessUp, exec, brightnessctl s +10%
 
