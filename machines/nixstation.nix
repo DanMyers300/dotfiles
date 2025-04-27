@@ -170,6 +170,7 @@
   systemd.services.aiDanMyersNet = {
     enable = true;
     path = [ pkgs.nix ];
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       User = "dan";
       WorkingDirectory = "/home/dan/dev/repos/danmyersWebsite/danmyers.net/chat";
