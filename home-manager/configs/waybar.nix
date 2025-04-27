@@ -31,8 +31,10 @@
           "clock"
         ];
         clock = {
+          interval = 1;
+          format = "{:%H:%M:%S}";
           format-alt = "{:%Y-%m-%d}";
-          tooltip-format = "{:%Y-%m-%d | %H:%M}";
+          tooltip-format = "{:%Y-%m-%d | %H:%M:%S}";
         };
         cpu = {
           format = "  {usage}%    |";

@@ -3,6 +3,7 @@
   lib,
   config,
   pkgs,
+  unstable,
   ...
 }:{
 
@@ -12,6 +13,7 @@
       ../pkgs/packages.nix
       ../pkgs/steam.nix
       ../pkgs/stylix.nix
+      ../pkgs/ollama.nix
     ];
 
 ### --- Boot loader --- ###
@@ -96,13 +98,18 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 ];
+      allowedTCPPorts = [ 22 8000 47984 47989 47990 48010 ];
+      allowedUDPPortRanges = [
+        { from = 47998; to = 48000; }
+        { from = 8000; to = 8010; }
+      ];
     };
     extraHosts =
       ''
         192.168.1.15 danserver
         192.168.1.11 mac
         192.168.1.9 nixtop
+        192.168.1.21 raspberrypi
       '';
   };
 
@@ -115,7 +122,7 @@
       X11Forwarding = false;
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      PermitRootLogin = "prohibit-password";
     };
   };
 
@@ -155,22 +162,29 @@
   '';
   services.joycond.enable = true;
 
-### --- LLMs --- ###
-  services.ollama = {
-    enable = true;
-    acceleration = "rocm";
-    rocmOverrideGfx = "11.0.1";
-    environmentVariables = {
-      HSA_OVERRIDE_GFX_VERSION = "11.0.1";
-    };
-  };
-  nixpkgs.config.rocmSupport = true;
-
 ### --- ENV VARs --- ###
   environment.variables = {
     EDITOR = "nvim";
   };
 
-### --- Version --- ###
+  systemd.services.aiDanMyersNet = {
+    enable = true;
+    path = [ pkgs.nix ];
+    serviceConfig = {
+      User = "dan";
+      WorkingDirectory = "/home/dan/dev/repos/danmyersWebsite/danmyers.net/chat";
+      ExecStart = "/run/current-system/sw/bin/nix develop --command ./start_stream.sh";
+      Type = "simple";
+    };
+  };
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
+  # --- Version --- ###
   system.stateVersion = "24.11";
 }
