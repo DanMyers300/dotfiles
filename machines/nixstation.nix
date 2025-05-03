@@ -89,8 +89,8 @@
   programs.virt-manager.enable = true;
   virtualisation.podman.enable = true;
   virtualisation.docker.enable = true;
-  # virtualisation.waydroid.enable = true;
-  # virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.waydroid.enable = true;
+  #virtualisation.spiceUSBRedirection.enable = true;
 
 ### --- Networking --- ###
   networking = {
@@ -109,7 +109,7 @@
         192.168.1.15 danserver
         192.168.1.11 mac
         192.168.1.9 nixtop
-        192.168.1.21 raspberrypi
+        192.168.1.3 raspberrypi
       '';
   };
 
