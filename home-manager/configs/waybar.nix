@@ -3,13 +3,66 @@
     enable = true;
     systemd.enable = true;
     style = ''
-      window#waybar {
-        background: transparent;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-bottom: none;
+      * {
+        border: none;
+        border-radius: 6px;
+        font-family: "JetBrains Mono";
+        font-weight: bold;
+        font-size: 14px;
+        min-height: 0;
       }
+
+      window#waybar {
+        background: rgba(0, 0, 0, 0.4);
+        color: #cdd6f4;
+        border-radius: 6px;
+        padding: 5px;
+      }
+
+      #window,
+      #clock,
+      #battery,
+      #pulseaudio,
+      #network,
+      #workspaces,
+      #cpu,
+      #memory,
+      #tray {
+        background: rgba(30, 30, 46, 0.8);
+        padding: 5px 10px;
+        margin: 0px 5px;
+        border: 1px solid rgba(24, 24, 37, 0.8);
+        border-radius: 6px;
+      }
+
+      #memory {
+        color: #89dceb;
+      }
+
+      #cpu {
+        color: #74c7ec;
+      }
+
+      #pulseaudio {
+        color: #f38ba8;
+      }
+
+      #network {
+        color: #cba6f7;
+      }
+
       #clock {
-        margin-right: 10px;
+        color: #a6e3a1;
+        border-radius: 6px;
+        margin-right: 5px;
+      }
+
+      #workspaces {
+        background: rgba(30, 30, 46, 0.8);
+        border-radius: 6px;
+        margin-left: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
       }
     '';
     settings = [
@@ -20,6 +73,9 @@
         modules-left = [
           "hyprland/workspaces"
         ];
+        modules-center = [
+          "clock"
+        ];
         modules-right = [
           "tray"
           "pulseaudio"
@@ -28,7 +84,6 @@
           "memory"
           "temperature"
           "battery"
-          "clock"
         ];
         clock = {
           interval = 1;
@@ -37,22 +92,22 @@
           tooltip-format = "{:%Y-%m-%d | %H:%M:%S}";
         };
         cpu = {
-          format = "  {usage}%    |";
+          format = "{usage}%  ";
           tooltip = false;
         };
-        memory = { format = "  {}%    |  "; };
+        memory = { format = "{}%  "; };
         network = {
           interval = 1;
-          format-alt = " {ifname}: {ipaddr}/{cidr}  |";
-          format-disconnected = "  Disconnected ⚠   |";
-          format-ethernet = "  {ifname}: {ipaddr}/{cidr}  up: {bandwidthUpBits} down: {bandwidthDownBits}";
-          format-linked = "  {ifname} (No IP) ";
-          format-wifi = "  {essid} ({signalStrength}%)     |";
+          format-alt = "{ifname}: {ipaddr}/{cidr}";
+          format-disconnected = "Disconnected ⚠";
+          format-ethernet = "{ifname}: {ipaddr}/{cidr}  up: {bandwidthUpBits} down: {bandwidthDownBits}";
+          format-linked = "{ifname} (No IP) ";
+          format-wifi = "{essid} ({signalStrength}%)  ";
         };
         pulseaudio = {
-          format = "  |  {volume}% {icon}    |  {format_source}  |";
-          format-bluetooth = "  |  {volume}% {icon}  |  {format_source}  |";
-          format-bluetooth-muted = "   {icon} {format_source}  ";
+          format = "{volume}% {icon} {format_source}";
+          format-bluetooth = "{volume}% {icon} | {format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
           format-icons = {
             car = "";
             default = [ "" "" "" ];
@@ -62,7 +117,7 @@
             phone = "";
             portable = "";
           };
-          format-muted = "  |  No   |  {format_source}  |";
+          format-muted = "No  {format_source}";
           format-source = "{volume}% ";
           format-source-muted = " ";
           on-click = "pavucontrol";
@@ -78,8 +133,8 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon}  {capacity}%  |  ";
-          format-charging = "⚡{capacity}%  |  ";
+          format = "{icon}  {capacity}%";
+          format-charging = "⚡{capacity}%";
           format-plugged = "{capacity}%";
           format-alt = "{time} {icon}";
           format-icons = [ " " " " " " " " " " ];
