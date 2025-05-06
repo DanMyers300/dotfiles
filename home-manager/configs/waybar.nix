@@ -26,6 +26,7 @@
       #network,
       #workspaces,
       #cpu,
+      #gpu-usage,
       #memory,
       #tray {
         background: rgba(30, 30, 46, 0.8);
@@ -33,6 +34,15 @@
         margin: 0px 5px;
         border: 1px solid rgba(24, 24, 37, 0.8);
         border-radius: 6px;
+      }
+
+      #custom-gpu-usage {
+        background: rgba(30, 30, 46, 0.8);
+        padding: 5px 10px;
+        margin: 0px 5px;
+        border: 1px solid rgba(24, 24, 37, 0.8);
+        border-radius: 6px;
+        color: #f5a97f; /* Choose a color for the GPU usage module */
       }
 
       #memory {
@@ -82,6 +92,7 @@
           "network"
           "cpu"
           "memory"
+          "custom/gpu-usage"
           "temperature"
           "battery"
         ];
@@ -126,6 +137,13 @@
           critical-threshold = 80;
           format = "{temperatureC}°C {icon}";
           format-icons = [ "" "" "" ];
+        };
+        "custom/gpu-usage" = {
+          format = "{} {icon}";
+          exec = "/home/dan/.cargo/bin/gpu-usage-waybar";
+          return-type = "json";
+          format-icons = "󰾲";
+          on-click = "alacritty -e nvtop";
         };
         battery = {
           states = {
