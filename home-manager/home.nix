@@ -2,7 +2,7 @@
 
   imports = [
     ./configs/nvim.nix
-    ./configs/alacritty.nix
+    ./configs/ghostty.nix
     ./configs/hypr.nix
     ./configs/bash.nix
     ./configs/tmux.nix
@@ -15,7 +15,7 @@
     homeDirectory = "/home/dan";
   };
 
-  stylix.targets.hyprlock.enable=false;
+  stylix.targets.hyprlock.enable = false;
   stylix.targets.waybar.enable = false;
 
   programs.home-manager.enable = true;

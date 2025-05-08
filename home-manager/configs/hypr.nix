@@ -35,7 +35,7 @@
     ###################
     
     # https://wiki.hyprland.org/Configuring/Keywords/
-    $terminal = alacritty
+    $terminal = ghostty
     $browser = zen
     $fileManager = nautilus
     $menu = wofi --show drun

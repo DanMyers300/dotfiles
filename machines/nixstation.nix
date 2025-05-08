@@ -89,7 +89,6 @@
   programs.virt-manager.enable = true;
   virtualisation.podman.enable = true;
   virtualisation.docker.enable = true;
-  #virtualisation.waydroid.enable = true;
   #virtualisation.spiceUSBRedirection.enable = true;
 
 ### --- Networking --- ###
@@ -167,17 +166,17 @@
     EDITOR = "nvim";
   };
 
-  systemd.services.aiDanMyersNet = {
-    enable = true;
-    path = [ pkgs.nix ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      User = "dan";
-      WorkingDirectory = "/home/dan/dev/repos/danmyersWebsite/danmyers.net/chat";
-      ExecStart = "/run/current-system/sw/bin/nix develop --command ./start_stream.sh";
-      Type = "simple";
-    };
-  };
+  #systemd.services.aiDanMyersNet = {
+  #  enable = true;
+  #  path = [ pkgs.nix ];
+  #  wantedBy = [ "multi-user.target" ];
+  #  serviceConfig = {
+  #    User = "dan";
+  #    WorkingDirectory = "/home/dan/dev/repos/danmyersWebsite/danmyers.net/chat";
+  #    ExecStart = "/run/current-system/sw/bin/nix develop --command ./start_stream.sh";
+  #    Type = "simple";
+  #  };
+  #};
 
   services.sunshine = {
     enable = true;
