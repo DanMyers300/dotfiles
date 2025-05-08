@@ -46,7 +46,7 @@
       }
 
       #memory {
-        color: #89dceb;
+        color: #a6e3a1;
       }
 
       #cpu {
@@ -62,7 +62,6 @@
       }
 
       #clock {
-        color: #a6e3a1;
         border-radius: 6px;
         margin-right: 5px;
       }
