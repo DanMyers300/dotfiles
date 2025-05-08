@@ -105,8 +105,12 @@
         cpu = {
           format = "{usage}%  ";
           tooltip = false;
+          on-click = "ghostty -e btop";
         };
-        memory = { format = "{}%  "; };
+        memory = {
+          format = "{}%  ";
+          on-click = "ghostty -e btop";
+        };
         network = {
           interval = 1;
           format-alt = "{ifname}: {ipaddr}/{cidr}";
@@ -143,7 +147,7 @@
           exec = "/home/dan/.cargo/bin/gpu-usage-waybar";
           return-type = "json";
           format-icons = "󰾲";
-          on-click = "alacritty -e nvtop";
+          on-click = "ghostty -e nvtop";
         };
         battery = {
           states = {
