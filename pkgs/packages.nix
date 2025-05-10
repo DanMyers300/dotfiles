@@ -22,11 +22,11 @@
 
     hyprland = [
       wl-clipboard nerdfonts sway-contrib.grimshot wofi
-      ];
+    ];
 
     games = [
       linuxKernel.packages.linux_zen.xpadneo
-      prismlauncher
+      prismlauncher desmume mgba
     ];
 
     rain = [ inputs.rain-mixer.packages."${system}".default ];
