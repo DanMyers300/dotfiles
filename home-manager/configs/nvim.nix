@@ -11,7 +11,7 @@
     #package = unstable.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
-    plugins = with pkgs.vimPlugins; [
+    plugins = with unstable.vimPlugins; [
       {
         plugin = nvim-lspconfig;
         config = ''
@@ -78,6 +78,44 @@
             })
           })
           EOF'';
+      }
+      {
+        plugin = codecompanion-nvim;
+        config = ''
+        lua << EOF
+        require("codecompanion").setup({
+          adapters = {
+            opts = {show_defaults = false,},
+            ollama_adapter = function()
+              return require("codecompanion.adapters").extend("ollama", {
+                name = "llama3",
+                schema = {
+                  model = {
+                    default = "llama3:latest",
+                  },
+                  num_ctx = {
+                    default = 16384,
+                  },
+                  num_predict = {
+                    default = -1,
+                  },
+                },
+              })
+            end,
+          },
+          strategies = {
+            chat = {
+              adapter = "ollama_adapter",
+            },
+            inline = {
+              adapter = "ollama_adapter",
+            },
+            cmd = {
+              adapter = "ollama_adapter",
+            }
+          },
+        })
+        EOF'';
       }
       {
         plugin = (nvim-treesitter.withPlugins (p: [
