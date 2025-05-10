@@ -143,7 +143,7 @@
         };
         "custom/gpu-usage" = {
           format = "{} {icon}";
-          exec = "/home/dan/.cargo/bin/gpu-usage-waybar";
+          exec = "/home/dan/dotfiles/utils/gpu-usage-waybar";
           return-type = "json";
           format-icons = "󰾲";
           on-click = "ghostty -e nvtop";

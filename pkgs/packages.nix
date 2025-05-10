@@ -12,7 +12,7 @@
     cli = [
       git git-lfs xxd btop
       p7zip ripgrep bluez-tools
-      dbus
+      dbus jq
     ];
 
     gui = [
