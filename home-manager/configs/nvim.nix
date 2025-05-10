@@ -192,18 +192,27 @@
         extends = '›',
         precedes = '‹',
       }
+
       vim.api.nvim_set_keymap('n', '<leader>o', ':Explore<CR>', {
         noremap = true,
         silent = true
       })
+
       vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', {
         noremap = true,
         silent = true
       })
+
       vim.api.nvim_set_keymap('n', '<leader>l', ':bn<CR>', {
         noremap = true,
         silent = true
       })
+
+      vim.api.nvim_set_keymap('n', '<leader>C', ':CodeCompanionChat<CR>', {
+        noremap = true,
+        silent = true
+      })
+
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -214,6 +223,7 @@
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
         end
       })
+
       vim.diagnostic.config({
         virtual_text = true, -- Show diagnostics inline (on the same line)
         signs = true,        -- Show signs in the sign column
