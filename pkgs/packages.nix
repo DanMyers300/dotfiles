@@ -27,6 +27,7 @@
     games = [
       linuxKernel.packages.linux_zen.xpadneo
       prismlauncher desmume mgba
+      dolphin-emu
     ];
 
     rain = [ inputs.rain-mixer.packages."${system}".default ];
@@ -39,7 +40,7 @@
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [gimp] [cozy]
         [wireguard-tools] [tigervnc] [cargo]
-        [gcc]
+        [gcc] [vesktop]
       ];
       nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
     };
