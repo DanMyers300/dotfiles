@@ -150,6 +150,7 @@
       luasnip
       cmp_luasnip
       vim-sleuth
+      which-key-nvim
     ];
     extraPackages = with pkgs; [
       gcc
