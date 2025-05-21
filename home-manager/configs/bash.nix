@@ -52,4 +52,7 @@ function proController() {
         echo "Connected to $mac_address"
     fi
 }
+
+# -- Alias Section --
+alias ai='ollama run deepseek-r1:14b'
 '';};}

@@ -88,10 +88,10 @@
             opts = {show_defaults = false,},
             ollama_adapter = function()
               return require("codecompanion.adapters").extend("ollama", {
-                name = "deepseek-r1:14b",
+                name = "gemma3:12b",
                 schema = {
                   model = {
-                    default = "deepseek-r1:14b",
+                    default = "gemma3:12b",
                   },
                   num_ctx = {
                     default = 16384,
