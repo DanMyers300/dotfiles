@@ -54,5 +54,5 @@ function proController() {
 }
 
 # -- Alias Section --
-alias ai='ollama run deepseek-r1:14b'
+alias ai='ollama run gemma3:12b'
 '';};}

@@ -38,9 +38,8 @@
       nixstation = [
         gui rain games zen hyprland
         [ungoogled-chromium] [nvtopPackages.amd]
-        [qemu swtpm] [libreoffice] [gimp] [cozy]
-        [wireguard-tools] [tigervnc] [cargo]
-        [gcc] [vesktop]
+        [qemu swtpm] [libreoffice] [cozy]
+        [wireguard-tools] [vesktop]
       ];
       nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
     };
