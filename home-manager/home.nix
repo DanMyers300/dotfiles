@@ -17,6 +17,7 @@
 
   stylix.targets.hyprlock.enable = false;
   stylix.targets.waybar.enable = false;
+  stylix.targets.gnome.enable = false;
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";

@@ -1,10 +1,10 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     zen-browser.url = "github:DanMyers300/zen-browser-flake";
-    stylix.url = "github:danth/stylix/release-24.11";
+    stylix.url = "github:danth/stylix/release-25.05";
     rain-mixer.url = "github:danmyers300/rain-mixer";
   };
 

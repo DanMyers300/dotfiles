@@ -126,7 +126,7 @@
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
 
 ### --- Audio --- ###
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
    enable = true;
@@ -182,5 +182,5 @@
   };
 
   # --- Version --- ###
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }

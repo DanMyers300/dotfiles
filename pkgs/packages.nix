@@ -17,11 +17,11 @@
 
     gui = [
       bitwarden-desktop pavucontrol
-      baobab mullvad-vpn
+      baobab mullvad-vpn nerd-fonts.hack nerd-fonts.symbols-only
     ];
 
     hyprland = [
-      wl-clipboard nerdfonts sway-contrib.grimshot wofi
+      wl-clipboard sway-contrib.grimshot wofi
     ];
 
     games = [
