@@ -17,7 +17,12 @@
     ];
 
 ### --- Boot loader --- ###
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub = {
+    enable = true;
+    devices = ["nodev"];
+    efiSupport = true;
+  };
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
 
 ### --- Kernel --- ###
