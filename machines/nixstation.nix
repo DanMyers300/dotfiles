@@ -21,6 +21,7 @@
     enable = true;
     devices = ["nodev"];
     efiSupport = true;
+    theme = pkgs.minimal-grub-theme;
   };
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
