@@ -21,7 +21,12 @@
     enable = true;
     devices = ["nodev"];
     efiSupport = true;
-    theme = pkgs.minimal-grub-theme;
+    minegrub-theme = {
+      enable = true;
+      splash = "100% Flakes!";
+      background = "background_options/1.8  - [Classic Minecraft].png";
+      boot-options-count = 4;
+    };
   };
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;

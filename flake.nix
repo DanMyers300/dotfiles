@@ -6,6 +6,7 @@
     zen-browser.url = "github:DanMyers300/zen-browser-flake";
     stylix.url = "github:danth/stylix/release-25.05";
     rain-mixer.url = "github:danmyers300/rain-mixer";
+    minegrub-theme.url = "github:Lxtharia/minegrub-theme";
   };
 
   outputs = {
@@ -38,6 +39,7 @@
           (./machines + "/${machine}.nix")
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
+          inputs.minegrub-theme.nixosModules.default
           {
             home-manager = {
               useGlobalPkgs = true;
