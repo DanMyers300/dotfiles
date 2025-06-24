@@ -39,7 +39,7 @@
         gui rain games zen hyprland
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [cozy]
-        [wireguard-tools] [vesktop]
+        [wireguard-tools] [vesktop] [gimp] [vlc]
       ];
       nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
     };
