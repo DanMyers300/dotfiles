@@ -52,7 +52,7 @@
 
   users.users.danserver = {
     isNormalUser = true;
-    description = "danserver";
+    description = "dan";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
