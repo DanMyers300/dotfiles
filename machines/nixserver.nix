@@ -50,7 +50,7 @@
     pulse.enable = true;
   };
 
-  users.users.danserver = {
+  users.users.dan = {
     isNormalUser = true;
     description = "dan";
     extraGroups = [ "networkmanager" "wheel" ];
