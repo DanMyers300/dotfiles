@@ -7,17 +7,27 @@
       ../pkgs/packages.nix
     ];
 
-  boot.loader.systemd-boot.enable = true;
+### --- Boot loader --- ###
+  boot.loader.grub = {
+    enable = true;
+    devices = ["nodev"];
+    efiSupport = true;
+    minegrub-theme = {
+      enable = true;
+      splash = "100% Flakes!";
+      background = "background_options/1.8  - [Classic Minecraft].png";
+      boot-options-count = 4;
+    };
+  };
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixserver";
+### --- Kernel --- ###
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "America/Indiana/Vincennes";
-
+### --- Localization --- ###
+  time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -30,33 +40,14 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  services.printing.enable = true;
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  users.users.dan = {
-    isNormalUser = true;
-    description = "dan";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+### --- Networking --- ###
+  networking = {
+    hostName = "nixserver";
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 22 ];
+    };
   };
 
   services.openssh = {
@@ -71,10 +62,40 @@
     };
   };
 
-  programs.firefox.enable = true;
+### --- Xserver setup --- ###
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+  };
 
+### --- Audio --- ###
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+### --- User setup --- ###
+  users.users.dan = {
+    isNormalUser = true;
+    description = "dan";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
+### --- Package settings --- ###
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
 
+### --- Version --- ###
   system.stateVersion = "25.05";
-
 }
