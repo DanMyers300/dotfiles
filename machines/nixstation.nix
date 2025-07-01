@@ -113,7 +113,7 @@
     };
     extraHosts =
       ''
-        192.168.1.15 danserver
+        192.168.1.15 nixserver
         192.168.1.11 mac
         192.168.1.9 nixtop
         192.168.1.3 raspberrypi
