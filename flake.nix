@@ -26,6 +26,7 @@
       machines = [
         "nixstation"
         "nixtop"
+        "nixserver"
         "nixvm"
       ];
 
