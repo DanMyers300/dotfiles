@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware/nixserver-hardware.nix
+      ../pkgs/packages.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

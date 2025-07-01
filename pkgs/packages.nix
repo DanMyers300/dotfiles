@@ -42,6 +42,7 @@
         [wireguard-tools] [vesktop] [gimp] [vlc]
       ];
       nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
+      nixserver = [ cli ];
     };
 
     hostPackages = cli ++ lib.concatLists (hostProfiles."${config.networking.hostName}" or []);
