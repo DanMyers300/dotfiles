@@ -109,6 +109,7 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ];
+      allowedUDPPorts = [27015 27016];
     };
     extraHosts =
       ''
