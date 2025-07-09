@@ -30,10 +30,6 @@
         "nixvm"
       ];
 
-      shells = import ./shells.nix {
-        inherit pkgs unstable;
-      };
-
       mkNixosConfig = machine: nixpkgs.lib.nixosSystem {
         specialArgs = { inherit unstable inputs outputs; };
         modules = [
@@ -57,8 +53,5 @@
         name = machine;
         value = mkNixosConfig machine;
       }) machines);
-
-      devShells.${system} = shells;
-
     };
 }
