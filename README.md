@@ -12,7 +12,7 @@ This flake provides a modular NixOS configuration with machine-agnostic core set
 ├── machines/            # Machine-specific configurations (nixstation, nixtop)
 ├── home-manager/        # Home Manager configurations
 │   └── config/          # Configuration files
-├── pkgs/                # Custom packages and overlays
+└── pkgs/                # Custom packages and overlays
 ```
 
 ---
