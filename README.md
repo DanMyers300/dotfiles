@@ -13,7 +13,6 @@ This flake provides a modular NixOS configuration with machine-agnostic core set
 ├── home-manager/        # Home Manager configurations
 │   └── config/          # Configuration files
 ├── pkgs/                # Custom packages and overlays
-└── shells.nix           # Development shell environments
 ```
 
 ---
@@ -30,10 +29,6 @@ This flake provides a modular NixOS configuration with machine-agnostic core set
   - `zen-browser`: Custom browser configuration
   - `stylix`: Theme manager integration
   - `rain-mixer`: Custom audio player
-
-### 3. Development Environment
-- Pre-configured dev shells via `shells.nix`
-- Automatic Home Manager integration in system builds
 
 ---
 
@@ -62,12 +57,6 @@ home-manager = {
 ```bash
 # Deploy to specific machine
 nixos-rebuild switch --flake .#<machine-name>
-```
-
-### Development
-```bash
-# Enter dev shell
-nix develop .#shells
 ```
 
 ---
