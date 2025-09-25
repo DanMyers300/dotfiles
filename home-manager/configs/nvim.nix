@@ -18,7 +18,28 @@
           lua << EOF
           local lspconfig = require('lspconfig')
           lspconfig.ts_ls.setup({})
+          lspconfig.omnisharp.setup({
+            cmd = { "dotnet", "OmniSharp.dll" },
+            root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj"),
+            capabilities = vim.lsp.protocol.make_client_capabilities(),
+          })
           EOF'';
+      }
+      {
+        plugin = mason-nvim;
+        config = ''
+        lua << EOF
+          require("mason").setup()
+        EOF'';
+      }
+      {
+        plugin = mason-lspconfig-nvim;
+        config = ''
+        lua << EOF
+        require("mason-lspconfig").setup({
+          ensure_installed = { "omnisharp" },
+        })
+        EOF'';
       }
       {
         plugin = pkgs.rust-analyzer;
@@ -127,6 +148,7 @@
           p.tree-sitter-tsx
           p.tree-sitter-lua
           p.tree-sitter-nix
+          p.tree-sitter-c-sharp
         ]));
         config = ''
           lua << EOF

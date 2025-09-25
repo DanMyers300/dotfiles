@@ -12,7 +12,7 @@
     cli = [
       git git-lfs xxd btop
       p7zip ripgrep bluez-tools
-      dbus jq
+      dbus jq unzip
     ];
 
     gui = [
@@ -34,13 +34,17 @@
 
     zen = [ inputs.zen-browser.packages."${system}".default ];
 
+    csharp = [
+      dotnet-sdk_9
+    ];
+
     hostProfiles = {
       nixstation = [
-        gui rain games zen hyprland
+        gui rain games zen hyprland csharp
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [cozy]
         [wireguard-tools] [vesktop] [gimp] [vlc]
-        [signal-desktop] [vscode]
+        [signal-desktop]
       ];
       nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
       nixserver = [ cli ];
