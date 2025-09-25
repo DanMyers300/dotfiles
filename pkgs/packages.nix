@@ -27,7 +27,7 @@
     games = [
       linuxKernel.packages.linux_zen.xpadneo
       prismlauncher desmume mgba
-      dolphin-emu
+      dolphin-emu r2modman
     ];
 
     rain = [ inputs.rain-mixer.packages."${system}".default ];
@@ -40,6 +40,7 @@
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [cozy]
         [wireguard-tools] [vesktop] [gimp] [vlc]
+        [signal-desktop] [vscode]
       ];
       nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
       nixserver = [ cli ];

@@ -85,23 +85,25 @@
         lua << EOF
         require("codecompanion").setup({
           adapters = {
-            opts = {show_defaults = false,},
-            ollama_adapter = function()
-              return require("codecompanion.adapters").extend("ollama", {
-                name = "gemma3:12b",
-                schema = {
-                  model = {
-                    default = "gemma3:12b",
+            http = {
+              opts = {show_defaults = false,},
+              ollama_adapter = function()
+                return require("codecompanion.adapters").extend("ollama", {
+                  name = "gemma3:12b",
+                  schema = {
+                    model = {
+                      default = "gemma3:12b",
+                    },
+                    num_ctx = {
+                      default = 16384,
+                    },
+                    num_predict = {
+                      default = -1,
+                    },
                   },
-                  num_ctx = {
-                    default = 16384,
-                  },
-                  num_predict = {
-                    default = -1,
-                  },
-                },
-              })
-            end,
+                })
+              end,
+            },
           },
           strategies = {
             chat = {
