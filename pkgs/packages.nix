@@ -44,7 +44,7 @@
         [ungoogled-chromium] [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [cozy]
         [wireguard-tools] [vesktop] [gimp] [vlc]
-        [signal-desktop]
+        [signal-desktop] [via] [pokemmo-installer]
       ];
       nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
       nixserver = [ cli ];

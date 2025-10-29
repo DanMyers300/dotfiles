@@ -25,7 +25,7 @@
     # https://wiki.hyprland.org/Configuring/Monitors/
     monitor = DP-1, preferred, 0x0, 1
     monitor = HDMI-A-1, preferred, 1920x0, 1
-    monitor = HDMI-A-2, preferred, auto-right, 1#, mirror, DP-1
+    monitor = HDMI-A-2, preferred, auto-right, 1#, mirror, HDMI-A-1
 
     debug:disable_scale_checks = true
     monitor = eDP-1, preferred, 0x0, 0.80

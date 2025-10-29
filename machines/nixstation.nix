@@ -108,7 +108,7 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 ];
+      allowedTCPPorts = [ 22 25566 ];
       allowedUDPPorts = [27015 27016];
     };
     extraHosts =
