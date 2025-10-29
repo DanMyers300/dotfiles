@@ -46,7 +46,7 @@
         [wireguard-tools] [vesktop] [gimp] [vlc]
         [signal-desktop] [via] [pokemmo-installer]
       ];
-      nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] ];
+      nixtop = [ [pulseaudio brightnessctl] rain gui zen hyprland [openvpn] [pokemmo-installer] ];
       nixserver = [ cli ];
     };
 
