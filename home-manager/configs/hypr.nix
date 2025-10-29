@@ -28,7 +28,7 @@
     monitor = HDMI-A-2, preferred, auto-right, 1#, mirror, HDMI-A-1
 
     debug:disable_scale_checks = true
-    monitor = eDP-1, preferred, 0x0, 0.80
+    monitor = eDP-1, preferred, 0x0, 0.90
     
     ###################
     ### MY PROGRAMS ###
