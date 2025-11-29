@@ -45,6 +45,7 @@
         [qemu swtpm] [libreoffice] [cozy]
         [wireguard-tools] [vesktop] [gimp] [vlc]
         [signal-desktop] [via] [pokemmo-installer]
+        [libimobiledevice usbmuxd ifuse altserver-linux]
       ];
       nixtop = [ [pulseaudio brightnessctl] gui zen hyprland [openvpn] [pokemmo-installer] ];
       nixserver = [ cli ];
