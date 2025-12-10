@@ -55,4 +55,5 @@ function proController() {
 
 # -- Alias Section --
 alias ai='ollama run gemma3:12b'
+alias drun='docker run -it --network=host --device=/dev/kfd --device=/dev/dri --group-add=video --ipc=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $(pwd):/pwd'
 '';};}
