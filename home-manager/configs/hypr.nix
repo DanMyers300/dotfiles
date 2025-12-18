@@ -174,11 +174,6 @@
         }
     }
     
-    # https://wiki.hyprland.org/Configuring/Variables/#gestures
-    gestures {
-        workspace_swipe = false
-    }
-    
     # https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs
     device {
         name = pixart-hp-320m-usb-optical-mouse
