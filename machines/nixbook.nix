@@ -19,7 +19,6 @@
     config.boot.kernelPackages.broadcom_sta
   ];
 
-
 ### --- Kernel --- ###
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -53,9 +52,6 @@
       PermitRootLogin = "no";
     };
   };
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
 
 ### --- Localization --- ###
   time.timeZone = "America/Chicago";
@@ -106,13 +102,6 @@
     gnome-initial-setup
   ]);
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "broadcom-sta-6.30.223.271-59-6.12.63"
-    ];
-  };
-
 ### --- Hyprland --- ###
   programs.hyprland = {
     enable = true;
@@ -140,9 +129,15 @@
 
 ### --- Package settings --- ###
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = false;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "broadcom-sta-6.30.223.271-59-6.18.1"
+    ];
+  };
+
 
 ### --- User setup --- ###
   users.users.dan = {

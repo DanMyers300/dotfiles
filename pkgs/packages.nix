@@ -48,6 +48,7 @@
         [libimobiledevice usbmuxd ifuse altserver-linux]
       ];
       nixtop = [ [pulseaudio brightnessctl] gui zen hyprland [openvpn] [pokemmo-installer] ];
+      nixbook = [ cli gui zen hyprland [pokemmo-installer] [prismlauncher] ];
       nixserver = [ cli ];
     };
 
