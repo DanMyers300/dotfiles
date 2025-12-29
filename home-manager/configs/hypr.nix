@@ -202,7 +202,7 @@
 
     ### --- System --- ###
     bind = $mainMod, C, killactive,
-    #bind = $mainMod, Q, exit,
+    bind = $mainMod CTRL ALT, Q, exit,
     bind = $mainMod ALT, F, togglefloating
     bind = $mainMod, F, fullscreen, 1
     bind = $mainMod CTRL, F, fullscreen

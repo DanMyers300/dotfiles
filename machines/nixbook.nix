@@ -138,7 +138,6 @@
     ];
   };
 
-
 ### --- User setup --- ###
   users.users.dan = {
     isNormalUser = true;
