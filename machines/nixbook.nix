@@ -14,10 +14,11 @@
 
 ### --- Wifi drivers --- ###
   boot.initrd.kernelModules = [ "wl" ];
-  boot.kernelModules = [ "kvm-intel" "wl" ];
+  boot.kernelModules = [ "hid_apple" "kvm-intel" "wl" ];
   boot.extraModulePackages = [
     config.boot.kernelPackages.broadcom_sta
   ];
+  boot.kernelParams = [ "hid_apple.fnmode=2" ];
 
 ### --- Kernel --- ###
   boot.kernelPackages = pkgs.linuxPackages_latest;
