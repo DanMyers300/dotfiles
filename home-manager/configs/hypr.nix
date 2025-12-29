@@ -27,7 +27,7 @@
     monitor = HDMI-A-1, preferred, 1920x0, 1
 
     debug:disable_scale_checks = true
-    monitor = eDP-1, preferred, 0x0, 0.90
+    monitor = eDP-1, preferred, 0x0, 1
     
     ###################
     ### MY PROGRAMS ###
