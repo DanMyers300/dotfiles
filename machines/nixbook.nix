@@ -5,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware/nixbook-hardware.nix
       ../pkgs/packages.nix
+      ../pkgs/steam.nix
       ../pkgs/stylix.nix
     ];
 
