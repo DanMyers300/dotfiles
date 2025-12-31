@@ -140,6 +140,9 @@
     ];
   };
 
+### --- Docker --- ###
+  virtualisation.docker.enable = true;
+
 ### --- User setup --- ###
   users.users.dan = {
     isNormalUser = true;
