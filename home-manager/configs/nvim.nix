@@ -16,13 +16,18 @@
         plugin = nvim-lspconfig;
         config = ''
           lua << EOF
-          local lspconfig = require('lspconfig')
-          lspconfig.ts_ls.setup({})
-          lspconfig.omnisharp.setup({
+          -- Define/override configs for servers
+          vim.lsp.config("ts_ls", {})
+          
+          vim.lsp.config("omnisharp", {
             cmd = { "dotnet", "OmniSharp.dll" },
-            root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj"),
+            root_dir = vim.fs.dirname, -- optional custom root logic
             capabilities = vim.lsp.protocol.make_client_capabilities(),
           })
+          
+          -- Enable (auto start) them
+          vim.lsp.enable("ts_ls")
+          vim.lsp.enable("omnisharp")
           EOF'';
       }
       {
@@ -45,8 +50,7 @@
         plugin = pkgs.rust-analyzer;
         config = ''
           lua << EOF
-          local lspconfig = require('lspconfig')
-          lspconfig.rust_analyzer.setup {
+          vim.lsp.config("rust_analyzer", {
             settings = {
               ["rust-analyzer"] = {
                 diagnostics = {
@@ -58,15 +62,16 @@
                 procMacro = {
                   ignored = {
                     leptos_macro = {
-                      -- optional:
-                      -- "component"u
+                      -- "component",
                       -- "server",
                     },
                   },
                 },
               },
-            }
-          }
+            },
+          })
+          
+          vim.lsp.enable("rust_analyzer")
           EOF'';
       }
       {

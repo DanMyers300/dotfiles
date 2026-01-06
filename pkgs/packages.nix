@@ -25,7 +25,7 @@
     ];
 
     games = [
-      linuxKernel.packages.linux_zen.xpadneo
+      #linuxKernel.packages.linux_zen.xpadneo
       prismlauncher desmume mgba
       dolphin-emu r2modman
     ];
@@ -41,7 +41,8 @@
     hostProfiles = {
       nixstation = [
         gui rain games zen hyprland csharp
-        [ungoogled-chromium] [nvtopPackages.amd]
+        #[ungoogled-chromium]
+        [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [cozy]
         [wireguard-tools] [vesktop] [gimp] [vlc]
         [signal-desktop] [via] [pokemmo-installer]
