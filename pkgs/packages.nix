@@ -25,7 +25,6 @@
     ];
 
     games = [
-      #linuxKernel.packages.linux_zen.xpadneo
       prismlauncher desmume mgba
       dolphin-emu r2modman
     ];
