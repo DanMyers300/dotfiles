@@ -26,7 +26,7 @@
 
     games = [
       prismlauncher desmume mgba
-      dolphin-emu r2modman
+      unstable.dolphin-emu r2modman
     ];
 
     rain = [ inputs.rain-mixer.packages."${system}".default ];
@@ -43,9 +43,10 @@
         #[ungoogled-chromium]
         [nvtopPackages.amd]
         [qemu swtpm] [libreoffice] [cozy]
-        [wireguard-tools] [vesktop] [gimp] [vlc]
+        [wireguard-tools] [gimp] [vlc]
         [signal-desktop] [via] [pokemmo-installer]
         [libimobiledevice usbmuxd ifuse altserver-linux]
+        [xdg-utils]
       ];
       nixtop = [ [pulseaudio brightnessctl] gui zen hyprland [openvpn] [pokemmo-installer] ];
       nixbook = [ cli gui zen hyprland [pokemmo-installer] [prismlauncher]

@@ -108,15 +108,12 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 25565 ];
-      allowedUDPPorts = [];
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ 5520 ];
     };
     extraHosts =
       ''
-        192.168.1.15 nixserver
-        192.168.1.11 mac
-        192.168.1.9 nixtop
-        192.168.1.3 raspberrypi
+        192.168.1.14 nixtop
       '';
   };
 
@@ -169,11 +166,18 @@
   '';
   services.joycond.enable = true;
 
+### --- OpenGL --- ###
+  hardware.opengl.enable = true;
+
 ### --- ENV VARs --- ###
   environment.variables = {
     EDITOR = "nvim";
   };
 
+### --- Flatpak --- ###
+  services.flatpak.enable = true;
+
+### --- Sunshine --- ###
   services.sunshine = {
     enable = true;
     autoStart = true;
