@@ -1,44 +1,45 @@
-{ inputs, config, lib, pkgs, ... }:
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware/nixbook-hardware.nix
-      ../pkgs/packages.nix
-      ../pkgs/steam.nix
-      ../pkgs/stylix.nix
-    ];
+  imports = [
+    ./common.nix
+    ./hardware/nixbook-hardware.nix
+    ../pkgs/packages.nix
+    ../pkgs/steam.nix
+    ../pkgs/stylix.nix
+  ];
 
-### --- Boot loader --- ###
+  ### --- Boot loader --- ###
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
-### --- Wifi drivers --- ###
+  ### --- Wifi drivers --- ###
   boot.initrd.kernelModules = [ "wl" ];
-  boot.kernelModules = [ "hid_apple" "kvm-intel" "wl" ];
+  boot.kernelModules = [
+    "hid_apple"
+    "kvm-intel"
+    "wl"
+  ];
   boot.extraModulePackages = [
     config.boot.kernelPackages.broadcom_sta
   ];
   boot.kernelParams = [ "hid_apple.fnmode=2" ];
 
-### --- Kernel --- ###
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-### --- Bluetooth --- ###
+  ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-### --- Networking --- ###
+  ### --- Networking --- ###
   networking.hostName = "nixbook";
-  networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 ];
-    #allowedUDPPortRanges = [
-      #{ from = 4000; to = 4007; }
-      #{ from = 8000; to = 8010; }
-    #];
   };
 
   services.openssh = {
@@ -55,22 +56,7 @@
     };
   };
 
-### --- Localization --- ###
-  time.timeZone = "America/Chicago";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-### --- Xserver setup --- ###
+  ### --- Xserver setup --- ###
   services.xserver = {
     enable = true;
     xkb = {
@@ -82,29 +68,32 @@
     '';
   };
 
-### --- Gnome --- ###
+  ### --- Gnome --- ###
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    gedit # text editor
-    cheese # webcam tool
-    gnome-music
-    epiphany # web browser
-    geary # email reader
-    gnome-characters
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-    yelp # Help view
-    gnome-contacts
-    gnome-initial-setup
-  ]);
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      gnome-photos
+      gnome-tour
+      gedit # text editor
+      cheese # webcam tool
+      gnome-music
+      epiphany # web browser
+      geary # email reader
+      gnome-characters
+      tali # poker game
+      iagno # go game
+      hitori # sudoku game
+      atomix # puzzle game
+      yelp # Help view
+      gnome-contacts
+      gnome-initial-setup
+    ]
+  );
 
-### --- Hyprland --- ###
+  ### --- Hyprland --- ###
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -112,44 +101,23 @@
   # Optional, hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-### --- Crucial Programs --- ###
-  environment.variables.EDITOR = "nvim";
-
-### --- VPN --- ###
+  ### --- VPN --- ###
   services.mullvad-vpn.enable = true;
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
 
-### --- Audio --- ###
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
+  ### --- Broadcom insecure package --- ###
+  nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-59-6.18.1"
+  ];
 
-### --- Package settings --- ###
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = false;
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "broadcom-sta-6.30.223.271-59-6.18.1"
-    ];
-  };
-
-### --- Docker --- ###
+  ### --- Docker --- ###
   virtualisation.docker.enable = true;
 
-### --- User setup --- ###
+  ### --- User setup --- ###
   users.users.dan = {
-    isNormalUser = true;
-    description = "Dan";
     home = "/home/dan";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [ "input" ];
   };
 
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 }

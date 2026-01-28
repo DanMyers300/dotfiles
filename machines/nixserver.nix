@@ -1,16 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware/nixserver-hardware.nix
-      ../pkgs/packages.nix
-    ];
+  imports = [
+    ./common.nix
+    ./hardware/nixserver-hardware.nix
+    ../pkgs/packages.nix
+  ];
 
-### --- Boot loader --- ###
+  ### --- Boot loader --- ###
   boot.loader.grub = {
     enable = true;
-    devices = ["nodev"];
+    devices = [ "nodev" ];
     efiSupport = true;
     minegrub-theme = {
       enable = true;
@@ -20,30 +20,10 @@
     };
   };
   boot.loader.systemd-boot.enable = false;
-  boot.loader.efi.canTouchEfiVariables = true;
 
-### --- Kernel --- ###
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-### --- Localization --- ###
-  time.timeZone = "America/Chicago";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-### --- Networking --- ###
+  ### --- Networking --- ###
   networking = {
     hostName = "nixserver";
-    networkmanager.enable = true;
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ];
@@ -62,7 +42,7 @@
     };
   };
 
-### --- Xserver setup --- ###
+  ### --- Xserver setup --- ###
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -73,36 +53,12 @@
     };
   };
 
-### --- Virtualisation --- ###
+  ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   virtualisation.podman.enable = true;
   virtualisation.docker.enable = true;
-  #virtualisation.spiceUSBRedirection.enable = true;
 
-### --- Audio --- ###
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-### --- User setup --- ###
-  users.users.dan = {
-    isNormalUser = true;
-    description = "dan";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
-### --- Package settings --- ###
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = false;
-
-### --- Version --- ###
+  ### --- Version --- ###
   system.stateVersion = "25.05";
 }

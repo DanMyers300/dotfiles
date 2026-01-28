@@ -4,7 +4,8 @@
   config,
   pkgs,
   ...
-} : {
+}:
+{
 
   disabledModules = [ "${inputs.stylix}/modules/kubecolor/hm.nix" ];
   stylix = {

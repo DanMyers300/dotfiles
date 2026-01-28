@@ -5,21 +5,22 @@
   pkgs,
   unstable,
   ...
-}:{
+}:
+{
 
-  imports =
-    [
-      ./hardware/nixstation-hardware.nix
-      ../pkgs/packages.nix
-      ../pkgs/steam.nix
-      ../pkgs/stylix.nix
-      ../pkgs/ollama.nix
-    ];
+  imports = [
+    ./common.nix
+    ./hardware/nixstation-hardware.nix
+    ../pkgs/packages.nix
+    ../pkgs/steam.nix
+    ../pkgs/stylix.nix
+    ../pkgs/ollama.nix
+  ];
 
-### --- Boot loader --- ###
+  ### --- Boot loader --- ###
   boot.loader.grub = {
     enable = true;
-    devices = ["nodev"];
+    devices = [ "nodev" ];
     efiSupport = true;
     minegrub-theme = {
       enable = true;
@@ -29,32 +30,13 @@
     };
   };
   boot.loader.systemd-boot.enable = false;
-  boot.loader.efi.canTouchEfiVariables = true;
 
-### --- Kernel --- ###
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-### --- Bluetooth --- ###
+  ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-### --- Localization --- ###
-  time.timeZone = "America/Chicago";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-### --- Xserver setup --- ###
+  ### --- Xserver setup --- ###
   services.xserver = {
     enable = true;
     xkb = {
@@ -66,55 +48,55 @@
     '';
   };
 
-### --- Gnome --- ###
+  ### --- Gnome --- ###
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-connections
-    gnome-photos
-    gnome-tour
-    gnome-music
-    gnome-contacts
-    gnome-initial-setup
-    gedit # text editor
-    cheese # webcam tool
-    epiphany # web browser
-    geary # email reader
-    gnome-characters
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-    yelp # Help view
-  ]);
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      gnome-connections
+      gnome-photos
+      gnome-tour
+      gnome-music
+      gnome-contacts
+      gnome-initial-setup
+      gedit # text editor
+      cheese # webcam tool
+      epiphany # web browser
+      geary # email reader
+      gnome-characters
+      tali # poker game
+      iagno # go game
+      hitori # sudoku game
+      atomix # puzzle game
+      yelp # Help view
+    ]
+  );
 
-### --- Hyprland --- ###
+  ### --- Hyprland --- ###
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
-### --- Virtualisation --- ###
+  ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   virtualisation.podman.enable = true;
   virtualisation.docker.enable = true;
-  #virtualisation.spiceUSBRedirection.enable = true;
 
-### --- Networking --- ###
+  ### --- Networking --- ###
   networking = {
     hostName = "nixstation";
-    networkmanager.enable = true;
     firewall = {
       enable = true;
       allowedTCPPorts = [ ];
       allowedUDPPorts = [ 5520 ];
     };
-    extraHosts =
-      ''
-        192.168.1.14 nixtop
-      '';
+    extraHosts = ''
+      192.168.1.14 nixtop
+    '';
   };
 
   services.openssh = {
@@ -130,54 +112,35 @@
     };
   };
 
-### --- VPN --- ###
+  ### --- VPN --- ###
   services.mullvad-vpn.enable = true;
   environment.etc.openvpn.source = "${pkgs.update-resolv-conf}/libexec/openvpn";
 
-### --- Audio --- ###
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-   enable = true;
-   alsa.enable = true;
-   alsa.support32Bit = true;
-   pulse.enable = true;
-  };
-
-### --- Package settings --- ###
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = false;
-
-### --- User setup --- ###
+  ### --- User setup --- ###
   users.users.dan = {
-    isNormalUser = true;
-    description = "Dan";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEVdbTZeHyd3Hy5Yz1eQWKg+4xhKt3blqFLjjrgtnsH dan@nixtop"
     ];
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" "input" ];
+    extraGroups = [
+      "libvirtd"
+      "docker"
+      "input"
+    ];
   };
 
-### --- Config for game controller --- ###
+  ### --- Config for game controller --- ###
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
   services.joycond.enable = true;
 
-### --- OpenGL --- ###
+  ### --- OpenGL --- ###
   hardware.opengl.enable = true;
 
-### --- ENV VARs --- ###
-  environment.variables = {
-    EDITOR = "nvim";
-  };
-
-### --- Flatpak --- ###
+  ### --- Flatpak --- ###
   services.flatpak.enable = true;
 
-### --- Sunshine --- ###
+  ### --- Sunshine --- ###
   services.sunshine = {
     enable = true;
     autoStart = true;
@@ -185,6 +148,6 @@
     openFirewall = true;
   };
 
-### --- Version --- ###
+  ### --- Version --- ###
   system.stateVersion = "25.05";
 }

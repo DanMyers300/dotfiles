@@ -1,59 +1,64 @@
-{ ... } : { programs.bash = { enable = true; bashrcExtra = ''
+{ ... }:
+{
+  programs.bash = {
+    enable = true;
+    bashrcExtra = ''
 
-case $- in
-*i*) ;;
-*) return ;;
-esac
+      case $- in
+      *i*) ;;
+      *) return ;;
+      esac
 
-HISTCONTROL=ignoreboth
-shopt -s histappend
-HISTSIZE=1000
-HISTFILESIZE=2000
+      HISTCONTROL=ignoreboth
+      shopt -s histappend
+      HISTSIZE=1000
+      HISTFILESIZE=2000
 
-shopt -s checkwinsize
+      shopt -s checkwinsize
 
-PATH="$PATH:/opt/nvim-linux64/bin"
-PATH="$PATH:/home/dan/.local/bin"
+      PATH="$PATH:/opt/nvim-linux64/bin"
+      PATH="$PATH:/home/dan/.local/bin"
 
-function add_ssh_keys() {
-    eval "$(ssh-agent -s)" > /dev/null 2>&1
-    # Exclude public keys, backups, known_hosts, and authorized_keys
-    for key in $(find ~/.ssh -type f \
-        -not -name "*.pub" \
-        -not -name "known_hosts*" \
-        -not -name "*.bak" \
-        -not -name "authorized_keys"); do
-        key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
-        if ! ssh-add -l | grep -qF "$key_fingerprint"; then
-            ssh-add "$key" > /dev/null 2>&1
-        fi
-    done
+      function add_ssh_keys() {
+          eval "$(ssh-agent -s)" > /dev/null 2>&1
+          # Exclude public keys, backups, known_hosts, and authorized_keys
+          for key in $(find ~/.ssh -type f \
+              -not -name "*.pub" \
+              -not -name "known_hosts*" \
+              -not -name "*.bak" \
+              -not -name "authorized_keys"); do
+              key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
+              if ! ssh-add -l | grep -qF "$key_fingerprint"; then
+                  ssh-add "$key" > /dev/null 2>&1
+              fi
+          done
+      }
+      add_ssh_keys
+
+      function airpods() {
+          local mac_address="90:62:3F:4F:28:B5"
+          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
+              bluetoothctl disconnect "$mac_address"
+              echo "Disconnected from $mac_address"
+          else
+              bluetoothctl connect "$mac_address"
+              echo "Connected to $mac_address"
+          fi
+      }
+
+      function proController() {
+          local mac_address="E4:17:D8:C3:47:57"
+          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
+              bluetoothctl disconnect "$mac_address"
+              echo "Disconnected from $mac_address"
+          else
+              bluetoothctl connect "$mac_address"
+              echo "Connected to $mac_address"
+          fi
+      }
+
+      # -- Alias Section --
+      alias ai='claude'
+    '';
+  };
 }
-add_ssh_keys
-
-function airpods() {
-    local mac_address="90:62:3F:4F:28:B5"
-    if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
-        bluetoothctl disconnect "$mac_address"
-        echo "Disconnected from $mac_address"
-    else
-        bluetoothctl connect "$mac_address"
-        echo "Connected to $mac_address"
-    fi
-}
-
-function proController() {
-    local mac_address="E4:17:D8:C3:47:57"
-    if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
-        bluetoothctl disconnect "$mac_address"
-        echo "Disconnected from $mac_address"
-    else
-        bluetoothctl connect "$mac_address"
-        echo "Connected to $mac_address"
-    fi
-}
-
-# -- Alias Section --
-alias ai='ollama run gemma3:12b'
-alias drun='docker run -it --network=host --device=/dev/kfd --device=/dev/dri --group-add=video --ipc=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $(pwd):/pwd'
-'';};}

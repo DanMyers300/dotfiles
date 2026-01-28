@@ -9,50 +9,59 @@
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    stylix,
-    ...
-  } @ inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      stylix,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      unstable = nixpkgs-unstable.legacyPackages.${system};
+      unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
 
       machines = [
         "nixstation"
         "nixtop"
-	"nixbook"
+        "nixbook"
         "nixserver"
         "nixvm"
       ];
 
-      mkNixosConfig = machine: nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit unstable inputs outputs; };
-        modules = [
-          (./machines + "/${machine}.nix")
-          home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
-          inputs.minegrub-theme.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.dan = import ./home-manager/home.nix;
-              extraSpecialArgs = { inherit unstable inputs outputs; };
-            };
-          }
-        ];
-      };
+      mkNixosConfig =
+        machine:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit unstable inputs outputs; };
+          modules = [
+            (./machines + "/${machine}.nix")
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+            inputs.minegrub-theme.nixosModules.default
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.dan = import ./home-manager/home.nix;
+                extraSpecialArgs = { inherit unstable inputs outputs; };
+              };
+            }
+          ];
+        };
 
-    in {
-      nixosConfigurations = builtins.listToAttrs (map (machine: {
-        name = machine;
-        value = mkNixosConfig machine;
-      }) machines);
+    in
+    {
+      nixosConfigurations = builtins.listToAttrs (
+        map (machine: {
+          name = machine;
+          value = mkNixosConfig machine;
+        }) machines
+      );
     };
 }

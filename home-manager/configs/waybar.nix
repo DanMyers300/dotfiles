@@ -78,7 +78,9 @@
       {
         height = 30;
         layer = "top";
-        tray = { spacing = 10; };
+        tray = {
+          spacing = 10;
+        };
         modules-left = [
           "hyprland/workspaces"
         ];
@@ -114,7 +116,7 @@
           interval = 1;
           format-alt = "{ifname}: {ipaddr}/{cidr}";
           format-disconnected = "Disconnected ⚠";
-          format-ethernet = "{ifname}: {ipaddr}/{cidr}  up: {bandwidthUpBits} down: {bandwidthDownBits}";
+          format-ethernet = "{ifname}: {ipaddr}/{cidr}";
           format-linked = "{ifname} (No IP) ";
           format-wifi = "{essid} ({signalStrength}%)  ";
         };
@@ -124,7 +126,11 @@
           format-bluetooth-muted = " {icon} {format_source}";
           format-icons = {
             car = "";
-            default = [ "" "" "" ];
+            default = [
+              ""
+              ""
+              ""
+            ];
             handsfree = "";
             headphones = "";
             headset = "";
@@ -158,7 +164,13 @@
           format-charging = "⚡{capacity}%";
           format-plugged = "{capacity}%";
           format-alt = "{time} {icon}";
-          format-icons = [ " " " " " " " " " " ];
+          format-icons = [
+            " "
+            " "
+            " "
+            " "
+            " "
+          ];
         };
         "hyprland/workspaces" = {
           format = "{name}";
@@ -169,4 +181,3 @@
     ];
   };
 }
-

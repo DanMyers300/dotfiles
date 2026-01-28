@@ -18,13 +18,13 @@
           lua << EOF
           -- Define/override configs for servers
           vim.lsp.config("ts_ls", {})
-          
+
           vim.lsp.config("omnisharp", {
             cmd = { "dotnet", "OmniSharp.dll" },
             root_dir = vim.fs.dirname, -- optional custom root logic
             capabilities = vim.lsp.protocol.make_client_capabilities(),
           })
-          
+
           -- Enable (auto start) them
           vim.lsp.enable("ts_ls")
           vim.lsp.enable("omnisharp")
@@ -33,18 +33,18 @@
       {
         plugin = mason-nvim;
         config = ''
-        lua << EOF
-          require("mason").setup()
-        EOF'';
+          lua << EOF
+            require("mason").setup()
+          EOF'';
       }
       {
         plugin = mason-lspconfig-nvim;
         config = ''
-        lua << EOF
-        require("mason-lspconfig").setup({
-          ensure_installed = { "omnisharp" },
-        })
-        EOF'';
+          lua << EOF
+          require("mason-lspconfig").setup({
+            ensure_installed = { "omnisharp" },
+          })
+          EOF'';
       }
       {
         plugin = pkgs.rust-analyzer;
@@ -70,7 +70,7 @@
               },
             },
           })
-          
+
           vim.lsp.enable("rust_analyzer")
           EOF'';
       }
@@ -146,15 +146,17 @@
       #  EOF'';
       #}
       {
-        plugin = (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-java
-          p.tree-sitter-vim
-          p.tree-sitter-typescript
-          p.tree-sitter-tsx
-          p.tree-sitter-lua
-          p.tree-sitter-nix
-          p.tree-sitter-c-sharp
-        ]));
+        plugin = (
+          nvim-treesitter.withPlugins (p: [
+            p.tree-sitter-java
+            p.tree-sitter-vim
+            p.tree-sitter-typescript
+            p.tree-sitter-tsx
+            p.tree-sitter-lua
+            p.tree-sitter-nix
+            p.tree-sitter-c-sharp
+          ])
+        );
         config = ''
           lua << EOF
           require'nvim-treesitter.configs'.setup {

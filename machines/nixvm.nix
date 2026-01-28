@@ -1,10 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware/nixvm-hardware.nix
-    ];
+  imports = [
+    ./hardware/nixvm-hardware.nix
+  ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
@@ -19,15 +23,14 @@
     ];
   };
 
-   environment.systemPackages = with pkgs; [
-     neovim 
-     wget
-   ];
+  environment.systemPackages = with pkgs; [
+    neovim
+    wget
+  ];
 
   services.openssh.enable = true;
 
-   networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
   system.stateVersion = "24.11";
 }
-

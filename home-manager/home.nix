@@ -1,4 +1,10 @@
-{ config, pkgs, unstable, ... } : {
+{
+  config,
+  pkgs,
+  unstable,
+  ...
+}:
+{
 
   imports = [
     ./configs/nvim.nix
