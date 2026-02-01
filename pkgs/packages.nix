@@ -88,6 +88,7 @@
           [ unstable.claude-code ]
           [ chromium ]
           [ obs-studio ]
+          [ unstable.obsidian ]
         ];
         nixtop = [
           [
