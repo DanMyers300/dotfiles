@@ -22,6 +22,13 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  systemd.sleep.extraConfig = ''
+  AllowSuspend=no
+  AllowHibernation=no
+  AllowHybirdSleep=no
+  AllowSuspendThenHibernate=no
+  '';
+
   ### --- Networking --- ###
   networking.hostName = "nixtop";
   networking.firewall = {
