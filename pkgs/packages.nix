@@ -65,7 +65,6 @@
           csharp
           #[ungoogled-chromium]
           [ nvtopPackages.amd ]
-          [ vesktop ]
           [
             qemu
             swtpm
@@ -95,11 +94,6 @@
             pulseaudio
             brightnessctl
           ]
-          gui
-          zen
-          hyprland
-          [ openvpn ]
-          [ pokemmo-installer ]
         ];
         nixbook = [
           cli

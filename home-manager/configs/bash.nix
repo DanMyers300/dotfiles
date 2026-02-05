@@ -16,6 +16,15 @@
 
       shopt -s checkwinsize
 
+      parse_git_branch() {
+          local branch
+          branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+          local status=""
+          [[ -n $(git status --porcelain 2>/dev/null) ]] && status="*"
+          echo " ($branch$status)"
+      }
+      PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0;33m\]$(parse_git_branch)\[\e[0m\]\$ '
+
       PATH="$PATH:/opt/nvim-linux64/bin"
       PATH="$PATH:/home/dan/.local/bin"
 

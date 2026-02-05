@@ -91,12 +91,20 @@
     hostName = "nixstation";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ ];
-      allowedUDPPorts = [ 5520 ];
+      trustedInterfaces = [ "tailscale0" ];
+      allowedTCPPorts = [ 5984 ];
+      allowedUDPPorts = [ config.services.tailscale.port ];
     };
     extraHosts = ''
       192.168.1.14 nixtop
     '';
+  };
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "server";  # or "client" or "both"
+    # useRoutingFeatures = "server" for exit node
+    # useRoutingFeatures = "client" to use exit nodes
   };
 
   services.openssh = {
