@@ -11,6 +11,7 @@
     ./common.nix
     ./hardware/nixtop-hardware.nix
     ../pkgs/packages.nix
+    ../pkgs/stylix.nix
   ];
 
   ### --- Boot loader --- ###
