@@ -14,6 +14,7 @@
     base16Scheme = builtins.toPath ../home-manager/themes/default-dark.yaml;
     image = ../background.jpeg;
     polarity = "dark";
+    targets.gnome.enable = false;
     targets.grub.enable = false;
     cursor = {
       package = pkgs.bibata-cursors;

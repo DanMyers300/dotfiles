@@ -1,10 +1,10 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     zen-browser.url = "github:DanMyers300/zen-browser-flake";
-    stylix.url = "github:danth/stylix/release-25.05";
+    stylix.url = "github:danth/stylix/release-25.11";
     rain-mixer.url = "github:danmyers300/rain-mixer";
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
   };
