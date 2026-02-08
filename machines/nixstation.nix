@@ -91,7 +91,7 @@
     hostName = "nixstation";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 47990 ];
+      allowedTCPPorts = [ 47990 5984 ];
       allowedUDPPorts = [ ];
     };
   };
