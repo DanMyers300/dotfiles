@@ -49,7 +49,7 @@
       ];
       nixtop = [ [pulseaudio brightnessctl] gui zen hyprland [openvpn] [pokemmo-installer] ];
       nixbook = [ cli gui zen hyprland [pokemmo-installer] [prismlauncher]
-        [brightnessctl] [pulseaudio] [openvpn] [moonlight-qt] [claude-code]
+        [brightnessctl] [pulseaudio] [openvpn] [moonlight-qt] [claude-code] [obsidian]
       ];
       nixserver = [ cli ];
     };
