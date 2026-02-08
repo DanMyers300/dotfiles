@@ -105,6 +105,8 @@
           [ brightnessctl ]
           [ pulseaudio ]
           [ obsidian ]
+          [ moonlight-qt ]
+          [ claude-code ]
         ];
         nixserver = [ cli ];
       };
