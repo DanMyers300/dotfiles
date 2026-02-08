@@ -42,6 +42,13 @@
     allowedTCPPorts = [ 22 ];
   };
 
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
+
+  networking.firewall.checkReversePath = "loose";
+
   services.openssh = {
     enable = true;
     ports = [ 22 ];
