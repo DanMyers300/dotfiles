@@ -104,6 +104,7 @@
           [ prismlauncher ]
           [ brightnessctl ]
           [ pulseaudio ]
+          [ obsidian ]
         ];
         nixserver = [ cli ];
       };
