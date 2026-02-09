@@ -63,7 +63,6 @@
           zen
           hyprland
           csharp
-          #[ungoogled-chromium]
           [ nvtopPackages.amd ]
           [
             qemu
@@ -88,6 +87,7 @@
           [ chromium ]
           [ obs-studio ]
           [ unstable.obsidian ]
+          [ unstable.teamspeak6-client ]
         ];
         nixtop = [
           [
