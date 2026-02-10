@@ -17,6 +17,14 @@
   ### --- Boot loader --- ###
   boot.loader.systemd-boot.enable = true;
 
+  ### --- Intel Graphics (fixes idle display crashes) --- ###
+  hardware.graphics.enable = true;
+  boot.kernelParams = [
+    "i915.enable_psr=0"    # disable panel self-refresh
+    "i915.enable_fbc=0"    # disable framebuffer compression
+    "i915.enable_rc6=0"    # disable render standby (main idle crash culprit)
+  ];
+
   ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
