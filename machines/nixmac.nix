@@ -110,6 +110,11 @@
   ### --- User setup --- ###
   users.users.dan.extraGroups = [ "libvirtd" ];
 
+  fileSystems."/mnt/storage" = {
+    device = "/dev/disk/by-uuid/12e13096-1ab9-40a6-8d0a-f0d36d8d3d83";
+    fsType = "ext4";
+  };
+
   ### --- Version --- ###
   system.stateVersion = "24.11";
 }

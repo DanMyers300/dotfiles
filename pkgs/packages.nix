@@ -86,7 +86,7 @@
           [ unstable.claude-code ]
           [ chromium ]
           [ obs-studio ]
-          [ unstable.obsidian ]
+          [ obsidian ]
           [ unstable.teamspeak6-client ]
         ];
         nixtop = [
