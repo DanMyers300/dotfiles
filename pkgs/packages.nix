@@ -22,6 +22,7 @@
         dbus
         jq
         unzip
+        openssl
       ];
 
       gui = [
