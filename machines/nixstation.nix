@@ -49,8 +49,8 @@
   };
 
   ### --- Gnome --- ###
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   services.displayManager.autoLogin = {
     enable = true;
     user = "dan";
@@ -210,7 +210,7 @@
   services.joycond.enable = true;
 
   ### --- OpenGL --- ###
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   ### --- Flatpak --- ###
   services.flatpak.enable = true;

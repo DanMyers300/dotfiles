@@ -48,9 +48,9 @@
         r2modman
       ];
 
-      rain = [ inputs.rain-mixer.packages."${system}".default ];
+      fluxer = [ inputs.fluxer.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 
-      zen = [ inputs.zen-browser.packages."${system}".default ];
+      zen = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 
       csharp = [
         dotnet-sdk_9
@@ -59,11 +59,11 @@
       hostProfiles = {
         nixstation = [
           gui
-          rain
           games
           zen
           hyprland
           csharp
+          fluxer
           [ nvtopPackages.amd ]
           [
             qemu

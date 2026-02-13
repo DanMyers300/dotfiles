@@ -157,22 +157,7 @@
             p.tree-sitter-c-sharp
           ])
         );
-        config = ''
-          lua << EOF
-          require'nvim-treesitter.configs'.setup {
-            auto_install = true,
-            ensure_installed = {},
-            highlight = {
-              enable = true,
-              additional_vim_regex_highlighting = false,
-            },
-            parser_install_dir = vim.fn.stdpath("data") .. "/treesitter/parsers",
-            extra_parser_paths = {
-              vim.fn.stdpath("data") .. "/treesitter/parsers",
-            },
-          }
-          vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter/parsers")
-          EOF'';
+        config = "";
       }
       cmp-nvim-lsp
       cmp-buffer

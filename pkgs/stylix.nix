@@ -16,6 +16,7 @@
     polarity = "dark";
     targets.gnome.enable = false;
     targets.grub.enable = false;
+    targets.qt.enable = false;
     cursor = {
       package = pkgs.bibata-cursors;
       size = 8;
