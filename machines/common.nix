@@ -23,6 +23,10 @@
   ### --- Networking --- ###
   networking.networkmanager.enable = true;
 
+  ### --- Bluetooth --- ###
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   ### --- Audio --- ###
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -31,6 +35,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
     wireplumber.extraConfig = {
       # Disable broken route restoration that causes enum_params error in WirePlumber 0.5.x
       "50-disable-restore-routes" = {
@@ -47,6 +52,19 @@
               update-props = {
                 "api.acp.auto-profile" = true;
                 "api.acp.probe-rate" = 48000;
+              };
+            };
+          }
+        ];
+      };
+      # Enable Bluetooth support
+      "52-bluetooth-autoswitch" = {
+        "monitor.bluez.rules" = [
+          {
+            matches = [{ "device.name" = "~bluez_card.*"; }];
+            actions = {
+              update-props = {
+                "bluez5.auto-connect" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
               };
             };
           }
