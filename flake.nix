@@ -4,7 +4,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     zen-browser.url = "github:DanMyers300/zen-browser-flake";
-    fluxer.url = "github:DanMyers300/fluxer-flake";
     stylix.url = "github:danth/stylix/release-25.11";
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
   };

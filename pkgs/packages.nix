@@ -48,8 +48,6 @@
         r2modman
       ];
 
-      fluxer = [ inputs.fluxer.packages."${pkgs.stdenv.hostPlatform.system}".default ];
-
       zen = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 
       csharp = [
@@ -63,7 +61,6 @@
           zen
           hyprland
           csharp
-          fluxer
           [ nvtopPackages.amd ]
           [
             qemu
@@ -88,6 +85,7 @@
           [ chromium ]
           [ obs-studio ]
           [ obsidian ]
+          [ unstable.stoat-desktop ]
           [ unstable.teamspeak6-client ]
         ];
         nixtop = [
