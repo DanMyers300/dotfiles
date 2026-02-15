@@ -201,6 +201,7 @@
     bind = $mainMod, S, exec, $menu
     bind = $mainMod, e, exec, $fileManager
     bind = , print, exec, grimshot copy area
+    bind = $mainMod CTRL, S, exec, grimshot copy area
 
     ### --- System --- ###
     bind = $mainMod, C, killactive,
