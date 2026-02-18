@@ -85,7 +85,6 @@
           [ chromium ]
           [ obs-studio ]
           [ obsidian ]
-          [ unstable.stoat-desktop ]
           [ unstable.teamspeak6-client ]
         ];
         nixtop = [

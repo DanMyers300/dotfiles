@@ -198,7 +198,7 @@
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
-    bind = $mainMod, S, exec, $menu
+    bind = $mainMod, SPACE, exec, $menu
     bind = $mainMod, e, exec, $fileManager
     bind = , print, exec, grimshot copy area
     bind = $mainMod CTRL, S, exec, grimshot copy area
@@ -271,8 +271,8 @@
 
     # Mute
     bind = SUPER, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-    bindl = , mouse:276, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0
-    bindrl = , mouse:276, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1
+    #bindl = , mouse:276, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0
+    #bindrl = , mouse:276, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1
 
     ##############################
     ### WINDOWS AND WORKSPACES ###
