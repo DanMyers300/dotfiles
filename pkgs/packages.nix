@@ -50,17 +50,12 @@
 
       zen = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 
-      csharp = [
-        dotnet-sdk_9
-      ];
-
       hostProfiles = {
         nixstation = [
           gui
           games
           zen
           hyprland
-          csharp
           [ nvtopPackages.amd ]
           [
             qemu
@@ -72,7 +67,6 @@
           [ gimp ]
           [ vlc ]
           [ signal-desktop ]
-          [ via ]
           [ pokemmo-installer ]
           [
             libimobiledevice
@@ -85,7 +79,6 @@
           [ chromium ]
           [ obs-studio ]
           [ obsidian ]
-          [ unstable.teamspeak6-client ]
           [ opencode ]
         ];
         nixtop = [
