@@ -67,7 +67,7 @@
       }
 
       # -- Alias Section --
-      alias ai='claude'
+      alias ai='opencode'
       alias enon='sudo tailscale set --exit-node=mullvad-exit'
       alias enonlan='sudo tailscale set --exit-node=mullvad-exit --exit-node-allow-lan-access'
       alias enoff='sudo tailscale set --exit-node='

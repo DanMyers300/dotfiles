@@ -223,6 +223,8 @@
     openFirewall = true;
   };
 
+  programs.nix-ld.enable = true;
+
   ### --- Version --- ###
   system.stateVersion = "25.11";
 }

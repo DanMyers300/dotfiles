@@ -86,6 +86,7 @@
           [ obs-studio ]
           [ obsidian ]
           [ unstable.teamspeak6-client ]
+          [ opencode ]
         ];
         nixtop = [
           [

@@ -19,15 +19,8 @@
           -- Define/override configs for servers
           vim.lsp.config("ts_ls", {})
 
-          vim.lsp.config("omnisharp", {
-            cmd = { "dotnet", "OmniSharp.dll" },
-            root_dir = vim.fs.dirname, -- optional custom root logic
-            capabilities = vim.lsp.protocol.make_client_capabilities(),
-          })
-
           -- Enable (auto start) them
           vim.lsp.enable("ts_ls")
-          vim.lsp.enable("omnisharp")
           EOF'';
       }
       {
@@ -42,7 +35,7 @@
         config = ''
           lua << EOF
           require("mason-lspconfig").setup({
-            ensure_installed = { "omnisharp" },
+            ensure_installed = {},
           })
           EOF'';
       }
@@ -154,7 +147,6 @@
             p.tree-sitter-tsx
             p.tree-sitter-lua
             p.tree-sitter-nix
-            p.tree-sitter-c-sharp
           ])
         );
         config = "";
