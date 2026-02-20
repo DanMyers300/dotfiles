@@ -204,7 +204,7 @@
     bind = $mainMod CTRL, S, exec, grimshot copy area
 
     ### --- System --- ###
-    bind = $mainMod, C, killactive,
+    bind = $mainMod, Q, killactive,
     bind = $mainMod CTRL ALT, Q, exit,
     bind = $mainMod ALT, F, togglefloating
     bind = $mainMod, F, fullscreen, 1

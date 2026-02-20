@@ -99,6 +99,7 @@
           [ obsidian ]
           [ moonlight-qt ]
           [ claude-code ]
+          [ opencode ]
         ];
         nixserver = [ cli ];
       };
