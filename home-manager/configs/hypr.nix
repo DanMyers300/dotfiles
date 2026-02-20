@@ -44,7 +44,6 @@
     ### AUTOSTART ###
     #################
     exec-once = blueman-applet
-    exec-once = steam
     exec-once = "hyprctl setcursor rose-pine-hyprcursor 18"
     exec-once = systemctl --user start sunshine
 
