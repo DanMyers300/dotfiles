@@ -38,6 +38,7 @@
         wl-clipboard
         sway-contrib.grimshot
         wofi
+        hyprpaper
       ];
 
       games = [
@@ -56,6 +57,7 @@
           games
           zen
           hyprland
+          [ mpvpaper ]
           [ nvtopPackages.amd ]
           [
             qemu

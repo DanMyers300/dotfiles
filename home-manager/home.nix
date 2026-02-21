@@ -1,6 +1,8 @@
 {
   config,
+  lib,
   pkgs,
+  osConfig,
   unstable,
   ...
 }:
@@ -24,6 +26,7 @@
   stylix.targets.hyprlock.enable = false;
   stylix.targets.waybar.enable = false;
   stylix.targets.gnome.enable = false;
+  stylix.targets.hyprpaper.enable = lib.mkForce (osConfig.networking.hostName != "nixstation");
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";

@@ -2,9 +2,13 @@
   inputs,
   lib,
   config,
+  osConfig,
   pkgs,
   ...
 }:
+let
+  isNixstation = osConfig.networking.hostName == "nixstation";
+in
 {
 
   imports = [
@@ -43,6 +47,8 @@
     #################
     ### AUTOSTART ###
     #################
+    ${lib.optionalString isNixstation "exec-once = mpvpaper -f -o \"no-audio loop\" '*' ~/.dotfiles/matrix.mp4"}
+    ${lib.optionalString (!isNixstation) "exec-once = hyprpaper"}
     exec-once = blueman-applet
     exec-once = "hyprctl setcursor rose-pine-hyprcursor 18"
     exec-once = systemctl --user start sunshine
