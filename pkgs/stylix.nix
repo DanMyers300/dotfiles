@@ -11,7 +11,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = builtins.toPath ../home-manager/themes/default-dark.yaml;
+    base16Scheme = builtins.toPath ../home-manager/themes/tokyo-night.yaml;
     image = ../background.jpeg;
     polarity = "dark";
     targets.gnome.enable = false;
