@@ -102,6 +102,7 @@
           [ moonlight-qt ]
           [ claude-code ]
           [ opencode ]
+          [ uxplay ]
         ];
         nixserver = [ cli ];
       };

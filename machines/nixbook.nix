@@ -39,24 +39,34 @@
   networking.hostName = "nixbook";
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 ];
-    allowedUDPPorts = [ ];
+    allowedTCPPorts = [
+      22
+      #7000
+      #7001
+      #7100
+    ];
+    allowedUDPPorts = [
+      #5353
+      #6000
+      #6001
+      #7011
+    ];
   };
 
   ### --- Avahi (for UxPlay AirPlay server) --- ###
   ### --- Ports: TCP(7000 7001 7100) UDP: 5353 6000 6001 7011
-  #services.avahi = {
-  #  enable = true;
-  #  nssmdns4 = true;
-  #  publish = {
-  #    enable = true;
-  #    addresses = true;
-  #    domain = true;
-  #    hinfo = true;
-  #    userServices = true;
-  #    workstation = true;
-  #  };
-  #};
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
 
   services.tailscale = {
     enable = true;
