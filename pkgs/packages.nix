@@ -82,6 +82,8 @@
           [ obs-studio ]
           [ obsidian ]
           [ opencode ]
+          [ godot ]
+          [ irssi ]
         ];
         nixtop = [
           [

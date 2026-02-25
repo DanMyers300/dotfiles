@@ -48,6 +48,9 @@
     '';
   };
 
+  ### --- Cosmic --- ###
+  services.desktopManager.cosmic.enable = true;
+
   ### --- Gnome --- ###
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -84,6 +87,7 @@
     xwayland.enable = true;
   };
 
+
   ### --- Virtualisation --- ###
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
@@ -95,7 +99,7 @@
     hostName = "nixstation";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 47990 5984 ];
+      allowedTCPPorts = [ 3000 47990 5984 ];
       allowedUDPPorts = [ ];
     };
   };

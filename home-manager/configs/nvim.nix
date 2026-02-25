@@ -159,6 +159,27 @@
       cmp_luasnip
       vim-sleuth
       which-key-nvim
+      plenary-nvim
+      nvim-web-devicons
+      nui-nvim
+      {
+        plugin = neo-tree-nvim;
+        config = ''
+          lua << EOF
+          require("neo-tree").setup({
+            close_if_last_window = true,
+            window = {
+              width = 30,
+            },
+            filesystem = {
+              follow_current_file = {
+                enabled = true,
+              },
+              hijack_netrw_behavior = "open_current",
+            },
+          })
+          EOF'';
+      }
     ];
     extraPackages = with pkgs; [
       gcc
@@ -207,6 +228,11 @@
         silent = true
       })
 
+      vim.api.nvim_set_keymap('n', '<leader>e', ':Neotree toggle<CR>', {
+        noremap = true,
+        silent = true
+      })
+
       vim.api.nvim_set_keymap('n', '<leader>h', ':bp<CR>', {
         noremap = true,
         silent = true
@@ -222,6 +248,11 @@
         silent = true
       })
 
+      vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -230,6 +261,7 @@
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+          vim.keymap.set('n', '<leader>x', vim.diagnostic.setloclist, opts)
         end
       })
 
