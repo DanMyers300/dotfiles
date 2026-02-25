@@ -12,7 +12,7 @@ in
 {
 
   imports = [
-    ./waybar.nix
+    #./waybar.nix
     ./hyprlock.nix
   ];
 

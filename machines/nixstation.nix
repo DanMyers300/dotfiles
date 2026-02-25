@@ -34,7 +34,7 @@
   ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  #services.blueman.enable = true;
 
   ### --- Xserver setup --- ###
   services.xserver = {
@@ -50,6 +50,11 @@
 
   ### --- Cosmic --- ###
   services.desktopManager.cosmic.enable = true;
+  environment.cosmic.excludePackages = with pkgs; [
+    cosmic-edit
+    cosmic-term
+    cosmic-player
+  ];
 
   ### --- Gnome --- ###
   services.displayManager.gdm.enable = true;
@@ -83,7 +88,7 @@
 
   ### --- Hyprland --- ###
   programs.hyprland = {
-    enable = true;
+    enable = false;
     xwayland.enable = true;
   };
 

@@ -56,7 +56,6 @@
           gui
           games
           zen
-          hyprland
           [ mpvpaper ]
           [ nvtopPackages.amd ]
           [
