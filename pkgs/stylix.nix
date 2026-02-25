@@ -19,7 +19,7 @@
     targets.qt.enable = false;
     cursor = {
       package = pkgs.bibata-cursors;
-      size = 8;
+      size = 12;
       name = "Bibata-Modern-Classic";
     };
     fonts = {
