@@ -34,13 +34,6 @@
         nerd-fonts.symbols-only
       ];
 
-      hyprland = [
-        wl-clipboard
-        sway-contrib.grimshot
-        wofi
-        hyprpaper
-      ];
-
       games = [
         prismlauncher
         desmume
@@ -83,6 +76,7 @@
           [ opencode ]
           [ godot ]
           [ irssi ]
+          [ grim slurp wl-clipboard ]
         ];
         nixtop = [
           [
@@ -94,7 +88,6 @@
           cli
           gui
           zen
-          hyprland
           [ pokemmo-installer ]
           [ prismlauncher ]
           [ brightnessctl ]
