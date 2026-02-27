@@ -126,11 +126,20 @@
     ]
   );
 
+  ### --- Cosmic --- ###
+  services.desktopManager.cosmic.enable = true;
+  environment.cosmic.excludePackages = with pkgs; [
+    cosmic-edit
+    cosmic-term
+    cosmic-player
+  ];
+
   ### --- Hyprland --- ###
   programs.hyprland = {
-    enable = true;
+    enable = false;
     xwayland.enable = true;
   };
+
   # Optional, hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
