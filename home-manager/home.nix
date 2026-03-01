@@ -11,7 +11,6 @@
   imports = [
     ./configs/nvim.nix
     ./configs/ghostty.nix
-    ./configs/hypr.nix
     ./configs/bash.nix
     ./configs/tmux.nix
     ./configs/redshift.nix
