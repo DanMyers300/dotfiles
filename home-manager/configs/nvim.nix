@@ -18,9 +18,11 @@
           lua << EOF
           -- Define/override configs for servers
           vim.lsp.config("ts_ls", {})
+          vim.lsp.config("pyright", {})
 
           -- Enable (auto start) them
           vim.lsp.enable("ts_ls")
+          vim.lsp.enable("pyright")
           EOF'';
       }
       {
@@ -49,7 +51,8 @@
                 diagnostics = {
                   enable = true,
                 },
-                checkOnSave = {
+                checkOnSave = true,
+                check = {
                   command = "clippy",
                 },
                 procMacro = {
@@ -139,30 +142,6 @@
       #  EOF'';
       #}
       {
-        plugin = (
-          nvim-treesitter.withPlugins (p: [
-            p.tree-sitter-java
-            p.tree-sitter-vim
-            p.tree-sitter-typescript
-            p.tree-sitter-tsx
-            p.tree-sitter-lua
-            p.tree-sitter-nix
-          ])
-        );
-        config = "";
-      }
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      luasnip
-      cmp_luasnip
-      vim-sleuth
-      which-key-nvim
-      plenary-nvim
-      nvim-web-devicons
-      nui-nvim
-      {
         plugin = neo-tree-nvim;
         config = ''
           lua << EOF
@@ -180,11 +159,37 @@
           })
           EOF'';
       }
+      {
+        plugin = (
+          nvim-treesitter.withPlugins (p: [
+            p.tree-sitter-java
+            p.tree-sitter-vim
+            p.tree-sitter-typescript
+            p.tree-sitter-tsx
+            p.tree-sitter-lua
+            p.tree-sitter-nix
+            p.tree-sitter-python
+          ])
+        );
+        config = "";
+      }
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      luasnip
+      cmp_luasnip
+      vim-sleuth
+      which-key-nvim
+      plenary-nvim
+      nvim-web-devicons
+      nui-nvim
     ];
     extraPackages = with pkgs; [
       gcc
       stdenv.cc.cc
       nodePackages.typescript-language-server
+      pyright
       rust-analyzer
     ];
     extraLuaConfig = ''
