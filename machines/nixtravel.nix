@@ -17,18 +17,6 @@
   ### --- Boot loader --- ###
   boot.loader.systemd-boot.enable = true;
 
-  ### --- Wifi drivers --- ###
-  boot.initrd.kernelModules = [ "wl" ];
-  boot.kernelModules = [
-    "hid_apple"
-    "kvm-intel"
-    "wl"
-  ];
-  boot.extraModulePackages = [
-    config.boot.kernelPackages.broadcom_sta
-  ];
-  boot.kernelParams = [ "hid_apple.fnmode=2" ];
-
   ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -77,9 +65,16 @@
     '';
   };
 
+  services.desktopManager.cosmic.enable = true;
+  environment.cosmic.excludePackages = with pkgs; [
+    cosmic-edit
+    cosmic-term
+    cosmic-player
+  ];
+
   ### --- Gnome --- ###
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = false;
   programs.dconf.enable = true;
   environment.gnome.excludePackages = (
     with pkgs;
