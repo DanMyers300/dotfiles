@@ -33,6 +33,7 @@
         "nixserver"
         "nixvm"
         "nixmac"
+	"nixtravel"
       ];
 
       mkNixosConfig =
