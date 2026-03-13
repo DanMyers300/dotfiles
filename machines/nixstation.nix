@@ -14,7 +14,6 @@
     ../pkgs/packages.nix
     ../pkgs/steam.nix
     ../pkgs/stylix.nix
-    ../pkgs/ollama.nix
   ];
 
   ### --- Boot loader --- ###
@@ -34,7 +33,7 @@
   ### --- Bluetooth --- ###
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  services.blueman.enable = false;
 
   ### --- Xserver setup --- ###
   services.xserver = {
@@ -94,7 +93,14 @@
 
 
   ### --- Virtualisation --- ###
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+    };
+  };
   programs.virt-manager.enable = true;
   virtualisation.podman.enable = true;
   virtualisation.docker.enable = true;
@@ -140,6 +146,7 @@
     ];
     extraGroups = [
       "libvirtd"
+      "kvm"
       "docker"
       "input"
     ];
