@@ -47,14 +47,6 @@
     '';
   };
 
-  ### --- Cosmic --- ###
-  services.desktopManager.cosmic.enable = true;
-  environment.cosmic.excludePackages = with pkgs; [
-    cosmic-edit
-    cosmic-term
-    cosmic-player
-  ];
-
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
