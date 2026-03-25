@@ -1,4 +1,26 @@
 { config, pkgs, ... }: {
+  home.packages = with pkgs; [
+    swaylock
+    swayidle
+  ];
+
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      show-failed-attempts = true;
+      indicator-radius = 100;
+      indicator-thickness = 10;
+    };
+  };
+
+  services.swayidle = {
+    enable = true;
+    events = [
+      { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+      { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
+    ];
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     config = {
@@ -28,6 +50,7 @@
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
           "${mod}+Shift+r" = "reload";
+          "${mod}+Shift+l" = "exec swaylock -f";
 
           "${mod}+h" = "focus left";
           "${mod}+j" = "focus down";
