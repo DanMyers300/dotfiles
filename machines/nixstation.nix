@@ -54,7 +54,9 @@
 
   ### --- Gnome --- ###
   services.displayManager.gdm.enable = true;
-  services.displayManager.gdm.wayland = false;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.gdm-autologin.enableGnomeKeyring = true;
+  services.displayManager.gdm.wayland = true;
   services.desktopManager.gnome.enable = true;
   services.displayManager.autoLogin = {
     enable = true;

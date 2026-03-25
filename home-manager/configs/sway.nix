@@ -23,6 +23,7 @@
         in {
           "${mod}+t" = "exec ghostty";
           "${mod}+i" = "exec pavucontrol";
+          "${mod}+b" = "exec zen";
           "${mod}+Space" = "exec wofi --show run";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
@@ -38,8 +39,8 @@
           "${mod}+Ctrl+k" = "move up";
           "${mod}+Ctrl+l" = "move right";
 
-          "${mod}+b" = "splith";
-          "${mod}+v" = "splitv";
+          "${mod}+n" = "splith";
+          "${mod}+m" = "splitv";
           "${mod}+f" = "fullscreen toggle";
           "${mod}+s" = "layout stacking";
           "${mod}+w" = "layout tabbed";
