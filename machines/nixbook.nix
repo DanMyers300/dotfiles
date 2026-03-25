@@ -38,18 +38,11 @@
   ### --- Networking --- ###
   networking.hostName = "nixbook";
   networking.firewall = {
-    enable = true;
+    enable = false;
     allowedTCPPorts = [
       22
-      #7000
-      #7001
-      #7100
     ];
     allowedUDPPorts = [
-      #5353
-      #6000
-      #6001
-      #7011
     ];
   };
 

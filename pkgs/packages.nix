@@ -98,6 +98,7 @@
           [ claude-code ]
           [ opencode ]
           [ uxplay ]
+          [ signal-desktop ]
         ];
         nixserver = [ cli ];
       };
