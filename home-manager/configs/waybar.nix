@@ -151,6 +151,7 @@
           format = "{} {icon}";
           exec = "/home/dan/.dotfiles/utils/gpu-usage-waybar";
           return-type = "json";
+          interval = 2;
           format-icons = "󰾲";
           on-click = "ghostty -e nvtop";
         };
