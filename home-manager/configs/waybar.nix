@@ -94,7 +94,7 @@
           "cpu"
           "memory"
           "custom/gpu-usage"
-          "temperature"
+          #"temperature"
           "battery"
         ];
         clock = {

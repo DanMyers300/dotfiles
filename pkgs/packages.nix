@@ -99,6 +99,7 @@
           [ opencode ]
           [ uxplay ]
           [ signal-desktop ]
+          [ wofi ]
         ];
         nixserver = [ cli ];
       };

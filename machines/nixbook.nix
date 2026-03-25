@@ -94,9 +94,17 @@
     '';
   };
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   ### --- Gnome --- ###
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.gdm-autologin.enableGnomeKeyring = true;
+  services.displayManager.gdm.wayland = true;
+  services.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
   environment.gnome.excludePackages = (
     with pkgs;
@@ -119,20 +127,6 @@
     ]
   );
 
-  ### --- Cosmic --- ###
-  services.desktopManager.cosmic.enable = true;
-  environment.cosmic.excludePackages = with pkgs; [
-    cosmic-edit
-    cosmic-term
-    cosmic-player
-  ];
-
-  ### --- Hyprland --- ###
-  programs.hyprland = {
-    enable = false;
-    xwayland.enable = true;
-  };
-
   # Optional, hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -142,7 +136,7 @@
 
   ### --- Broadcom insecure package --- ###
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.19"
+    "broadcom-sta-6.30.223.271-59-6.19.3"
   ];
 
   ### --- Docker --- ###
