@@ -7,9 +7,9 @@
       menu = "wofi --show run";
 
       output = {
-        "HDMI-A-2" = { resolution = "3840x2160"; position = "0,0"; refresh_rate = "60"; };
-        "DP-2"     = { resolution = "1920x1080"; position = "3840,0"; refresh_rate = "60"; };
-        "HDMI-A-1" = { resolution = "1920x1080"; position = "5760,0"; refresh_rate = "60"; };
+        "DP-2"     = { mode = "1920x1080@60Hz"; position = "0,0"; };
+        "HDMI-A-1" = { mode = "1920x1080@60Hz"; position = "1920,0"; };
+        "HDMI-A-2" = { mode = "3840x2160@60Hz"; position = "3840,0"; };
       };
 
       input = {
