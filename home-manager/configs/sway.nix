@@ -32,10 +32,10 @@
           "${mod}+k" = "focus up";
           "${mod}+l" = "focus right";
 
-          "${mod}+Shift+h" = "move left";
-          "${mod}+Shift+j" = "move down";
-          "${mod}+Shift+k" = "move up";
-          "${mod}+Shift+l" = "move right";
+          "${mod}+Ctrl+h" = "move left";
+          "${mod}+Ctrl+j" = "move down";
+          "${mod}+Ctrl+k" = "move up";
+          "${mod}+Ctrl+l" = "move right";
 
           "${mod}+b" = "splith";
           "${mod}+v" = "splitv";
@@ -50,11 +50,11 @@
           "${mod}+4" = "workspace number 4";
           "${mod}+5" = "workspace number 5";
 
-          "${mod}+Shift+1" = "move container to workspace number 1";
-          "${mod}+Shift+2" = "move container to workspace number 2";
-          "${mod}+Shift+3" = "move container to workspace number 3";
-          "${mod}+Shift+4" = "move container to workspace number 4";
-          "${mod}+Shift+5" = "move container to workspace number 5";
+          "${mod}+Ctrl+1" = "move container to workspace number 1";
+          "${mod}+Ctrl+2" = "move container to workspace number 2";
+          "${mod}+Ctrl+3" = "move container to workspace number 3";
+          "${mod}+Ctrl+4" = "move container to workspace number 4";
+          "${mod}+Ctrl+5" = "move container to workspace number 5";
         };
 
       bars = [];
