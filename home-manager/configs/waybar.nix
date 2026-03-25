@@ -82,7 +82,7 @@
           spacing = 10;
         };
         modules-left = [
-          "hyprland/workspaces"
+          "sway/workspaces"
         ];
         modules-center = [
           "clock"
@@ -172,7 +172,7 @@
             " "
           ];
         };
-        "hyprland/workspaces" = {
+        "sway/workspaces" = {
           format = "{name}";
           on-click = "activate";
           sort-by-number = true;

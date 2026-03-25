@@ -23,7 +23,7 @@
         in {
           "${mod}+Return" = "exec ghostty";
           "${mod}+d" = "exec wofi --show run";
-          "${mod}+Shift+q" = "kill";
+          "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
           "${mod}+Shift+r" = "reload";
 
@@ -57,9 +57,7 @@
           "${mod}+Shift+5" = "move container to workspace number 5";
         };
 
-      bars = [{
-        command = "waybar";
-      }];
+      bars = [];
     };
   };
 }
