@@ -22,6 +22,7 @@
         let mod = config.wayland.windowManager.sway.config.modifier;
         in {
           "${mod}+t" = "exec ghostty";
+          "${mod}+i" = "exec pavucontrol";
           "${mod}+Space" = "exec wofi --show run";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
