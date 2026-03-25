@@ -31,7 +31,8 @@
     "amdgpu.sg_display=0"
     "radeon.si_support=0" # Disable legacy Southern Islands support
     "amdgpu.si_support=1" # Enable modern AMDGPU driver
-    "amd_iommu=on" # GPU passthrough
+    "amdgpu.ppfeaturemask=0xffffffff" # Gaming stuff
+    #"amd_iommu=on" # GPU passthrough
   ];
   boot.extraModulePackages = [ ];
 
@@ -42,6 +43,9 @@
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
+
+  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
 
   hardware.graphics.enable = true;
 

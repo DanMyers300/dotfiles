@@ -55,8 +55,14 @@
     cosmic-player
   ];
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   ### --- Gnome --- ###
   services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = false;
   services.desktopManager.gnome.enable = true;
   services.displayManager.autoLogin = {
     enable = true;
@@ -149,6 +155,7 @@
       "kvm"
       "docker"
       "input"
+      "dialout"
     ];
   };
 

@@ -77,6 +77,7 @@
           [ godot ]
           [ irssi ]
           [ grim slurp wl-clipboard ]
+          [ wofi ]
         ];
         nixtop = [
           [
