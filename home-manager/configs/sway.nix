@@ -21,8 +21,8 @@
       keybindings =
         let mod = config.wayland.windowManager.sway.config.modifier;
         in {
-          "${mod}+Return" = "exec ghostty";
-          "${mod}+d" = "exec wofi --show run";
+          "${mod}+t" = "exec ghostty";
+          "${mod}+Space" = "exec wofi --show run";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
           "${mod}+Shift+r" = "reload";
