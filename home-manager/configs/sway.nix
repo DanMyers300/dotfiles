@@ -64,8 +64,9 @@
           "${mod}+Ctrl+k" = "move up";
           "${mod}+Ctrl+l" = "move right";
 
-          "${mod}+n" = "splith";
-          "${mod}+m" = "splitv";
+          "${mod}+m" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          "${mod}+period" = "splith";
+          "${mod}+comma" = "splitv";
           "${mod}+f" = "fullscreen toggle";
           "${mod}+s" = "layout stacking";
           "${mod}+w" = "layout tabbed";
