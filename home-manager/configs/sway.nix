@@ -47,6 +47,7 @@
           "${mod}+i" = "exec pavucontrol";
           "${mod}+b" = "exec zen";
           "${mod}+e" = "exec nautilus";
+          "Print" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
           "${mod}+Space" = "exec wofi --show run";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
