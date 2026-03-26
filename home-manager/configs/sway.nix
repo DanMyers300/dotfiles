@@ -46,6 +46,7 @@
           "${mod}+t" = "exec ghostty";
           "${mod}+i" = "exec pavucontrol";
           "${mod}+b" = "exec zen";
+          "${mod}+e" = "exec nautilus";
           "${mod}+Space" = "exec wofi --show run";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
@@ -67,7 +68,7 @@
           "${mod}+f" = "fullscreen toggle";
           "${mod}+s" = "layout stacking";
           "${mod}+w" = "layout tabbed";
-          "${mod}+e" = "layout toggle split";
+          "${mod}+p" = "layout toggle split";
 
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
