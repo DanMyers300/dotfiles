@@ -35,7 +35,6 @@
                 id = "Network";
               }
               {
-                alwaysShowPercentage = true;
                 id = "Battery";
                 warningThreshold = 30;
               }
@@ -45,6 +44,9 @@
         location = {
           monthBeforeDay = true;
           name = "Austin, Texas";
+        };
+        notifications = {
+          density = "compact";
         };
       };
     };
