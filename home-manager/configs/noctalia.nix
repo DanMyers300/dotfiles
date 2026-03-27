@@ -1,18 +1,16 @@
 { pkgs, inputs, ... }:
 {
-  home-manager.users.drfoobar = {
-    # import the home manager module
-    imports = [
-      inputs.noctalia.homeModules.default
-    ];
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
 
-    # configure options
-    programs.noctalia-shell = {
+  # configure options
+  programs.noctalia-shell = {
       enable = true;
       settings = {
         bar = {
           density = "compact";
-          position = "right";
+          position = "top";
           showCapsule = false;
           widgets = {
             left = [
@@ -20,18 +18,14 @@
                 id = "ControlCenter";
                 useDistroLogo = true;
               }
-              {
-                id = "Network";
-              }
-              {
-                id = "Bluetooth";
-              }
             ];
             center = [
               {
-                hideUnoccupied = false;
-                id = "Workspace";
-                labelMode = "none";
+                formatHorizontal = "HH:mm:ss";
+                formatVertical = "HH mm";
+                id = "Clock";
+                useMonospacedFont = true;
+                usePrimaryColor = true;
               }
             ];
             right = [
@@ -41,11 +35,10 @@
                 warningThreshold = 30;
               }
               {
-                formatHorizontal = "HH:mm";
-                formatVertical = "HH mm";
-                id = "Clock";
-                useMonospacedFont = true;
-                usePrimaryColor = true;
+                id = "Network";
+              }
+              {
+                id = "Bluetooth";
               }
             ];
           };
@@ -62,5 +55,4 @@
       };
       # this may also be a string or a path to a JSON file.
     };
-  };
 }

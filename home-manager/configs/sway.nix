@@ -86,6 +86,10 @@
         };
 
       bars = [];
+
+      startup = [
+        { command = "noctalia-shell"; }
+      ];
     };
   };
 }

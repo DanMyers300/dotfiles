@@ -35,15 +35,22 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   ### --- Networking --- ###
-  networking.hostName = "nixbook";
-  networking.firewall = {
-    enable = false;
-    allowedTCPPorts = [
-      22
-    ];
-    allowedUDPPorts = [
-    ];
+  networking = {
+    hostName = "nixbook";
+    networkmanager.enable = true;
+    firewall = {
+      enable = false;
+      checkReversePath = "loose";
+      allowedTCPPorts = [
+        22
+      ];
+      allowedUDPPorts = [
+      ];
+    };
   };
 
   ### --- Avahi (for UxPlay AirPlay server) --- ###
@@ -65,8 +72,6 @@
     enable = true;
     useRoutingFeatures = "client";
   };
-
-  networking.firewall.checkReversePath = "loose";
 
   services.openssh = {
     enable = true;

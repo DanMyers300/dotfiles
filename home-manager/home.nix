@@ -15,7 +15,6 @@
     ./configs/tmux.nix
     ./configs/redshift.nix
     ./configs/sway.nix
-    ./configs/waybar.nix
     ./configs/noctalia.nix
   ];
 

@@ -72,6 +72,7 @@
       alias enonlan='sudo tailscale set --exit-node=mullvad-exit --exit-node-allow-lan-access'
       alias enoff='sudo tailscale set --exit-node='
       alias pipewireRestart='systemctl --user restart pipewire pipewire-pulse wireplumber'
+      alias rebuild='sudo nixos-rebuild switch --flake ~/.dotfiles && pkill quickshell; setsid noctalia-shell &>/dev/null &'
     '';
   };
 }
