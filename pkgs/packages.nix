@@ -78,6 +78,7 @@
           [ irssi ]
           [ grim slurp wl-clipboard ]
           [ wofi ]
+          [ unstable.vintagestory ]
         ];
         nixtop = [
           [
