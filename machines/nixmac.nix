@@ -46,7 +46,7 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 42420 ];
-    allowedUDPports = [ 42420 ];
+    allowedUDPPorts = [ 42420 ];
   };
 
   services.openssh = {
