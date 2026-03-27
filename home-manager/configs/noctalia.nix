@@ -4,7 +4,6 @@
     inputs.noctalia.homeModules.default
   ];
 
-  # configure options
   programs.noctalia-shell = {
       enable = true;
       settings = {
@@ -30,29 +29,23 @@
             ];
             right = [
               {
-                alwaysShowPercentage = false;
-                id = "Battery";
-                warningThreshold = 30;
+                id = "Bluetooth";
               }
               {
                 id = "Network";
               }
               {
-                id = "Bluetooth";
+                alwaysShowPercentage = true;
+                id = "Battery";
+                warningThreshold = 30;
               }
             ];
           };
-        };
-        colorSchemes.predefinedScheme = "Monochrome";
-        general = {
-          avatarImage = "";
-          radiusRatio = 0.2;
         };
         location = {
           monthBeforeDay = true;
           name = "Austin, Texas";
         };
       };
-      # this may also be a string or a path to a JSON file.
     };
 }
