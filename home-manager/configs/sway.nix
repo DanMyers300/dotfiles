@@ -85,6 +85,11 @@
           "${mod}+Ctrl+5" = "move container to workspace number 5";
         };
 
+      window = {
+        titlebar = false;
+        border = 2;
+      };
+
       bars = [];
 
       startup = [

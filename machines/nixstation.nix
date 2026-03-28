@@ -105,8 +105,12 @@
   virtualisation.podman.enable = true;
   virtualisation.docker.enable = true;
 
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   ### --- Networking --- ###
   networking = {
+    networkmanager.enable = true;
     hostName = "nixstation";
     firewall = {
       enable = true;
