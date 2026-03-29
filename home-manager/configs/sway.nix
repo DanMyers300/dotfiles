@@ -48,6 +48,7 @@
           "${mod}+b" = "exec zen";
           "${mod}+e" = "exec nautilus";
           "Print" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
+          "${mod}+s" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
           "${mod}+Space" = "exec wofi --show run";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
