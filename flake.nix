@@ -35,7 +35,6 @@
         "nixtop"
         "nixbook"
         "nixserver"
-        "nixvm"
         "nixmac"
 	"nixtravel"
       ];
