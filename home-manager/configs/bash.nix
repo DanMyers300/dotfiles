@@ -23,6 +23,7 @@
           [[ -n $(git status --porcelain 2>/dev/null) ]] && status="*"
           echo " ($branch$status)"
       }
+
       PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\[\e[0;33m\]$(parse_git_branch)\[\e[0m\]\$ '
 
       PATH="$PATH:/opt/nvim-linux64/bin"
@@ -44,35 +45,12 @@
       }
       add_ssh_keys
 
-      function airpods() {
-          local mac_address="90:62:3F:4F:28:B5"
-          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
-              bluetoothctl disconnect "$mac_address"
-              echo "Disconnected from $mac_address"
-          else
-              bluetoothctl connect "$mac_address"
-              echo "Connected to $mac_address"
-          fi
-      }
-
-      function proController() {
-          local mac_address="E4:17:D8:C3:47:57"
-          if bluetoothctl info "$mac_address" | grep -q "Connected: yes"; then
-              bluetoothctl disconnect "$mac_address"
-              echo "Disconnected from $mac_address"
-          else
-              bluetoothctl connect "$mac_address"
-              echo "Connected to $mac_address"
-          fi
-      }
-
       # -- Alias Section --
-      alias ai='opencode'
       alias enon='sudo tailscale set --exit-node=mullvad-exit'
       alias enonlan='sudo tailscale set --exit-node=mullvad-exit --exit-node-allow-lan-access'
       alias enoff='sudo tailscale set --exit-node='
       alias pipewireRestart='systemctl --user restart pipewire pipewire-pulse wireplumber'
-      alias rebuild='sudo nixos-rebuild switch --flake ~/.dotfiles && pkill quickshell; setsid noctalia-shell &>/dev/null &'
+      alias rebuild='sudo nixos-rebuild switch --flake ~/.dotfiles'
     '';
   };
 }

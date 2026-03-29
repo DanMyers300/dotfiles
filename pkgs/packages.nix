@@ -30,16 +30,13 @@
         pavucontrol
         baobab
         mullvad-vpn
-        nerd-fonts.hack
-        nerd-fonts.symbols-only
+        wofi
       ];
 
-      games = [
-        prismlauncher
-        desmume
-        mgba
-        unstable.dolphin-emu
-        r2modman
+      screenshot = [
+        grim
+        slurp
+        wl-clipboard
       ];
 
       zen = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
@@ -47,66 +44,61 @@
       hostProfiles = {
         nixstation = [
           gui
-          games
           zen
-          [ mpvpaper ]
-          [ nvtopPackages.amd ]
+          screenshot
           [
+            mpvpaper
+            nvtopPackages.amd
             qemu
             swtpm
-          ]
-          [ libreoffice ]
-          [ cozy ]
-          [ wireguard-tools ]
-          [ gimp ]
-          [ vlc ]
-          [ signal-desktop ]
-          [ pokemmo-installer ]
-          [
+            libreoffice
+            cozy
+            wireguard-tools
+            gimp
+            vlc
+            signal-desktop
+            pokemmo-installer
             libimobiledevice
             usbmuxd
             ifuse
             altserver-linux
-          ]
-          [ xdg-utils ]
-          [ unstable.claude-code ]
-          [ chromium ]
-          [ obs-studio ]
-          [ obsidian ]
-          [ opencode ]
-          [ godot ]
-          [ irssi ]
-          [ grim slurp wl-clipboard ]
-          [ wofi ]
-          [ unstable.vintagestory ]
-        ];
-        nixtop = [
-          [
-            pulseaudio
-            brightnessctl
+            xdg-utils
+            unstable.claude-code
+            chromium
+            obs-studio
+            obsidian
+            opencode
+            godot
+            irssi
+            wofi
+            unstable.vintagestory
           ]
         ];
         nixbook = [
           cli
           gui
           zen
-          [ pokemmo-installer ]
-          [ prismlauncher ]
-          [ brightnessctl ]
-          [ pulseaudio ]
-          [ obsidian ]
-          [ moonlight-qt ]
-          [ claude-code ]
-          [ opencode ]
-          [ uxplay ]
-          [ signal-desktop ]
-          [ wofi ]
-          [ grim slurp wl-clipboard ]
+          screenshot
+          [
+            brightnessctl
+            pulseaudio
+            obsidian
+            moonlight-qt
+            unstable.claude-code
+            uxplay
+            signal-desktop
+          ]
         ];
         nixserver = [ cli ];
+        nixtop = [
+          [
+            pulseaudio
+            brightnessctl
+          ]
+        ];
       };
 
-      hostPackages = cli ++ lib.concatLists (hostProfiles."${config.networking.hostName}" or [ ]);
+      hostPackages = lib.concatLists (hostProfiles."${config.networking.hostName}" or [ ]);
 
     in
     hostPackages;
