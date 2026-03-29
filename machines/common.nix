@@ -20,6 +20,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  ### --- Hint Electron apps to use bluetooth --- ###
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  ### --- Power Profiles --- ###
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   ### --- Networking --- ###
   networking.networkmanager.enable = true;
 
@@ -94,4 +101,6 @@
       "wheel"
     ];
   };
+
+  system.stateVersion = "25.11";
 }
