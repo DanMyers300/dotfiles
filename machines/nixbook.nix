@@ -13,6 +13,7 @@
     ../pkgs/packages.nix
     ../pkgs/steam.nix
     ../pkgs/stylix.nix
+    ../pkgs/gnome.nix
   ];
 
   ### --- Boot loader --- ###
@@ -103,34 +104,6 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
-
-  ### --- Gnome --- ###
-  services.displayManager.gdm.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.gdm-autologin.enableGnomeKeyring = true;
-  services.displayManager.gdm.wayland = true;
-  services.desktopManager.gnome.enable = true;
-  programs.dconf.enable = true;
-  environment.gnome.excludePackages = (
-    with pkgs;
-    [
-      gnome-photos
-      gnome-tour
-      gedit # text editor
-      cheese # webcam tool
-      gnome-music
-      epiphany # web browser
-      geary # email reader
-      gnome-characters
-      tali # poker game
-      iagno # go game
-      hitori # sudoku game
-      atomix # puzzle game
-      yelp # Help view
-      gnome-contacts
-      gnome-initial-setup
-    ]
-  );
 
   # Optional, hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
