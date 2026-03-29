@@ -1,11 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  osConfig,
-  unstable,
-  ...
-}:
+{ ... }:
 {
 
   imports = [
@@ -23,8 +16,6 @@
     username = "dan";
     homeDirectory = "/home/dan";
   };
-
-  stylix.targets.waybar.enable = false;
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";

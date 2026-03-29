@@ -10,6 +10,7 @@
   imports = [
     ./common.nix
     ./hardware/nixbook-hardware.nix
+    ../pkgs/bootloader.nix
     ../pkgs/packages.nix
     ../pkgs/stylix.nix
     ../pkgs/gnome.nix
@@ -17,8 +18,8 @@
     ../pkgs/xserver.nix
     ../pkgs/tailscale.nix
     ../pkgs/vpn.nix
-    ../pkgs/bootloader.nix
     ../pkgs/avahi.nix
+    ../pkgs/docker.nix
   ];
 
   ### --- Wifi drivers --- ###

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   ### --- VPN --- ###
   services.mullvad-vpn.enable = true;
