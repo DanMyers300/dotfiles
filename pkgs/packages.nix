@@ -43,6 +43,7 @@
 
       hostProfiles = {
         nixstation = [
+          cli
           gui
           zen
           screenshot
@@ -91,6 +92,7 @@
         ];
         nixserver = [ cli ];
         nixtop = [
+          cli
           [
             pulseaudio
             brightnessctl
