@@ -38,6 +38,9 @@
                 id = "Battery";
                 warningThreshold = 30;
               }
+              {
+                id = "Workspace";
+              }
             ];
           };
         };

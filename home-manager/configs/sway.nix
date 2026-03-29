@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   home.packages = with pkgs; [
     swaylock
     swayidle
@@ -48,7 +48,7 @@
           "${mod}+b" = "exec zen";
           "${mod}+e" = "exec nautilus";
           "Print" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
-          "${mod}+s" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
+          "${mod}+Control+s" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
           "${mod}+Space" = "exec wofi --show run";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
@@ -60,10 +60,10 @@
           "${mod}+k" = "focus up";
           "${mod}+l" = "focus right";
 
-          "${mod}+Ctrl+h" = "move left";
-          "${mod}+Ctrl+j" = "move down";
-          "${mod}+Ctrl+k" = "move up";
-          "${mod}+Ctrl+l" = "move right";
+          "${mod}+Control+h" = "move left";
+          "${mod}+Control+j" = "move down";
+          "${mod}+Control+k" = "move up";
+          "${mod}+Control+l" = "move right";
 
           "${mod}+m" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
           "${mod}+period" = "splith";
@@ -79,11 +79,11 @@
           "${mod}+4" = "workspace number 4";
           "${mod}+5" = "workspace number 5";
 
-          "${mod}+Ctrl+1" = "move container to workspace number 1";
-          "${mod}+Ctrl+2" = "move container to workspace number 2";
-          "${mod}+Ctrl+3" = "move container to workspace number 3";
-          "${mod}+Ctrl+4" = "move container to workspace number 4";
-          "${mod}+Ctrl+5" = "move container to workspace number 5";
+          "${mod}+Control+1" = "move container to workspace number 1";
+          "${mod}+Control+2" = "move container to workspace number 2";
+          "${mod}+Control+3" = "move container to workspace number 3";
+          "${mod}+Control+4" = "move container to workspace number 4";
+          "${mod}+Control+5" = "move container to workspace number 5";
         };
 
       window = {
@@ -93,9 +93,24 @@
 
       bars = [];
 
-      startup = [
-        { command = "noctalia-shell"; }
-      ];
+      startup = [];
+    };
+  };
+
+  systemd.user.services.noctalia-shell = {
+    Unit = {
+      Description = "Noctalia shell bar";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+      X-Restart-Triggers = [ "${config.xdg.configFile."noctalia/settings.json".source}" ];
+    };
+    Service = {
+      ExecStartPre = "-${pkgs.procps}/bin/pkill quickshell";
+      ExecStart = "${pkgs.bash}/bin/bash -lc noctalia-shell";
+      Restart = "on-failure";
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
     };
   };
 }

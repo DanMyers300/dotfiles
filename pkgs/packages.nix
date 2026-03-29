@@ -101,6 +101,7 @@
           [ uxplay ]
           [ signal-desktop ]
           [ wofi ]
+          [ grim slurp wl-clipboard ]
         ];
         nixserver = [ cli ];
       };
