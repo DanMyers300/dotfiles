@@ -55,6 +55,11 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEVdbTZeHyd3Hy5Yz1eQWKg+4xhKt3blqFLjjrgtnsH dan@nixtop"
   ];
 
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "dan";
+  };
+
   programs.nix-ld.enable = true;
 
   ### --- Version --- ###
