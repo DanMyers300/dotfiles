@@ -101,46 +101,6 @@
           })
           EOF'';
       }
-      #{
-      #  plugin = codecompanion-nvim;
-      #  config = ''
-      #  lua << EOF
-      #  require("codecompanion").setup({
-      #    adapters = {
-      #      http = {
-      #        opts = {show_defaults = false,},
-      #        ollama_adapter = function()
-      #          return require("codecompanion.adapters").extend("ollama", {
-      #            name = "gemma3:12b",
-      #            schema = {
-      #              model = {
-      #                default = "gemma3:12b",
-      #              },
-      #              num_ctx = {
-      #                default = 16384,
-      #              },
-      #              num_predict = {
-      #                default = -1,
-      #              },
-      #            },
-      #          })
-      #        end,
-      #      },
-      #    },
-      #    strategies = {
-      #      chat = {
-      #        adapter = "ollama_adapter",
-      #      },
-      #      inline = {
-      #        adapter = "ollama_adapter",
-      #      },
-      #      cmd = {
-      #        adapter = "ollama_adapter",
-      #      }
-      #    },
-      #  })
-      #  EOF'';
-      #}
       {
         plugin = neo-tree-nvim;
         config = ''
@@ -173,41 +133,6 @@
         );
         config = "";
       }
-      #{
-      #  plugin = unstable.vimPlugins.minuet-ai-nvim;
-      #  config = ''
-      #    lua << EOF
-      #    require('minuet').setup({
-      #      provider = 'openai_compatible',
-      #      n_completions = 1,
-      #      context_window = 512,
-      #      request_timeout = 6,
-      #      notify = 'warn',
-      #      provider_options = {
-      #        openai_compatible = {
-      #          model = 'deepseek-coder:latest',
-      #          end_point = 'http://localhost:11434/v1/chat/completions',
-      #          api_key = 'TERM',
-      #          name = 'Ollama',
-      #          optional = {
-      #            max_tokens = 128,
-      #            top_p = 0.9,
-      #          },
-      #        },
-      #      },
-      #      virtualtext = {
-      #        auto_trigger_ft = { '*' },
-      #        keymap = {
-      #          accept = '<A-a>',
-      #          accept_line = '<A-l>',
-      #          prev = '<A-[>',
-      #          next = '<A-]>',
-      #          dismiss = '<A-e>',
-      #        },
-      #      },
-      #    })
-      #    EOF'';
-      #}
       cmp-nvim-lsp
       cmp-buffer
       cmp-path
