@@ -99,8 +99,15 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "libvirtd"
+      "kvm"
+      "docker"
+      "input"
+      "dialout"
     ];
   };
+
+  hardware.graphics.enable = true;
 
   system.stateVersion = "25.11";
 }
