@@ -47,7 +47,6 @@
             (./machines + "/${machine}.nix")
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
-            inputs.minegrub-theme.nixosModules.default
             inputs.noctalia.nixosModules.default
             {
               home-manager = {
