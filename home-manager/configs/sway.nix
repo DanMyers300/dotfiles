@@ -96,21 +96,4 @@
       startup = [];
     };
   };
-
-  systemd.user.services.noctalia-shell = {
-    Unit = {
-      Description = "Noctalia shell bar";
-      PartOf = [ "graphical-session.target" ];
-      After = [ "graphical-session.target" ];
-      X-Restart-Triggers = [ "${config.xdg.configFile."noctalia/settings.json".source}" ];
-    };
-    Service = {
-      ExecStartPre = "-${pkgs.procps}/bin/pkill quickshell";
-      ExecStart = "${pkgs.bash}/bin/bash -lc noctalia-shell";
-      Restart = "on-failure";
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  };
 }
