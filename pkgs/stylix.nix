@@ -11,7 +11,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = builtins.toPath ../home-manager/themes/tokyo-night.yaml;
+    base16Scheme = builtins.toPath ../home-manager/themes/oxocarbon-dark.yaml;
     image = ../background.jpeg;
     polarity = "dark";
     targets.grub.enable = false;
