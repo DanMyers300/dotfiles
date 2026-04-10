@@ -19,7 +19,7 @@
     ../pkgs/vpn.nix
     ../pkgs/avahi.nix
     ../pkgs/docker.nix
-    ../pkgs/greetd.nix
+    ../pkgs/regreet.nix
   ];
 
   ### --- Wifi drivers --- ###

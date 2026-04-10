@@ -1,0 +1,4 @@
+{ ... }:
+{
+  programs.regreet.enable = true;
+}
