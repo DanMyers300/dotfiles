@@ -13,13 +13,13 @@
     ../pkgs/bootloader.nix
     ../pkgs/packages.nix
     ../pkgs/stylix.nix
-    ../pkgs/gnome.nix
     ../pkgs/sway.nix
     ../pkgs/xserver.nix
     ../pkgs/tailscale.nix
     ../pkgs/vpn.nix
     ../pkgs/avahi.nix
     ../pkgs/docker.nix
+    ../pkgs/greetd.nix
   ];
 
   ### --- Wifi drivers --- ###
