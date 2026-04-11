@@ -6,6 +6,13 @@
   unstable,
   ...
 }:
+let
+  greetdSwayConfig = pkgs.writeText "greetd-sway-config" ''
+    output HDMI-A-2 disable
+    output DP-2 disable
+    exec "${pkgs.regreet}/bin/regreet; swaymsg exit"
+  '';
+in
 {
 
   imports = [
@@ -55,12 +62,11 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEVdbTZeHyd3Hy5Yz1eQWKg+4xhKt3blqFLjjrgtnsH dan@nixtop"
   ];
 
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "dan";
-  };
-
   programs.nix-ld.enable = true;
+
+  ### --- Greeter --- ###
+  services.greetd.settings.default_session.command = lib.mkForce
+    "${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway --config ${greetdSwayConfig}";
 
   ### --- Version --- ###
   system.stateVersion = "25.11";
