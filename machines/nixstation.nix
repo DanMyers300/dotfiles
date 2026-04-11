@@ -17,7 +17,7 @@
     ../pkgs/bootloader.nix
     ../pkgs/xserver.nix
     ../pkgs/sway.nix
-    ../pkgs/gnome.nix
+    ../pkgs/regreet.nix
     ../pkgs/docker.nix
     ../pkgs/virt.nix
     ../pkgs/tailscale.nix
