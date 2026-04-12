@@ -100,11 +100,6 @@
     ]
   );
 
-  ### --- Hyprland --- ###
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   # Optional, hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -115,7 +110,4 @@
     device = "/dev/disk/by-uuid/12e13096-1ab9-40a6-8d0a-f0d36d8d3d83";
     fsType = "ext4";
   };
-
-  ### --- Version --- ###
-  system.stateVersion = "24.11";
 }
