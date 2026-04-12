@@ -31,7 +31,9 @@
       output = {
         "DP-2"     = { mode = "1920x1080@60Hz"; position = "0,0"; };
         "HDMI-A-1" = { mode = "1920x1080@60Hz"; position = "1920,0"; };
-        "HDMI-A-2" = { mode = "3840x2160@60Hz"; position = "3840,0"; };
+
+        #"HDMI-A-2" = { mode = "3840x2160@60Hz"; position = "3840,0"; };
+        "HDMI-A-2" = { mode = "3840x2160@60Hz"; position = "1920,0"; scale = "2"; };
       };
 
       input = {
