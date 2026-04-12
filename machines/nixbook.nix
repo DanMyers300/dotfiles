@@ -20,6 +20,7 @@
     ../pkgs/avahi.nix
     ../pkgs/docker.nix
     ../pkgs/regreet.nix
+    ../pkgs/steam.nix
   ];
 
   ### --- Wifi drivers --- ###
