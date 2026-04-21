@@ -30,7 +30,6 @@
         pavucontrol
         baobab
         mullvad-vpn
-        wofi
       ];
 
       screenshot = [

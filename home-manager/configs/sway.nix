@@ -51,7 +51,7 @@
           "${mod}+e" = "exec nautilus";
           "Print" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
           "${mod}+Control+s" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
-          "${mod}+Space" = "exec wofi --show run";
+          "${mod}+Space" = "exec noctalia-shell ipc call launcher toggle";
           "${mod}+q" = "kill";
           "${mod}+Shift+e" = "exit";
           "${mod}+Shift+r" = "reload";
