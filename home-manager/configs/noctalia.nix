@@ -28,6 +28,7 @@
           density = "compact";
           position = "top";
           showCapsule = false;
+          outerCorners = false;
           widgets = {
             left = [
               {
@@ -45,6 +46,13 @@
               }
             ];
             right = [
+              {
+                id = "Tray";
+                drawerEnabled = false;
+              }
+              {
+                id = "SystemMonitor";
+              }
               {
                 id = "Bluetooth";
               }
@@ -67,6 +75,9 @@
         };
         notifications = {
           density = "compact";
+        };
+        general = {
+          enableShadows = false;
         };
       };
     };
