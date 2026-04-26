@@ -45,8 +45,8 @@
   networking.hostName = "nixmac";
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 42420 ];
-    allowedUDPPorts = [ 42420 ];
+    allowedTCPPorts = [ 22 42420 7777 25565 ];
+    allowedUDPPorts = [ 42420 7777];
   };
 
   services.openssh = {
