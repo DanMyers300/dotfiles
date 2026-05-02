@@ -29,10 +29,9 @@
       menu = "wofi --show run";
 
       output = {
-        "DP-2"     = { mode = "1920x1080@60Hz"; position = "0,0"; };
+        "DP-2"     = { mode = "3840x2160@160Hz"; position = "0,0"; scale = "2"; };
         "HDMI-A-1" = { mode = "1920x1080@60Hz"; position = "1920,0"; };
-
-        "HDMI-A-2" = { mode = "3840x2160@60Hz"; position = "3840,0"; };
+        "HDMI-A-2" = { mode = "3840x2160@60Hz"; position = "3840,0"; scale = "2"; };
         #"HDMI-A-2" = { mode = "3840x2160@60Hz"; position = "1920,0"; scale = "2"; };
       };
 
@@ -50,6 +49,7 @@
           "${mod}+b" = "exec zen";
           "${mod}+e" = "exec nautilus";
           "Print" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
+          "${mod}+Shift+s" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
           "${mod}+Control+s" = "exec bash -c 'grim -g \"$(slurp)\" - | wl-copy'";
           "${mod}+Space" = "exec noctalia-shell ipc call launcher toggle";
           "${mod}+q" = "kill";

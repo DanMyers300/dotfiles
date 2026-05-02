@@ -47,6 +47,8 @@
           zen
           screenshot
           [
+            jdk25
+            prismlauncher
             mpvpaper
             nvtopPackages.amd
             qemu
@@ -57,7 +59,6 @@
             gimp
             vlc
             signal-desktop
-            pokemmo-installer
             libimobiledevice
             usbmuxd
             ifuse
