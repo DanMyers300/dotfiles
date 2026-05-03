@@ -57,10 +57,6 @@
 
   programs.nix-ld.enable = true;
 
-  ### --- Greeter --- ###
-  services.greetd.settings.default_session.command = lib.mkForce
-    "${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway --config ${greetdSwayConfig}";
-
   ### --- Version --- ###
   system.stateVersion = "25.11";
 }
