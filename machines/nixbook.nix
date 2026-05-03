@@ -13,7 +13,7 @@
     ../pkgs/bootloader.nix
     ../pkgs/packages.nix
     ../pkgs/stylix.nix
-    ../pkgs/sway.nix
+    ../pkgs/hypr.nix
     ../pkgs/xserver.nix
     ../pkgs/tailscale.nix
     ../pkgs/vpn.nix
@@ -39,7 +39,7 @@
     hostName = "nixbook";
     networkmanager.enable = true;
     firewall = {
-      enable = false;
+      enable = true;
       checkReversePath = "loose";
       allowedTCPPorts = [
         22
