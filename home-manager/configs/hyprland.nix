@@ -17,8 +17,9 @@
     ################
 
     # https://wiki.hyprland.org/Configuring/Monitors/
-    monitor = DP-2, preferred, 0x0, 1
-    monitor = HDMI-A-1, preferred, 1920x0, 1
+    monitor = DP-2, 3840x2160@160, 0x0, 2
+    monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
+    monitor = HDMI-A-2, 3840x2160@30, 3840x0, 1
 
     debug:disable_scale_checks = true
     monitor = eDP-1, preferred, 0x0, 1
@@ -197,7 +198,7 @@
     bind = $mainMod CTRL, S, exec, grimshot copy area
 
     ### --- System --- ###
-    bind = $mainMod, SHIFT, Q, killactive,
+    bind = $mainMod SHIFT, Q, killactive,
     bind = $mainMod CTRL ALT, Q, exit,
     bind = $mainMod ALT, F, togglefloating
     bind = $mainMod, F, fullscreen, 1
