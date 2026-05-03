@@ -7,7 +7,7 @@
     ./configs/bash.nix
     ./configs/tmux.nix
     ./configs/redshift.nix
-    ./configs/sway.nix
+    ./configs/hyprland.nix
     ./configs/noctalia.nix
   ];
 

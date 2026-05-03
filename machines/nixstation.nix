@@ -6,13 +6,6 @@
   unstable,
   ...
 }:
-let
-  greetdSwayConfig = pkgs.writeText "greetd-sway-config" ''
-    output HDMI-A-2 disable
-    output DP-2 disable
-    exec "${pkgs.regreet}/bin/regreet; swaymsg exit"
-  '';
-in
 {
 
   imports = [
@@ -23,7 +16,7 @@ in
     ../pkgs/stylix.nix
     ../pkgs/bootloader.nix
     ../pkgs/xserver.nix
-    ../pkgs/sway.nix
+    ../pkgs/hypr.nix
     ../pkgs/regreet.nix
     ../pkgs/docker.nix
     ../pkgs/virt.nix
