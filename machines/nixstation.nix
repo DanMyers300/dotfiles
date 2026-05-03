@@ -23,7 +23,7 @@ in
     ../pkgs/stylix.nix
     ../pkgs/bootloader.nix
     ../pkgs/xserver.nix
-    ../pkgs/kde.nix
+    ../pkgs/sway.nix
     ../pkgs/regreet.nix
     ../pkgs/docker.nix
     ../pkgs/virt.nix
