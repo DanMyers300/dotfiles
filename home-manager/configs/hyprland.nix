@@ -39,7 +39,7 @@
     #################
     exec-once = blueman-applet
     exec-once = steam
-    exec-once = "hyprctl setcursor rose-pine-hyprcursor 18"
+    #exec-once = "hyprctl setcursor rose-pine-hyprcursor 18"
     exec-once = systemctl --user start sunshine
 
     #############################
@@ -48,10 +48,10 @@
 
     # See https://wiki.hyprland.org/Configuring/Environment-variables/
 
-    env = XCURSOR_SIZE,8
-    env = XCURSOR_THEME,Bibata-Modern-Classic
-    env = HYPRCURSOR_SIZE,24
-    env = HYPRCURSOR_THEME,Bibata-Modern-Classic
+    #env = XCURSOR_SIZE,8
+    #env = XCURSOR_THEME,Bibata-Modern-Classic
+    #env = HYPRCURSOR_SIZE,24
+    #env = HYPRCURSOR_THEME,Bibata-Modern-Classic
 
     #####################
     ###   SSH  KEYS   ###
@@ -192,7 +192,7 @@
     bind = $mainMod, T, exec, $terminal
     bind = $mainMod, B, exec, $browser
     bind = $mainMod, I, exec, pavucontrol
-    bind = $mainMod, S, exec, $menu
+    bind = $mainMod, SPACE, exec, $menu
     bind = $mainMod, e, exec, $fileManager
     bind = , print, exec, grimshot copy area
     bind = $mainMod CTRL, S, exec, grimshot copy area
