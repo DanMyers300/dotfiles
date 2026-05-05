@@ -54,6 +54,12 @@
                 id = "SystemMonitor";
               }
               {
+                id = "Microphone";
+              }
+              {
+                id = "Volume";
+              }
+              {
                 id = "Bluetooth";
               }
               {
