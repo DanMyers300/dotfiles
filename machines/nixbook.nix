@@ -13,7 +13,6 @@
     ../pkgs/bootloader.nix
     ../pkgs/packages.nix
     ../pkgs/stylix.nix
-    ../pkgs/steam.nix
     ../pkgs/hypr.nix
     ../pkgs/xserver.nix
     ../pkgs/tailscale.nix
