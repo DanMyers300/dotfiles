@@ -19,15 +19,15 @@
     # https://wiki.hyprland.org/Configuring/Monitors/
 
     ### - DP-2 Scale 1 Setup ###
-    monitor = DP-2, 3840x2160@160, 0x0, 1
-    monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
-    monitor = HDMI-A-2, 3840x2160@30, 5760x0, 1
+    #monitor = DP-2, 3840x2160@160, 0x0, 1
+    #monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
+    #monitor = HDMI-A-2, 3840x2160@30, 5760x0, 1
     ### --- ###
 
     ### - Default Setup ###
-    #monitor = DP-2, 3840x2160@160, 0x0, 2
-    #monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
-    #monitor = HDMI-A-2, 3840x2160@30, 3840x0, 1
+    monitor = DP-2, 3840x2160@160, 0x0, 2
+    monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
+    monitor = HDMI-A-2, 3840x2160@30, 3840x0, 1
     ### --- ###
 
     ### - Mirrored Setup ###

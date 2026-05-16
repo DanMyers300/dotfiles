@@ -4,6 +4,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     zen-browser.url = "github:DanMyers300/zen-browser-flake";
+    dusklight.url = "github:DanMyers300/dusklight";
     stylix.url = "github:danth/stylix/release-25.11";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";

@@ -33,18 +33,21 @@
       ];
 
       screenshot = [
+        sway-contrib.grimshot
         grim
         slurp
         wl-clipboard
       ];
 
       zen = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
+      dusklight = [ inputs.dusklight.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 
       hostProfiles = {
         nixstation = [
           cli
           gui
           zen
+          dusklight
           screenshot
           [
             jdk25
