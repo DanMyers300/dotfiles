@@ -25,14 +25,15 @@
     ### --- ###
 
     ### - Default Setup ###
-    monitor = DP-2, 3840x2160@160, 0x0, 2
-    monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
-    monitor = HDMI-A-2, 3840x2160@30, 3840x0, 1
+    #monitor = DP-2, 3840x2160@160, 0x0, 2
+    #monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
+    #monitor = HDMI-A-2, 3840x2160@30, 3840x0, 1
     ### --- ###
 
-    ### - Mirrored Setup ###
-    #monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
-    #monitor = HDMI-A-2, preferred, 1920x0, 1, mirror, HDMI-A-1
+    ### - HDMI Mirror Setup ###
+    monitor = DP-2, 3840x2160@160, 0x0, 1
+    monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
+    monitor = HDMI-A-2, preferred, auto, 1, mirror, HDMI-A-1
     ### --- ###
 
     debug:disable_scale_checks = true
