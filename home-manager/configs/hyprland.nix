@@ -21,7 +21,7 @@
     ### - DP-2 Scale 1 Setup ###
     #monitor = DP-2, 3840x2160@160, 0x0, 1
     #monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
-    #monitor = HDMI-A-2, 3840x2160@30, 5760x0, 1
+    #monitor = HDMI-A-2, 1920x1080@60, 5760x0, 1
     ### --- ###
 
     ### - Default Setup ###
@@ -33,7 +33,7 @@
     ### - HDMI Mirror Setup ###
     monitor = DP-2, 3840x2160@160, 0x0, 1
     monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
-    monitor = HDMI-A-2, preferred, auto, 1, mirror, HDMI-A-1
+    monitor = HDMI-A-2, 3840x2160@60, auto, 1, mirror, HDMI-A-1
     ### --- ###
 
     debug:disable_scale_checks = true
@@ -158,7 +158,7 @@
     }
 
     # https://wiki.hyprland.org/Configuring/Variables/#misc
-    misc { 
+    misc {
         force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
     }
