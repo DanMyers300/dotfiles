@@ -73,11 +73,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1778944999,
-        "narHash": "sha256-qSXr+DvOOliHXVxh6W79aCc12sL5djaVGnerlhjx9I4=",
+        "lastModified": 1779505730,
+        "narHash": "sha256-dtyxHX57eOG6w4p7W5o1gltm0fGojAugw36aLF2quEE=",
         "owner": "DanMyers300",
         "repo": "dusklight",
-        "rev": "aead26448d5e12e37e941586e08ece1e9bbf0ff9",
+        "rev": "4e4ec3a624c9bde809b96c052faf2a89907b5fe9",
         "type": "github"
       },
       "original": {
@@ -179,11 +179,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1778869304,
-        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
+        "lastModified": 1779357205,
+        "narHash": "sha256-cCO8aTqss5x9Ky8GWkpY0Hy5fyTZEbtifSUV8QjSzic=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "rev": "f83fc3c307e74bc5fd5adb7eb6b8b13ffd2a36e1",
         "type": "github"
       },
       "original": {
