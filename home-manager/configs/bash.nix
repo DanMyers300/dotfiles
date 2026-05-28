@@ -36,6 +36,7 @@
               -not -name "*.pub" \
               -not -name "known_hosts*" \
               -not -name "*.bak" \
+              -not -name "config" \
               -not -name "authorized_keys"); do
               key_fingerprint=$(ssh-keygen -lf "$key" | awk '{print $2}')
               if ! ssh-add -l | grep -qF "$key_fingerprint"; then
