@@ -67,4 +67,10 @@
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-59-7.0.6"
   ];
+
+  ### --- Lid switch --- ###
+  services.logind = {
+    lidSwitch = "suspend";
+    lidSwitchExternalPower = "suspend";
+  };
 }
