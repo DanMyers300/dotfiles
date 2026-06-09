@@ -89,6 +89,7 @@
             pulseaudio
             obsidian
             moonlight-qt
+            vlc
             unstable.claude-code
             uxplay
             signal-desktop

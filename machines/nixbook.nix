@@ -28,9 +28,15 @@
     "hid_apple"
     "kvm-intel"
     "wl"
+    "facetimehd"
   ];
   boot.extraModulePackages = [
     config.boot.kernelPackages.broadcom_sta
+    (config.boot.kernelPackages.facetimehd.overrideAttrs (old: {
+      postPatch = (old.postPatch or "") + ''
+        sed -i '/wait_prepare/d; /wait_finish/d' fthd_v4l2.c
+      '';
+    }))
   ];
   boot.kernelParams = [ "hid_apple.fnmode=2" ];
 
@@ -62,6 +68,9 @@
       PermitRootLogin = "no";
     };
   };
+
+  ### --- FaceTime HD camera firmware --- ###
+  hardware.firmware = [ pkgs.facetimehd-firmware ];
 
   ### --- Broadcom insecure package --- ###
   nixpkgs.config.permittedInsecurePackages = [
