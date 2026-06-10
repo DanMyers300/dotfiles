@@ -73,11 +73,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1779505730,
-        "narHash": "sha256-dtyxHX57eOG6w4p7W5o1gltm0fGojAugw36aLF2quEE=",
+        "lastModified": 1781130307,
+        "narHash": "sha256-DYxlyDh97upv1A1uxo/yIGAlh+XhAJPT9iW8QuDsht8=",
         "owner": "DanMyers300",
         "repo": "dusklight",
-        "rev": "4e4ec3a624c9bde809b96c052faf2a89907b5fe9",
+        "rev": "b2e4d5b64a32493452f0df5e734f2839a7f4783a",
         "type": "github"
       },
       "original": {
