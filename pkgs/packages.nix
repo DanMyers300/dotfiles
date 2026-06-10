@@ -62,6 +62,9 @@
             wireguard-tools
             gimp
             vlc
+            libaacs
+            libbluray
+            makemkv
             signal-desktop
             libimobiledevice
             usbmuxd
