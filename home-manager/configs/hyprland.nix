@@ -36,8 +36,8 @@
     #monitor = HDMI-A-2, 3840x2160@60, auto, 1, mirror, HDMI-A-1
     ### --- ###
 
-    monitor = eDP-1, preferred, 0x0, 1
-    monitor = HDMI-A-1, 1920x1080@60, auto, 1
+    #monitor = eDP-1, preferred, 0x0, 1
+    #monitor = HDMI-A-1, 1920x1080@60, auto, 1
 
     ###################
     ### MY PROGRAMS ###
