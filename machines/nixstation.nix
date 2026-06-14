@@ -23,6 +23,7 @@
     ../pkgs/tailscale.nix
     ../pkgs/vpn.nix
     ../pkgs/sunshine.nix
+    ../pkgs/virtual-display.nix
     ../pkgs/gameController.nix
   ];
 
