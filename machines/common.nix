@@ -43,41 +43,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-    wireplumber.extraConfig = {
-      # Disable broken route restoration that causes enum_params error in WirePlumber 0.5.x
-      "50-disable-restore-routes" = {
-        "wireplumber.settings" = {
-          "device.restore-routes" = false;
-        };
-      };
-      # Force auto-profile for ALSA devices
-      "51-alsa-auto-profile" = {
-        "monitor.alsa.rules" = [
-          {
-            matches = [{ "device.name" = "~alsa_card.*"; }];
-            actions = {
-              update-props = {
-                "api.acp.auto-profile" = true;
-                "api.acp.probe-rate" = 48000;
-              };
-            };
-          }
-        ];
-      };
-      # Enable Bluetooth support
-      "52-bluetooth-autoswitch" = {
-        "monitor.bluez.rules" = [
-          {
-            matches = [{ "device.name" = "~bluez_card.*"; }];
-            actions = {
-              update-props = {
-                "bluez5.auto-connect" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
-              };
-            };
-          }
-        ];
-      };
-    };
   };
 
   ### --- Package settings --- ###

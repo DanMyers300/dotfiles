@@ -10,12 +10,16 @@ let
   };
 
   hyprctl = "${pkgs.hyprland}/bin/hyprctl";
-  jq = "${pkgs.jq}/bin/jq";
+  pactl = "${pkgs.pulseaudio}/bin/pactl";
 
   prepScript = pkgs.writeShellScript "sunshine-prep" ''
     # Save current cursor position
     IFS=', ' read -r X Y <<< "$(${hyprctl} cursorpos)"
     echo "$X $Y" > /tmp/sunshine-cursor-pos
+
+    # Save current default audio sink and switch to sunshine sink
+    ${pactl} info | grep "Default Sink" | awk '{print $3}' > /tmp/sunshine-default-sink
+    ${pactl} set-default-sink sunshine
 
     ${hyprctl} --instance 0 keyword monitor "HDMI-A-3,3840x2160@60,7680x0,2"
     sleep 2
@@ -28,6 +32,12 @@ let
   '';
 
   exitScript = pkgs.writeShellScript "sunshine-exit" ''
+    # Restore original default audio sink
+    if [ -f /tmp/sunshine-default-sink ]; then
+      ${pactl} set-default-sink "$(cat /tmp/sunshine-default-sink)"
+      rm /tmp/sunshine-default-sink
+    fi
+
     ${hyprctl} --instance 0 keyword monitor "DP-2,3840x2160@160,0x0,1"
     ${hyprctl} --instance 0 keyword monitor "HDMI-A-1,1920x1080@60,3840x0,1"
     ${hyprctl} --instance 0 keyword monitor "HDMI-A-2,1920x1080@60,5760x0,1"
@@ -54,7 +64,27 @@ in
     "video=${connector}:e"
   ];
 
+  # Persistent virtual audio sink so Sunshine never creates/destroys PA modules.
+  # Without this, Sunshine tries to unload a PA module on disconnect, which hangs
+  # under PipeWire's compat layer and prevents the undo script from running.
+  services.pipewire.extraConfig.pipewire."99-sunshine-sink" = {
+    "context.modules" = [
+      {
+        name = "libpipewire-module-null-sink";
+        args = {
+          "media.class" = "Audio/Sink";
+          "node.name" = "sunshine";
+          "node.description" = "Sunshine Audio";
+          "audio.rate" = 48000;
+          "audio.channels" = 2;
+          "audio.position" = [ "FL" "FR" ];
+        };
+      }
+    ];
+  };
+
   services.sunshine.settings = {
+    audio_sink = "sunshine";
     global_prep_cmd = builtins.toJSON [
       {
         do = "${prepScript}";

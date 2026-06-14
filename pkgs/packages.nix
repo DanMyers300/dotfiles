@@ -51,6 +51,7 @@
           dusklight
           screenshot
           [
+            pulseaudio
             jdk25
             prismlauncher
             mpvpaper
