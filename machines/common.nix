@@ -104,6 +104,7 @@
       "docker"
       "input"
       "dialout"
+      "uinput"
     ];
   };
 
