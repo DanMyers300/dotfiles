@@ -8,7 +8,7 @@
   };
   programs.neovim = {
     enable = true;
-    #package = unstable.neovim-unwrapped;
+    package = unstable.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
     plugins = with unstable.vimPlugins; [
