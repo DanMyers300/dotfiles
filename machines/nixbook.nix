@@ -74,7 +74,8 @@
 
   ### --- Broadcom insecure package --- ###
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-7.0.6"
+    "broadcom-sta-6.30.223.271-59-7.0.12"
+    "electron-39.8.10"
   ];
 
   ### --- Lid switch --- ###
