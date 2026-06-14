@@ -63,6 +63,29 @@
 
   programs.nix-ld.enable = true;
 
+  # The Realtek ALC897 has no jack detection, so all analog profiles report
+  # 'not available' and WirePlumber defaults to 'off'. Force it to analog stereo
+  # after WirePlumber enumerates devices.
+  systemd.user.services.realtek-audio-profile = {
+    description = "Force Realtek ALC897 to analog stereo profile";
+    after = [ "wireplumber.service" ];
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = pkgs.writeShellScript "realtek-audio-profile" ''
+        for i in $(seq 1 30); do
+          if ${pkgs.pulseaudio}/bin/pactl list cards short 2>/dev/null | grep -q alsa_card.pci-0000_12_00.6; then
+            ${pkgs.pulseaudio}/bin/pactl set-card-profile alsa_card.pci-0000_12_00.6 output:analog-stereo+input:analog-stereo
+            exit 0
+          fi
+          sleep 1
+        done
+        exit 1
+      '';
+    };
+  };
+
   nixpkgs.config.permittedInsecurePackages = [
     "electron-39.8.10"
   ];

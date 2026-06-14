@@ -14,8 +14,8 @@
     plugins = with unstable.vimPlugins; [
       {
         plugin = nvim-lspconfig;
+        type = "lua";
         config = ''
-          lua << EOF
           -- Define/override configs for servers
           vim.lsp.config("ts_ls", {})
           vim.lsp.config("pyright", {})
@@ -23,28 +23,28 @@
           -- Enable (auto start) them
           vim.lsp.enable("ts_ls")
           vim.lsp.enable("pyright")
-          EOF'';
+        '';
       }
       {
         plugin = mason-nvim;
+        type = "lua";
         config = ''
-          lua << EOF
-            require("mason").setup()
-          EOF'';
+          require("mason").setup()
+        '';
       }
       {
         plugin = mason-lspconfig-nvim;
+        type = "lua";
         config = ''
-          lua << EOF
           require("mason-lspconfig").setup({
             ensure_installed = {},
           })
-          EOF'';
+        '';
       }
       {
         plugin = pkgs.rust-analyzer;
+        type = "lua";
         config = ''
-          lua << EOF
           vim.lsp.config("rust_analyzer", {
             settings = {
               ["rust-analyzer"] = {
@@ -68,12 +68,12 @@
           })
 
           vim.lsp.enable("rust_analyzer")
-          EOF'';
+        '';
       }
       {
         plugin = nvim-cmp;
+        type = "lua";
         config = ''
-          lua << EOF
           local cmp = require'cmp'
           cmp.setup({
             snippet = {
@@ -99,12 +99,12 @@
               { name = 'buffer' },
             })
           })
-          EOF'';
+        '';
       }
       {
         plugin = neo-tree-nvim;
+        type = "lua";
         config = ''
-          lua << EOF
           require("neo-tree").setup({
             close_if_last_window = true,
             window = {
@@ -117,7 +117,7 @@
               hijack_netrw_behavior = "open_current",
             },
           })
-          EOF'';
+        '';
       }
       {
         plugin = (
