@@ -22,7 +22,13 @@
     monitor = DP-2, 3840x2160@160, 0x0, 1
     monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
     monitor = HDMI-A-2, 1920x1080@60, 5760x0, 1
+    monitor = HDMI-A-3, disable
     ### --- ###
+
+    # Pin default workspaces to monitors so they survive disconnect/reconnect
+    workspace = 1, monitor:DP-2, default:true
+    workspace = 2, monitor:HDMI-A-1, default:true
+    workspace = 3, monitor:HDMI-A-2, default:true
 
     ### - Default Setup ###
     #monitor = DP-2, 3840x2160@160, 0x0, 2
