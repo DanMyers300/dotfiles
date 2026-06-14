@@ -148,11 +148,11 @@
     extraPackages = with pkgs; [
       gcc
       stdenv.cc.cc
-      nodePackages.typescript-language-server
+      typescript-language-server
       pyright
       rust-analyzer
     ];
-    extraLuaConfig = ''
+    initLua = ''
       vim.g.mapleader = ' '
       vim.g.maplocalleader = ' '
       vim.opt.filetype = "on"
