@@ -6,6 +6,7 @@
   ];
 
   wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.configType = "hyprlang";
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   wayland.windowManager.hyprland.extraConfig = ''
@@ -151,8 +152,7 @@
 
     # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
     dwindle {
-        pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = true # You probably want this
+        preserve_split = true
     }
 
     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
@@ -293,6 +293,5 @@
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
 
-    windowrulev2 = suppressevent maximize, class:.*
   '';
 }
