@@ -72,7 +72,6 @@
             ifuse
             altserver-linux
             xdg-utils
-            unstable.claude-code
             chromium
             obs-studio
             obsidian
@@ -94,7 +93,6 @@
             obsidian
             moonlight-qt
             vlc
-            unstable.claude-code
             uxplay
             signal-desktop
           ]
