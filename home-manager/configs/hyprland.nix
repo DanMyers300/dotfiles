@@ -19,6 +19,10 @@
 
     # https://wiki.hyprland.org/Configuring/Monitors/
 
+    workspace = 1, monitor:DP-2, default:true
+    workspace = 2, monitor:HDMI-A-1, default:true
+    workspace = 3, monitor:HDMI-A-2, default:true
+
     ### - DP-2 Scale 1 Setup ###
     monitor = DP-2, 3840x2160@160, 0x0, 1
     monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
@@ -26,21 +30,18 @@
     monitor = HDMI-A-3, disable
     ### --- ###
 
-    # Pin default workspaces to monitors so they survive disconnect/reconnect
-    workspace = 1, monitor:DP-2, default:true
-    workspace = 2, monitor:HDMI-A-1, default:true
-    workspace = 3, monitor:HDMI-A-2, default:true
-
     ### - Default Setup ###
     #monitor = DP-2, 3840x2160@160, 0x0, 2
     #monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
     #monitor = HDMI-A-2, 3840x2160@60, 3840x0, 1
+    #monitor = HDMI-A-3, disable
     ### --- ###
 
     ### - HDMI Mirror Setup ###
     #monitor = DP-2, 3840x2160@160, 0x0, 1
     #monitor = HDMI-A-1, 1920x1080@60, 3840x0, 1
     #monitor = HDMI-A-2, 3840x2160@60, auto, 1, mirror, HDMI-A-1
+    #monitor = HDMI-A-3, disable
     ### --- ###
 
     ###################
