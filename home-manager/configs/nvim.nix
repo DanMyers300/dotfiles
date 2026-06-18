@@ -53,6 +53,7 @@
                 },
                 checkOnSave = true,
                 check = {
+                  allTargets = false,
                   command = "clippy",
                 },
                 procMacro = {

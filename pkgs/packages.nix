@@ -30,7 +30,7 @@
         pavucontrol
         baobab
         mullvad-vpn
-        xfce.thunar
+        thunar
       ];
 
       screenshot = [
