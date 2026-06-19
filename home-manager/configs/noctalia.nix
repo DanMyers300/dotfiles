@@ -24,9 +24,18 @@
   programs.noctalia = {
       enable = true;
       settings = {
+        widget.input-volume = {
+          type = "volume";
+          device = "input";
+        };
         bar = {
           main = {
             position = "top";
+            margin_ends = 10;
+            margin_edge = 5;
+            start = ["workspaces" "launcher"];
+            center = ["clock"];
+            end = ["tray" "clipboard" "network" "bluetooth" "volume" "input-volume" "brightness" "battery" "session"];
           };
         };
         wallpaper = {
