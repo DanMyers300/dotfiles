@@ -41,14 +41,15 @@
       ];
 
       zen = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
-      dusklight = [ inputs.dusklight.packages."${pkgs.stdenv.hostPlatform.system}".default ];
+
+      noctalia = [ inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default ];
 
       hostProfiles = {
         nixstation = [
           cli
           gui
           zen
-          dusklight
+          noctalia
           screenshot
           [
             pulseaudio
@@ -75,17 +76,18 @@
             chromium
             obs-studio
             obsidian
-            opencode
             godot
             irssi
             wofi
             unstable.vintagestory
+            unstable.dusklight
           ]
         ];
         nixbook = [
           cli
           gui
           zen
+          noctalia
           screenshot
           [
             brightnessctl

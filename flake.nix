@@ -4,7 +4,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     zen-browser.url = "github:DanMyers300/zen-browser-flake";
-    dusklight.url = "github:DanMyers300/dusklight";
     stylix.url = "github:danth/stylix/release-26.05";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
@@ -18,6 +17,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      noctalia,
       stylix,
       ...
     }@inputs:
@@ -34,7 +34,6 @@
         "nixstation"
         "nixtop"
         "nixbook"
-        "nixserver"
         "nixmac"
 	"nixtravel"
       ];
@@ -47,7 +46,6 @@
             (./machines + "/${machine}.nix")
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
-            inputs.noctalia.nixosModules.default
             {
               home-manager = {
                 useGlobalPkgs = true;
