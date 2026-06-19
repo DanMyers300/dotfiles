@@ -52,7 +52,7 @@
     $terminal = ghostty
     $browser = zen
     $fileManager = thunar
-    $menu = exec noctalia-shell ipc call launcher toggle
+    $menu = exec noctalia msg panel-toggle launcher
 
     #################
     ### AUTOSTART ###
