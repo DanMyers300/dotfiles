@@ -33,10 +33,15 @@
             position = "top";
             margin_ends = 10;
             margin_edge = 5;
-            start = ["workspaces" "launcher"];
+            start = ["launcher" "workspaces"];
             center = ["clock"];
             end = ["tray" "clipboard" "network" "bluetooth" "volume" "input-volume" "brightness" "battery" "session"];
           };
+        };
+        theme = {
+          mode = "dark";
+          source = "community";
+          community = "Oxocarbon";
         };
         wallpaper = {
           enabled = false;

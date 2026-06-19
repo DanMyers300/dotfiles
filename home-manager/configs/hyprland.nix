@@ -283,9 +283,8 @@
     bindm = $mainMod, mouse:273, resizewindow
 
     # Mute
-    bind = SUPER, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-    bindl = , mouse:276, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0
-    bindrl = , mouse:276, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1
+    #bind = SUPER, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+    bind = SUPER, M, exec, noctalia msg mic-mute
 
     ##############################
     ### WINDOWS AND WORKSPACES ###
