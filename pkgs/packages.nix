@@ -79,7 +79,7 @@
             godot
             irssi
             wofi
-            unstable.vintagestory
+            vintagestory
             unstable.dusklight
           ]
         ];
