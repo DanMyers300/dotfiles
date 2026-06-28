@@ -21,4 +21,13 @@
 
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "thunar.desktop";
+    };
+  };
+
+  xdg.configFile."mimeapps.list".force = true;
 }
