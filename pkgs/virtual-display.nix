@@ -16,7 +16,7 @@ let
     IFS=', ' read -r X Y <<< "$(${hyprctl} cursorpos)"
     echo "$X $Y" > /tmp/sunshine-cursor-pos
 
-    ${hyprctl} --instance 0 keyword monitor "HDMI-A-3,3840x2160@60,7680x0,2"
+    ${hyprctl} --instance 0 keyword monitor "HDMI-A-3,1920x1080@60,7680x0"
     sleep 2
     ${hyprctl} --instance 0 keyword monitor "DP-2,disable"
     ${hyprctl} --instance 0 keyword monitor "HDMI-A-1,disable"
