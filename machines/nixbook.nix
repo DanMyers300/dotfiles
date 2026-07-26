@@ -22,6 +22,8 @@
     ../pkgs/regreet.nix
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
+
   ### --- Wifi drivers --- ###
   boot.initrd.kernelModules = [ "wl" ];
   boot.kernelModules = [
