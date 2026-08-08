@@ -56,7 +56,6 @@ in
   ];
 
   services.sunshine.settings = {
-    output_name = connector;
     global_prep_cmd = builtins.toJSON [
       {
         do = "${prepScript}";
