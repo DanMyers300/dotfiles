@@ -57,6 +57,7 @@
     #################
     ### AUTOSTART ###
     #################
+    exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DISPLAY
     exec-once = blueman-applet
     exec-once = steam
     exec-once = systemctl --user start sunshine

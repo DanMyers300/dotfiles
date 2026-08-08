@@ -70,6 +70,8 @@
       "input"
       "dialout"
       "uinput"
+      "video"
+      "render"
     ];
   };
 
