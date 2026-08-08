@@ -52,6 +52,7 @@
           noctalia
           screenshot
           [
+            claude-code
             pulseaudio
             jdk25
             prismlauncher

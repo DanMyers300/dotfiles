@@ -2,7 +2,7 @@
 {
 
   ### --- Kernel --- ###
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.efi.canTouchEfiVariables = true;
 
   ### --- Localization --- ###
