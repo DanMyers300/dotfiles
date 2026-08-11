@@ -47,7 +47,7 @@
     hostName = "nixbook";
     networkmanager.enable = true;
     firewall = {
-      enable = true;
+      enable = false;
       checkReversePath = "loose";
       allowedTCPPorts = [
         22
@@ -76,7 +76,7 @@
 
   ### --- Broadcom insecure package --- ###
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-7.1.4"
+    "broadcom-sta-6.30.223.271-59-6.12.96"
     "electron-39.8.10"
   ];
 
