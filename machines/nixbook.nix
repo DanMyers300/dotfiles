@@ -23,6 +23,8 @@
   ];
 
   ### --- Wifi drivers --- ###
+  # broadcom-sta (wl) doesn't compile against kernels >= 6.8 due to cfg80211 API change
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
   boot.initrd.kernelModules = [ "wl" ];
   boot.kernelModules = [
     "hid_apple"
@@ -45,7 +47,7 @@
     hostName = "nixbook";
     networkmanager.enable = true;
     firewall = {
-      enable = false;
+      enable = true;
       checkReversePath = "loose";
       allowedTCPPorts = [
         22
@@ -74,9 +76,12 @@
 
   ### --- Broadcom insecure package --- ###
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.96"
+    "broadcom-sta-6.30.223.271-59-6.6.144"
     "electron-39.8.10"
   ];
+
+  ### --- Swap --- ###
+  swapDevices = [ { device = "/swapfile"; size = 4096; } ];
 
   ### --- Lid switch --- ###
   services.logind.settings.Login = {
