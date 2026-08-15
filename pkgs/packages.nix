@@ -98,7 +98,6 @@
             vlc
             uxplay
             signal-desktop
-            prismlauncher
           ]
         ];
         nixserver = [ cli ];
