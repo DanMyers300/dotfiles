@@ -218,6 +218,7 @@
     bind = $mainMod, e, exec, $fileManager
     bind = , print, exec, grimshot copy area
     bind = $mainMod CTRL, S, exec, grimshot copy area
+    bind = $mainMod ALT, S, exec, steam -bigpicture
 
     ### --- System --- ###
     bind = $mainMod, Q, killactive,
