@@ -12,6 +12,7 @@
     let
 
       cli = [
+        usbutils
         git
         git-lfs
         xxd
