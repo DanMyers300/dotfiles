@@ -53,7 +53,6 @@
           noctalia
           screenshot
           [
-            betaflight-configurator
             claude-code
             pulseaudio
             jdk25
