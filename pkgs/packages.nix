@@ -92,6 +92,7 @@
           noctalia
           screenshot
           [
+            claude-code
             brightnessctl
             pulseaudio
             obsidian
