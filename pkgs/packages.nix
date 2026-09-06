@@ -71,7 +71,6 @@
             makemkv
             signal-desktop
             libimobiledevice
-            usbmuxd
             ifuse
             altserver-linux
             xdg-utils
@@ -81,8 +80,6 @@
             godot
             irssi
             wofi
-            vintagestory
-            unstable.dusklight
           ]
         ];
         nixbook = [
