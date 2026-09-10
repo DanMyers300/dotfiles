@@ -90,7 +90,6 @@
           screenshot
           [
             chromium
-            claude-code
             brightnessctl
             pulseaudio
             obsidian
