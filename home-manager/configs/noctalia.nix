@@ -38,6 +38,9 @@
             end = ["tray" "clipboard" "network" "bluetooth" "volume" "input-volume" "brightness" "battery" "session"];
           };
         };
+        widget.clock = {
+          format = "{:%H:%M:%S}";
+        };
         theme = {
           mode = "dark";
           source = "community";
