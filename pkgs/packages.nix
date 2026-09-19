@@ -89,6 +89,7 @@
           noctalia
           screenshot
           [
+            claude-code
             chromium
             brightnessctl
             pulseaudio
