@@ -89,6 +89,7 @@
           noctalia
           screenshot
           [
+            pnpm
             kubectl
             claude-code
             chromium
