@@ -89,12 +89,6 @@
           noctalia
           screenshot
           [
-            # Forma Softworks:
-            pnpm
-            nodejs_26
-            kubectl
-
-            # Personal:
             claude-code
             chromium
             brightnessctl
