@@ -89,6 +89,7 @@
           noctalia
           screenshot
           [
+            kubectl
             claude-code
             chromium
             brightnessctl
