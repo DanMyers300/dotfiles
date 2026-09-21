@@ -76,7 +76,7 @@
 
   ### --- Broadcom insecure package --- ###
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.6.144"
+    "broadcom-sta-6.30.223.271-59-6.6.157"
     "electron-39.8.10"
   ];
 
