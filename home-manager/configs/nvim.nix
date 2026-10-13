@@ -19,10 +19,12 @@
           -- Define/override configs for servers
           vim.lsp.config("ts_ls", {})
           vim.lsp.config("pyright", {})
+          vim.lsp.config("ruff", {})
 
           -- Enable (auto start) them
           vim.lsp.enable("ts_ls")
           vim.lsp.enable("pyright")
+          vim.lsp.enable("ruff")
         '';
       }
       {
@@ -151,6 +153,7 @@
       stdenv.cc.cc
       typescript-language-server
       pyright
+      ruff
       rust-analyzer
     ];
     initLua = ''
